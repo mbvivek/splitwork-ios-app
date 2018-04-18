@@ -17,6 +17,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let http:HTTP = HTTP.shared()
+        
+        print("calling HTTP")
+        http.get(url: "user_accounts.json")
+        
         return true
     }
 
