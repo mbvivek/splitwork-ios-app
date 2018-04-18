@@ -20,8 +20,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let http:HTTP = HTTP.shared()
         
-        print("calling HTTP")
-        http.get(url: "user_accounts.json")
+        let completionHandler: (String, [String: Any]) -> () =  {error, data in
+            print("Completion Handler : ")
+            print("Error: \(error)")
+            print("Data: \(data)")
+        }
+        
+        http.get(url: "user_accounts/0", completionHandler: completionHandler)
         
         return true
     }
