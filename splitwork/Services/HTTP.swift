@@ -27,13 +27,14 @@ class HTTP {
         return sharedHTTP
     }
     
-    func get(url: String) {
-        print("calling \(url)")
+    func get(url: String, completionHandler: ((String, [String: Any]) -> ())?) {
+        print("Calling GET on \(url)")
         // set up URL
         var result = [String: Any]()
-        let endPoint = "\(String(describing: self.baseURL))\(url)"
+        let endPoint = "\(self.baseURL!)\(url).json"
         guard let url = URL(string: endPoint) else {
-            print("Error: Cannot create URL (\(endPoint)")
+            let error = String("Error: Cannot create URL (\(endPoint)")
+            completionHandler?(error, result)
             return
         }
         let urlRequest = URLRequest(url: url)
@@ -47,22 +48,33 @@ class HTTP {
             data, response, error in
             // check for error
             guard error == nil else {
-                print("Error: calling GET on \(endPoint)")
+                let error = String("Error: Error calling \(endPoint)")
+                completionHandler?(error, result)
                 return
             }
             // check for data
             guard let data = data else {
-                print("Error: no data received on calling \(endPoint)")
+                let error = String("Error: No data received on calling \(endPoint)")
+                completionHandler?(error, result)
                 return
             }
             // parse data
             do {
-                if let result = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-                    print("Success: calling GET on \(endPoint)")
-                    print(result)
+                if let res = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                    result = ["data": res]
+                    completionHandler?("", result)
+                } else if let res = try JSONSerialization.jsonObject(with: data, options: []) as? [[String: Any]] {
+                    result = ["data": res]
+                    completionHandler?("", result)
+                } else {
+                    print("Error: Could not parse response from \(endPoint)")
+                    let error = "Error: Could not parse response from (\(endPoint)"
+                    completionHandler?(error, result)
                 }
-            } catch let error {
-                print("Error: could not convert response to JSON")
+            } catch _ {
+                print("Error: Could not parse response from \(endPoint)")
+                let error = "Error: Could not parse response from (\(endPoint)"
+                completionHandler?(error, result)
             }
         })
         task.resume()
