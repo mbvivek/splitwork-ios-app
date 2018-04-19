@@ -1,5 +1,5 @@
 //
-//  GroupDetailViewController.swift
+//  DashboardViewController.swift
 //  splitwork
 //
 //  Created by Swathi Kommaghatta Chandrashekaraiah on 4/18/18.
@@ -8,24 +8,12 @@
 
 import UIKit
 
-class GroupDetailViewController: UIViewController {
-    
-    //MARK: Variables
-    @IBOutlet weak var groupNameLabel: UILabel!
-    
-    @IBOutlet weak var groupLabel: UILabel!
-    
+class DashboardViewController: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Do any additional setup after loading the view.
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-    }
-    
-    func setGroupLabel(label: String) {
-        loadViewIfNeeded()
-        self.groupLabel.text = label
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,5 +31,8 @@ class GroupDetailViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    //MARK: Actions
+    
 
 }

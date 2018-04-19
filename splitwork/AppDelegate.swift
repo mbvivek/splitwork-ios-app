@@ -26,7 +26,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("Data: \(data)")
         }
         
-        http.get(url: "user_accounts/0", completionHandler: completionHandler)
+        //http.get(url: "user_accounts/0", completionHandler: completionHandler)
+        
+        if let splitViewController = self.window?.rootViewController as? UISplitViewController {
+            splitViewController.preferredDisplayMode = .allVisible
+            
+            if let navigationController = splitViewController.viewControllers.last as? UINavigationController {
+                navigationController.topViewController?.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
+            }
+        }
         
         return true
     }

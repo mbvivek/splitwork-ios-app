@@ -1,5 +1,5 @@
 //
-//  GroupDetailViewController.swift
+//  GroupSplitViewController.swift
 //  splitwork
 //
 //  Created by Swathi Kommaghatta Chandrashekaraiah on 4/18/18.
@@ -8,24 +8,12 @@
 
 import UIKit
 
-class GroupDetailViewController: UIViewController {
-    
-    //MARK: Variables
-    @IBOutlet weak var groupNameLabel: UILabel!
-    
-    @IBOutlet weak var groupLabel: UILabel!
-    
+class GroupSplitViewController: UISplitViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Do any additional setup after loading the view.
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-    }
-    
-    func setGroupLabel(label: String) {
-        loadViewIfNeeded()
-        self.groupLabel.text = label
     }
 
     override func didReceiveMemoryWarning() {
