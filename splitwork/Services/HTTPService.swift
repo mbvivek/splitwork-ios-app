@@ -8,11 +8,11 @@
 
 import Foundation
 
-class HTTP {
+class HTTPService {
     
-    private static var sharedHTTP: HTTP = {
+    private static var sharedHTTP: HTTPService = {
         let baseURL = "https://splitwork-app.firebaseio.com/"
-        let http = HTTP(baseURL: baseURL)
+        let http = HTTPService(baseURL: baseURL)
         return http
     }()
     
@@ -20,10 +20,10 @@ class HTTP {
     
     private init(baseURL: String) {
         self.baseURL = URL(string: baseURL)
-        print("HTTP initialized..")
+        print("HTTPService initialized..")
     }
     
-    class func shared() -> HTTP {
+    class func shared() -> HTTPService {
         return sharedHTTP
     }
     
