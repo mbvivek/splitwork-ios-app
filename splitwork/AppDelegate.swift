@@ -17,15 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
-        let http:HTTP = HTTP.shared()
-        
-        let completionHandler: (String, [String: Any]) -> () =  {error, data in
-            print("Completion Handler : ")
-            print("Error: \(error)")
-            print("Data: \(data)")
-        }
-        
+   
         //http.get(url: "user_accounts/0", completionHandler: completionHandler)
         
         if let splitViewController = self.window?.rootViewController as? UISplitViewController {
