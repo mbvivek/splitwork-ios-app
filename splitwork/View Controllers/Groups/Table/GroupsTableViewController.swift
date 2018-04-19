@@ -8,11 +8,14 @@
 
 import UIKit
 
-class GroupsTableViewController: UITableViewController {
-    let groups : [String] = ["HouseWork", "BirthdayParty", "Assignment", "Cooking"]
+class GroupsTableViewController: UITableViewController, UISplitViewControllerDelegate {
+    var detailViewController: GroupDetailViewController? = nil
+    var groups : [String]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        groups = ["HouseWork", "BirthdayParty", "Assignment", "Cooking"]
+        splitViewController?.delegate = self
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -24,6 +27,30 @@ class GroupsTableViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: - Segues
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "CellView" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let group = groups[indexPath.row]
+                print("Group: \(group)")
+                print("segue.destination: \(segue.destination)")
+                let controller = (segue.destination as! UINavigationController).topViewController as! GroupDetailViewController
+                
+                controller.setGroupLabel(label: group)
+                
+                if let groupLabel = controller.groupLabel {
+                    print("groupLabel: \(String(describing: groupLabel.text))")
+                } else {
+                    print("groupLabel is nil")
+                }
+                controller.groupLabel.text = group
+                controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
+                controller.navigationItem.leftItemsSupplementBackButton = true
+            }
+        }
     }
 
     // MARK: - Table view data source
