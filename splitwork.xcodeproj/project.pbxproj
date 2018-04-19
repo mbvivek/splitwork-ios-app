@@ -13,7 +13,14 @@
 		912FFF6220859F1200A088A0 /* splitwork.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 912FFF6020859F1200A088A0 /* splitwork.xcdatamodeld */; };
 		912FFF6420859F1200A088A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 912FFF6320859F1200A088A0 /* Assets.xcassets */; };
 		912FFF6720859F1200A088A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 912FFF6520859F1200A088A0 /* LaunchScreen.storyboard */; };
-		919E91122087B0B6008A5524 /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919E91112087B0B6008A5524 /* HTTP.swift */; };
+		91585CD42087F5BC004E9970 /* UserAccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91585CD32087F5BC004E9970 /* UserAccountService.swift */; };
+		91585CD82087F87D004E9970 /* UserAccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91585CD72087F87D004E9970 /* UserAccountModel.swift */; };
+		91585CDC2087F9D6004E9970 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91585CDB2087F9D6004E9970 /* UserModel.swift */; };
+		91585CE020880FDF004E9970 /* GroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91585CDF20880FDF004E9970 /* GroupModel.swift */; };
+		91585CE22088113C004E9970 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91585CE12088113C004E9970 /* TaskModel.swift */; };
+		91585CE520881293004E9970 /* BillModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91585CE420881293004E9970 /* BillModel.swift */; };
+		91585CE720881390004E9970 /* PaymentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91585CE620881390004E9970 /* PaymentModel.swift */; };
+		919E91122087B0B6008A5524 /* HTTPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919E91112087B0B6008A5524 /* HTTPService.swift */; };
 		D131CC4A2087D1E700E599BC /* GroupsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D131CC492087D1E700E599BC /* GroupsTableViewController.swift */; };
 		D131CC4D2087D22700E599BC /* GroupsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D131CC4C2087D22700E599BC /* GroupsTableViewCell.swift */; };
 		D131CC4F2087D29A00E599BC /* GroupDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D131CC4E2087D29A00E599BC /* GroupDetailViewController.swift */; };
@@ -28,7 +35,14 @@
 		912FFF6320859F1200A088A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		912FFF6620859F1200A088A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		912FFF6820859F1200A088A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		919E91112087B0B6008A5524 /* HTTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTP.swift; sourceTree = "<group>"; };
+		91585CD32087F5BC004E9970 /* UserAccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccountService.swift; sourceTree = "<group>"; };
+		91585CD72087F87D004E9970 /* UserAccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccountModel.swift; sourceTree = "<group>"; };
+		91585CDB2087F9D6004E9970 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		91585CDF20880FDF004E9970 /* GroupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupModel.swift; sourceTree = "<group>"; };
+		91585CE12088113C004E9970 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
+		91585CE420881293004E9970 /* BillModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillModel.swift; sourceTree = "<group>"; };
+		91585CE620881390004E9970 /* PaymentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentModel.swift; sourceTree = "<group>"; };
+		919E91112087B0B6008A5524 /* HTTPService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPService.swift; sourceTree = "<group>"; };
 		D131CC492087D1E700E599BC /* GroupsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsTableViewController.swift; sourceTree = "<group>"; };
 		D131CC4C2087D22700E599BC /* GroupsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsTableViewCell.swift; sourceTree = "<group>"; };
 		D131CC4E2087D29A00E599BC /* GroupDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetailViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +78,7 @@
 		912FFF5820859F1200A088A0 /* splitwork */ = {
 			isa = PBXGroup;
 			children = (
+				91585CD62087F864004E9970 /* Models */,
 				919E910D2087B055008A5524 /* Services */,
 				912FFF6E2085A2C500A088A0 /* View Controllers */,
 				912FFF5920859F1200A088A0 /* AppDelegate.swift */,
@@ -93,10 +108,24 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		91585CD62087F864004E9970 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				91585CD72087F87D004E9970 /* UserAccountModel.swift */,
+				91585CDB2087F9D6004E9970 /* UserModel.swift */,
+				91585CDF20880FDF004E9970 /* GroupModel.swift */,
+				91585CE12088113C004E9970 /* TaskModel.swift */,
+				91585CE420881293004E9970 /* BillModel.swift */,
+				91585CE620881390004E9970 /* PaymentModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		919E910D2087B055008A5524 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				919E91112087B0B6008A5524 /* HTTP.swift */,
+				919E91112087B0B6008A5524 /* HTTPService.swift */,
+				91585CD32087F5BC004E9970 /* UserAccountService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -191,13 +220,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				919E91122087B0B6008A5524 /* HTTP.swift in Sources */,
+				91585CE020880FDF004E9970 /* GroupModel.swift in Sources */,
+				91585CD42087F5BC004E9970 /* UserAccountService.swift in Sources */,
+				919E91122087B0B6008A5524 /* HTTPService.swift in Sources */,
 				D131CC4F2087D29A00E599BC /* GroupDetailViewController.swift in Sources */,
+				91585CE720881390004E9970 /* PaymentModel.swift in Sources */,
+				91585CD82087F87D004E9970 /* UserAccountModel.swift in Sources */,
+				91585CE520881293004E9970 /* BillModel.swift in Sources */,
 				D131CC4D2087D22700E599BC /* GroupsTableViewCell.swift in Sources */,
+				91585CE22088113C004E9970 /* TaskModel.swift in Sources */,
 				D131CC4A2087D1E700E599BC /* GroupsTableViewController.swift in Sources */,
 				912FFF5C20859F1200A088A0 /* LoginViewController.swift in Sources */,
 				912FFF5A20859F1200A088A0 /* AppDelegate.swift in Sources */,
 				912FFF6220859F1200A088A0 /* splitwork.xcdatamodeld in Sources */,
+				91585CDC2087F9D6004E9970 /* UserModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
