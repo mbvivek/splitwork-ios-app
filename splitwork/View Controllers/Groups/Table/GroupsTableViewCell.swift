@@ -12,6 +12,9 @@ class GroupsTableViewCell: UITableViewCell {
 
     //MARK: Variables
     @IBOutlet weak var groupName: UILabel!
+    @IBOutlet weak var memberCount: UILabel!
+    @IBOutlet weak var taskCount: UILabel!
+    @IBOutlet weak var billCount: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

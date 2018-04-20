@@ -11,9 +11,20 @@ import UIKit
 class GroupDetailViewController: UIViewController {
     
     //MARK: Variables
-    @IBOutlet weak var groupNameLabel: UILabel!
+    @IBOutlet weak var groupName: UILabel!
+    @IBOutlet weak var groupDescription: UITextView!
     
-    @IBOutlet weak var groupLabel: UILabel!
+    @IBOutlet weak var totalMemberCount: UILabel!
+    @IBOutlet weak var totalTaskCount: UILabel!
+    @IBOutlet weak var totalBillCount: UILabel!
+    
+    @IBOutlet weak var yourPendingTaskCount: UILabel!
+    @IBOutlet weak var yourAssignedTaskCount: UILabel!
+    @IBOutlet weak var yourCompletedTaskCount: UILabel!
+    @IBOutlet weak var yourMissedTaskCount: UILabel!
+    
+    @IBOutlet weak var amountYouOwe: UILabel!
+    @IBOutlet weak var amountYouAreOwed: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +36,7 @@ class GroupDetailViewController: UIViewController {
     
     func setGroupLabel(label: String) {
         loadViewIfNeeded()
-        self.groupLabel.text = label
+        self.groupName.text = label
     }
 
     override func didReceiveMemoryWarning() {

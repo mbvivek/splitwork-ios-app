@@ -1,22 +1,20 @@
 //
-//  GroupsTableViewController.swift
+//  TasksTableViewController.swift
 //  splitwork
 //
-//  Created by Swathi Kommaghatta Chandrashekaraiah on 4/18/18.
+//  Created by Vivek Madhusudan Badrinarayan on 4/19/18.
 //  Copyright © 2018 Vivek Badrinarayan. All rights reserved.
 //
 
 import UIKit
 
-class GroupsTableViewController: UITableViewController, UISplitViewControllerDelegate {
-    var detailViewController: GroupDetailViewController? = nil
-    var groups : [String]!
+class TasksTableViewController: UITableViewController {
+    
+    var tasks = ["Cooking", "Rental Car", "Cleaning", "Grocery Shopping"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        groups = ["HouseWork", "BirthdayParty", "Assignment", "Cooking"]
-        splitViewController?.delegate = self
-        
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -28,49 +26,33 @@ class GroupsTableViewController: UITableViewController, UISplitViewControllerDel
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    // MARK: - Segues
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "GroupCellView" {
-            if let indexPath = tableView.indexPathForSelectedRow {
-                // get the selected group
-                let group = groups[indexPath.row]
-                print("Group: \(group)")
-                // get the detail view controller
-                let controller = (segue.destination as! UINavigationController).topViewController as! GroupDetailViewController
-                // configure the detail view
-                controller.setGroupLabel(label: group)
-                controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
-                controller.navigationItem.leftItemsSupplementBackButton = true
-            }
-        }
-    }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return groups.count
+        return tasks.count
     }
 
-
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellIdentifier = "GroupsCell"
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? GroupsTableViewCell  else {
-            fatalError("The dequeued cell is not an instance of allRoomsTableViewCell.")
+        
+        let cellIdentfier = "TasksTableViewCell"
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentfier, for: indexPath) as? TasksTableViewCell else {
+            fatalError("The dequeued cell is not an instance of TasksTableViewCell.")
         }
         
-        let group = groups[indexPath.row]
-        cell.groupName.text = group
+        // Configure the cell...
+        cell.taskName.text = tasks[indexPath.row]
 
         return cell
     }
+ 
 
     /*
     // Override to support conditional editing of the table view.
@@ -80,7 +62,7 @@ class GroupsTableViewController: UITableViewController, UISplitViewControllerDel
     }
     */
 
-    
+    /*
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
@@ -90,7 +72,7 @@ class GroupsTableViewController: UITableViewController, UISplitViewControllerDel
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
- 
+    */
 
     /*
     // Override to support rearranging the table view.

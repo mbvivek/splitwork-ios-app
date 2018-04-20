@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9110570320897107000966F4 /* TasksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9110570220897107000966F4 /* TasksTableViewCell.swift */; };
+		91105705208977ED000966F4 /* TasksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91105704208977ED000966F4 /* TasksTableViewController.swift */; };
+		9110570720897994000966F4 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9110570620897994000966F4 /* TasksViewController.swift */; };
 		912FFF5A20859F1200A088A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912FFF5920859F1200A088A0 /* AppDelegate.swift */; };
 		912FFF5C20859F1200A088A0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912FFF5B20859F1200A088A0 /* LoginViewController.swift */; };
 		912FFF5F20859F1200A088A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 912FFF5D20859F1200A088A0 /* Main.storyboard */; };
@@ -29,6 +32,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9110570220897107000966F4 /* TasksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTableViewCell.swift; sourceTree = "<group>"; };
+		91105704208977ED000966F4 /* TasksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTableViewController.swift; sourceTree = "<group>"; };
+		9110570620897994000966F4 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 		912FFF5620859F1200A088A0 /* splitwork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = splitwork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		912FFF5920859F1200A088A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		912FFF5B20859F1200A088A0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +69,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		911056FE20897003000966F4 /* Tasks */ = {
+			isa = PBXGroup;
+			children = (
+				911056FF2089700E000966F4 /* Table */,
+			);
+			path = Tasks;
+			sourceTree = "<group>";
+		};
+		911056FF2089700E000966F4 /* Table */ = {
+			isa = PBXGroup;
+			children = (
+				9110570220897107000966F4 /* TasksTableViewCell.swift */,
+				91105704208977ED000966F4 /* TasksTableViewController.swift */,
+				9110570620897994000966F4 /* TasksViewController.swift */,
+			);
+			path = Table;
+			sourceTree = "<group>";
+		};
 		912FFF4D20859F1100A088A0 = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +122,7 @@
 		912FFF6E2085A2C500A088A0 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				911056FE20897003000966F4 /* Tasks */,
 				D131CC702087F5D500E599BC /* Dashboard */,
 				D131CC482087D19700E599BC /* Groups */,
 				912FFF6F2085A2D300A088A0 /* Login */,
@@ -234,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91105705208977ED000966F4 /* TasksTableViewController.swift in Sources */,
 				91585CE020880FDF004E9970 /* GroupModel.swift in Sources */,
 				91585CD42087F5BC004E9970 /* UserAccountService.swift in Sources */,
 				D167DFAB20881A89001A199A /* GroupSplitViewController.swift in Sources */,
@@ -245,8 +271,10 @@
 				91585CE22088113C004E9970 /* TaskModel.swift in Sources */,
 				D131CC4A2087D1E700E599BC /* GroupsTableViewController.swift in Sources */,
 				912FFF5C20859F1200A088A0 /* LoginViewController.swift in Sources */,
+				9110570320897107000966F4 /* TasksTableViewCell.swift in Sources */,
 				912FFF5A20859F1200A088A0 /* AppDelegate.swift in Sources */,
 				912FFF6220859F1200A088A0 /* splitwork.xcdatamodeld in Sources */,
+				9110570720897994000966F4 /* TasksViewController.swift in Sources */,
 				91562C7620890C1100952B0A /* HTTPService.swift in Sources */,
 				91585CDC2087F9D6004E9970 /* UserModel.swift in Sources */,
 				D131CC722087F60D00E599BC /* DashboardViewController.swift in Sources */,
