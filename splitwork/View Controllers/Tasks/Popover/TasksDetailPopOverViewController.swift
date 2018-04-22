@@ -10,7 +10,6 @@ import UIKit
 
 class TasksDetailPopOverViewController: UIViewController {
     
-    
     @IBOutlet weak var taskName: UILabel!
     @IBOutlet weak var taskDescription: UILabel!
     @IBOutlet weak var assignedTo: UILabel!
@@ -34,13 +33,21 @@ class TasksDetailPopOverViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func initTask(taskName: String) {
+        loadViewIfNeeded()
+        self.taskName.text = taskName
+    }
+    
     @IBAction func closeButtonAction(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     
     func blurBackground() {
+        popoverView.layer.cornerRadius = 5
+        popoverView.layer.borderWidth = 0.75
+        popoverView.layer.borderColor = UIColor.darkGray.cgColor
         self.view.backgroundColor = .clear
-        let blurEffect = UIBlurEffect(style: .prominent)
+        let blurEffect = UIBlurEffect(style: .regular)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = self.view.frame
         self.view.insertSubview(blurEffectView, at: 0)
