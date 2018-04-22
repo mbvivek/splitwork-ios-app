@@ -12,8 +12,6 @@ class TasksViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     @IBOutlet weak var tasksTableView: UITableView!
     
-    
-    
     var tasks = ["Cleaning", "Rental Car"]
     
     override func viewDidLoad() {
@@ -48,6 +46,17 @@ class TasksViewController: UIViewController, UITableViewDataSource, UITableViewD
         cell.taskName.text = tasks[indexPath.row]
         
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "toTasksDetailPopOverViewController") {
+            let popup = segue.destination as! TasksDetailPopOverViewController
+            if let indexPath = tasksTableView.indexPathForSelectedRow {
+                let taskName = tasks[indexPath.row]
+                print(taskName)
+                popup.initTask(taskName: taskName)
+            }
+        }
     }
 
     
