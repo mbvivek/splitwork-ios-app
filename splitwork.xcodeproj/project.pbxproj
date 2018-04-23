@@ -23,6 +23,8 @@
 		91585CE22088113C004E9970 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91585CE12088113C004E9970 /* TaskModel.swift */; };
 		91585CE520881293004E9970 /* BillModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91585CE420881293004E9970 /* BillModel.swift */; };
 		91585CE720881390004E9970 /* PaymentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91585CE620881390004E9970 /* PaymentModel.swift */; };
+		91BE7821208E67F1000E4517 /* CreateGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BE7820208E67F1000E4517 /* CreateGroupViewController.swift */; };
+		91BE7823208E6C49000E4517 /* AddMemberPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BE7822208E6C49000E4517 /* AddMemberPopoverViewController.swift */; };
 		91D6DCDB208D558900F62264 /* CreateGroupInviteListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D6DCDA208D558900F62264 /* CreateGroupInviteListTableViewCell.swift */; };
 		91D6DCE2208D671800F62264 /* AddMemberPopoverTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D6DCE1208D671800F62264 /* AddMemberPopoverTableViewCell.swift */; };
 		91F3D5D1208BE3BE00BDE857 /* TasksDetailPopOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F3D5D0208BE3BE00BDE857 /* TasksDetailPopOverViewController.swift */; };
@@ -52,6 +54,8 @@
 		91585CE12088113C004E9970 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		91585CE420881293004E9970 /* BillModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillModel.swift; sourceTree = "<group>"; };
 		91585CE620881390004E9970 /* PaymentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentModel.swift; sourceTree = "<group>"; };
+		91BE7820208E67F1000E4517 /* CreateGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreateGroupViewController.swift; path = "splitwork/View Controllers/Groups/Create Group/CreateGroupViewController.swift"; sourceTree = SOURCE_ROOT; };
+		91BE7822208E6C49000E4517 /* AddMemberPopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMemberPopoverViewController.swift; sourceTree = "<group>"; };
 		91D6DCDA208D558900F62264 /* CreateGroupInviteListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupInviteListTableViewCell.swift; sourceTree = "<group>"; };
 		91D6DCE1208D671800F62264 /* AddMemberPopoverTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMemberPopoverTableViewCell.swift; sourceTree = "<group>"; };
 		91F3D5D0208BE3BE00BDE857 /* TasksDetailPopOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksDetailPopOverViewController.swift; sourceTree = "<group>"; };
@@ -167,6 +171,8 @@
 		91D6DCD6208D532200F62264 /* Create Group */ = {
 			isa = PBXGroup;
 			children = (
+				91D6DCDC208D5D7300F62264 /* Add Member Popover */,
+				91BE7820208E67F1000E4517 /* CreateGroupViewController.swift */,
 				91D6DCD9208D555400F62264 /* Invite List Table */,
 			);
 			path = "Create Group";
@@ -180,12 +186,13 @@
 			path = "Invite List Table";
 			sourceTree = "<group>";
 		};
-		91D6DCDC208D5D7300F62264 /* Popover */ = {
+		91D6DCDC208D5D7300F62264 /* Add Member Popover */ = {
 			isa = PBXGroup;
 			children = (
 				91D6DCE1208D671800F62264 /* AddMemberPopoverTableViewCell.swift */,
+				91BE7822208E6C49000E4517 /* AddMemberPopoverViewController.swift */,
 			);
-			path = Popover;
+			path = "Add Member Popover";
 			sourceTree = "<group>";
 		};
 		91F3D5CF208BE39500BDE857 /* Popover */ = {
@@ -199,7 +206,6 @@
 		D131CC482087D19700E599BC /* Groups */ = {
 			isa = PBXGroup;
 			children = (
-				91D6DCDC208D5D7300F62264 /* Popover */,
 				91D6DCD6208D532200F62264 /* Create Group */,
 				D131CC4B2087D1FB00E599BC /* Table */,
 				D131CC4E2087D29A00E599BC /* GroupDetailViewController.swift */,
@@ -305,6 +311,7 @@
 				91D6DCDB208D558900F62264 /* CreateGroupInviteListTableViewCell.swift in Sources */,
 				91F3D5D1208BE3BE00BDE857 /* TasksDetailPopOverViewController.swift in Sources */,
 				91585CD82087F87D004E9970 /* UserAccountModel.swift in Sources */,
+				91BE7821208E67F1000E4517 /* CreateGroupViewController.swift in Sources */,
 				91585CE520881293004E9970 /* BillModel.swift in Sources */,
 				D131CC4D2087D22700E599BC /* GroupsTableViewCell.swift in Sources */,
 				91585CE22088113C004E9970 /* TaskModel.swift in Sources */,
@@ -313,6 +320,7 @@
 				91D6DCE2208D671800F62264 /* AddMemberPopoverTableViewCell.swift in Sources */,
 				9110570320897107000966F4 /* TasksTableViewCell.swift in Sources */,
 				912FFF5A20859F1200A088A0 /* AppDelegate.swift in Sources */,
+				91BE7823208E6C49000E4517 /* AddMemberPopoverViewController.swift in Sources */,
 				912FFF6220859F1200A088A0 /* splitwork.xcdatamodeld in Sources */,
 				9110570720897994000966F4 /* TasksViewController.swift in Sources */,
 				91562C7620890C1100952B0A /* HTTPService.swift in Sources */,

@@ -16,12 +16,6 @@ class GroupsTableViewController: UITableViewController, UISplitViewControllerDel
         super.viewDidLoad()
         groups = ["HouseWork", "BirthdayParty", "Assignment", "Cooking"]
         splitViewController?.delegate = self
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     override func didReceiveMemoryWarning() {
@@ -60,8 +54,8 @@ class GroupsTableViewController: UITableViewController, UISplitViewControllerDel
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellIdentifier = "GroupsCell"
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? GroupsTableViewCell  else {
+
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "GroupsTableViewCell", for: indexPath) as? GroupsTableViewCell  else {
             fatalError("The dequeued cell is not an instance of allRoomsTableViewCell.")
         }
         
