@@ -35,6 +35,7 @@ class GroupDetailViewController: UIViewController {
     }
     
     func setGroupLabel(label: String) {
+        view.isHidden = false
         loadViewIfNeeded()
         self.groupName.text = label
     }

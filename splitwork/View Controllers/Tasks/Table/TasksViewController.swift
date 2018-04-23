@@ -17,8 +17,10 @@ class TasksViewController: UIViewController, UITableViewDataSource, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        tasksTableView.delegate = self
-        tasksTableView.dataSource = self
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -58,7 +60,7 @@ class TasksViewController: UIViewController, UITableViewDataSource, UITableViewD
             }
         }
     }
-
+    
     
     
     /*
