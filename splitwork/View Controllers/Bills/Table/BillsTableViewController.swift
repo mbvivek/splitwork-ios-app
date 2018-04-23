@@ -1,21 +1,20 @@
 //
-//  GroupsTableViewController.swift
+//  BillsTableViewController.swift
 //  splitwork
 //
-//  Created by Swathi Kommaghatta Chandrashekaraiah on 4/18/18.
+//  Created by Swathi Kommaghatta Chandrashekaraiah on 4/23/18.
 //  Copyright © 2018 Vivek Badrinarayan. All rights reserved.
 //
 
 import UIKit
 
-class GroupsTableViewController: UITableViewController {
-    var detailViewController: GroupDetailViewController!
-    var groups : [String]!
-
+class BillsTableViewController: UITableViewController {
+    var detailViewController: BillsDetailViewController!
+    var bills: [String]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        groups = ["HouseWork", "BirthdayParty", "Assignment", "Cooking"]
-        
+        bills = ["Bill1", "Bill2", "Bill3", "Bill4"]
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -23,26 +22,26 @@ class GroupsTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     // MARK: - Segues
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toGroupDetailViewController" {
+        if segue.identifier == "toBillsDetailViewController" {
             if let indexPath = tableView.indexPathForSelectedRow {
                 // get the selected group
-                let group = groups[indexPath.row]
+                let bill = bills[indexPath.row]
                 // get the detail view controller
-                let controller = (segue.destination as! UINavigationController).topViewController as! GroupDetailViewController
+                let controller = (segue.destination as! UINavigationController).topViewController as! BillsDetailViewController
                 // configure the detail view
-                controller.setGroupLabel(label: group)
+                controller.setBillLabel(label: bill)
                 controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true
             }
         }
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
@@ -54,21 +53,21 @@ class GroupsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return groups.count
+        return bills.count
     }
 
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellIdentifier = "GroupsCell"
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? GroupsTableViewCell  else {
+        let cellIdentifier = "BillsCell"
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? BillsTableViewCell  else {
             fatalError("The dequeued cell is not an instance of allRoomsTableViewCell.")
         }
         
-        let group = groups[indexPath.row]
-        cell.groupName.text = group
-
+        let bill = bills[indexPath.row]
+        cell.billNames.text = bill
         return cell
     }
+ 
 
     /*
     // Override to support conditional editing of the table view.
