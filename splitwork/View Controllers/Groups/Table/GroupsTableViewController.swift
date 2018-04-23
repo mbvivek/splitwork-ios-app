@@ -15,7 +15,6 @@ class GroupsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         groups = ["HouseWork", "BirthdayParty", "Assignment", "Cooking"]
-        splitViewController?.delegate = self
     }
 
     override func didReceiveMemoryWarning() {

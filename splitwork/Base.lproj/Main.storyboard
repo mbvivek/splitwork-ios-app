@@ -42,6 +42,9 @@
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="EYV-kC-Xbv" kind="show" id="oub-1q-voJ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o66-Ug-9L3">
                                 <rect key="frame" x="110" y="392.5" width="100" height="30"/>
@@ -109,6 +112,23 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-124" y="121"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="OaF-qG-yby">
+            <objects>
+                <viewController id="D0V-AP-aYe" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Xn2-JC-mAV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="vGd-zn-ne1"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Home" image="home" id="Hza-Oe-rfz"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="moo-of-RcR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-128" y="2436"/>
         </scene>
         <!--Group Detail View Controller-->
         <scene sceneID="LZE-y4-PYE">
@@ -2865,8 +2885,13 @@
     </scenes>
     <resources>
         <image name="Line" width="1000" height="181"/>
+        <image name="bill" width="32" height="32"/>
         <image name="bill-added-by-you" width="256" height="256"/>
         <image name="bill-added-to-you" width="256" height="256"/>
+        <image name="group" width="32" height="32"/>
+        <image name="home" width="32" height="32"/>
+        <image name="line" width="1000" height="181"/>
+        <image name="task" width="32" height="32"/>
         <image name="task-assigned" width="256" height="256"/>
         <image name="task-completed" width="256" height="256"/>
         <image name="task-missed" width="256" height="256"/>
