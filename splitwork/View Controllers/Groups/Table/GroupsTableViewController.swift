@@ -32,11 +32,10 @@ class GroupsTableViewController: UITableViewController, UISplitViewControllerDel
     // MARK: - Segues
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "GroupCellView" {
+        if segue.identifier == "toGroupDetailViewController" {
             if let indexPath = tableView.indexPathForSelectedRow {
                 // get the selected group
                 let group = groups[indexPath.row]
-                print("Group: \(group)")
                 // get the detail view controller
                 let controller = (segue.destination as! UINavigationController).topViewController as! GroupDetailViewController
                 // configure the detail view
