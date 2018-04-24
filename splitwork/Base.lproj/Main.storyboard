@@ -3357,7 +3357,7 @@
         <image name="bill-added-to-you" width="256" height="256"/>
         <image name="group" width="32" height="32"/>
         <image name="home" width="32" height="32"/>
-        <image name="line" width="1000" height="181"/>
+        <image name="line" width="452" height="129"/>
         <image name="task" width="32" height="32"/>
         <image name="task-assigned" width="256" height="256"/>
         <image name="task-completed" width="256" height="256"/>
