@@ -1,5 +1,5 @@
 //
-//  UserContactInfoModel+CoreDataProperties.swift
+//  UserContactInfo+CoreDataProperties.swift
 //  splitwork
 //
 //  Created by Vivek Madhusudan Badrinarayan on 4/24/18.
@@ -11,10 +11,10 @@ import Foundation
 import CoreData
 
 
-extension UserContactInfoModel {
+extension UserContactInfo {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<UserContactInfoModel> {
-        return NSFetchRequest<UserContactInfoModel>(entityName: "UserContactInfoModel")
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<UserContactInfo> {
+        return NSFetchRequest<UserContactInfo>(entityName: "UserContactInfo")
     }
 
     @NSManaged public var email: String?

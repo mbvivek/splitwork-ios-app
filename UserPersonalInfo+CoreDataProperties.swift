@@ -1,5 +1,5 @@
 //
-//  UserPersonalInfoModel+CoreDataProperties.swift
+//  UserPersonalInfo+CoreDataProperties.swift
 //  splitwork
 //
 //  Created by Vivek Madhusudan Badrinarayan on 4/24/18.
@@ -11,10 +11,10 @@ import Foundation
 import CoreData
 
 
-extension UserPersonalInfoModel {
+extension UserPersonalInfo {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<UserPersonalInfoModel> {
-        return NSFetchRequest<UserPersonalInfoModel>(entityName: "UserPersonalInfoModel")
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<UserPersonalInfo> {
+        return NSFetchRequest<UserPersonalInfo>(entityName: "UserPersonalInfo")
     }
 
     @NSManaged public var name: String?
