@@ -30,6 +30,10 @@
 		91D6DCE2208D671800F62264 /* AddMemberPopoverTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D6DCE1208D671800F62264 /* AddMemberPopoverTableViewCell.swift */; };
 		D106EA0E208E77570046A10A /* BillsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D106EA0D208E77570046A10A /* BillsDetailViewController.swift */; };
 		D106EA11208E77B80046A10A /* BillsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D106EA10208E77B80046A10A /* BillsTableViewCell.swift */; };
+		D12F3E82208EE33B0018D28E /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = D12F3E81208EE33B0018D28E /* home.png */; };
+		D12F3E84208EE3420018D28E /* home (1).png in Resources */ = {isa = PBXBuildFile; fileRef = D12F3E83208EE3420018D28E /* home (1).png */; };
+		D12F3E88208EE37A0018D28E /* wallet-filled-money-tool.png in Resources */ = {isa = PBXBuildFile; fileRef = D12F3E87208EE37A0018D28E /* wallet-filled-money-tool.png */; };
+		D12F3E8A208EE38D0018D28E /* wallet-filled-money-tool (1).png in Resources */ = {isa = PBXBuildFile; fileRef = D12F3E89208EE38D0018D28E /* wallet-filled-money-tool (1).png */; };
 		D131CC4A2087D1E700E599BC /* GroupsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D131CC492087D1E700E599BC /* GroupsTableViewController.swift */; };
 		D131CC4D2087D22700E599BC /* GroupsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D131CC4C2087D22700E599BC /* GroupsTableViewCell.swift */; };
 		D131CC4F2087D29A00E599BC /* GroupDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D131CC4E2087D29A00E599BC /* GroupDetailViewController.swift */; };
@@ -65,6 +69,10 @@
 		91D6DCE1208D671800F62264 /* AddMemberPopoverTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMemberPopoverTableViewCell.swift; sourceTree = "<group>"; };
 		D106EA0D208E77570046A10A /* BillsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillsDetailViewController.swift; sourceTree = "<group>"; };
 		D106EA10208E77B80046A10A /* BillsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillsTableViewCell.swift; sourceTree = "<group>"; };
+		D12F3E81208EE33B0018D28E /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
+		D12F3E83208EE3420018D28E /* home (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home (1).png"; sourceTree = "<group>"; };
+		D12F3E87208EE37A0018D28E /* wallet-filled-money-tool.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wallet-filled-money-tool.png"; sourceTree = "<group>"; };
+		D12F3E89208EE38D0018D28E /* wallet-filled-money-tool (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wallet-filled-money-tool (1).png"; sourceTree = "<group>"; };
 		D131CC492087D1E700E599BC /* GroupsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsTableViewController.swift; sourceTree = "<group>"; };
 		D131CC4C2087D22700E599BC /* GroupsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsTableViewCell.swift; sourceTree = "<group>"; };
 		D131CC4E2087D29A00E599BC /* GroupDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetailViewController.swift; sourceTree = "<group>"; };
@@ -129,6 +137,7 @@
 		912FFF5820859F1200A088A0 /* splitwork */ = {
 			isa = PBXGroup;
 			children = (
+				D12F3E80208EE3240018D28E /* Images */,
 				91125917208EA5A9003AE522 /* Util */,
 				91585CD62087F864004E9970 /* Models */,
 				919E910D2087B055008A5524 /* Services */,
@@ -230,6 +239,33 @@
 			path = Master;
 			sourceTree = "<group>";
 		};
+		D12F3E80208EE3240018D28E /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				D12F3E86208EE3600018D28E /* wallet */,
+				D12F3E85208EE3520018D28E /* home */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		D12F3E85208EE3520018D28E /* home */ = {
+			isa = PBXGroup;
+			children = (
+				D12F3E81208EE33B0018D28E /* home.png */,
+				D12F3E83208EE3420018D28E /* home (1).png */,
+			);
+			path = home;
+			sourceTree = "<group>";
+		};
+		D12F3E86208EE3600018D28E /* wallet */ = {
+			isa = PBXGroup;
+			children = (
+				D12F3E89208EE38D0018D28E /* wallet-filled-money-tool (1).png */,
+				D12F3E87208EE37A0018D28E /* wallet-filled-money-tool.png */,
+			);
+			path = wallet;
+			sourceTree = "<group>";
+		};
 		D131CC482087D19700E599BC /* Groups */ = {
 			isa = PBXGroup;
 			children = (
@@ -326,9 +362,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D12F3E82208EE33B0018D28E /* home.png in Resources */,
 				912FFF6720859F1200A088A0 /* LaunchScreen.storyboard in Resources */,
 				912FFF6420859F1200A088A0 /* Assets.xcassets in Resources */,
+				D12F3E88208EE37A0018D28E /* wallet-filled-money-tool.png in Resources */,
 				912FFF5F20859F1200A088A0 /* Main.storyboard in Resources */,
+				D12F3E8A208EE38D0018D28E /* wallet-filled-money-tool (1).png in Resources */,
+				D12F3E84208EE3420018D28E /* home (1).png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
