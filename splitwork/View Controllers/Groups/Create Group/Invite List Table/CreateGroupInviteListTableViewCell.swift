@@ -10,8 +10,10 @@ import UIKit
 
 class CreateGroupInviteListTableViewCell: UITableViewCell {
 
+    
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var username: UILabel!
+    @IBOutlet weak var profilePic: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
