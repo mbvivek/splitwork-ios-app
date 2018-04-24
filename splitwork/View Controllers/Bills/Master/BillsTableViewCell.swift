@@ -12,6 +12,10 @@ class BillsTableViewCell: UITableViewCell {
 
     //MARK: Variables
     @IBOutlet weak var billNames: UILabel!
+    @IBOutlet weak var oweLabel: UILabel!
+    @IBOutlet weak var addedBy: UILabel!
+    @IBOutlet weak var oweAmount: UILabel!
+    @IBOutlet weak var group: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
