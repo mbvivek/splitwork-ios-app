@@ -10,9 +10,11 @@ import UIKit
 
 class TasksViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    
     @IBOutlet weak var tasksTableView: UITableView!
     
-    var tasks = ["Cleaning", "Rental Car"]
+    var headers = ["Group1", "Group2"]
+    var tasks = [["Cleaning", "Rental Car"], ["Grocery Shopping"]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,11 +31,15 @@ class TasksViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return tasks.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tasks.count
+        return tasks[section].count
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return headers[section]
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -43,7 +49,7 @@ class TasksViewController: UIViewController, UITableViewDataSource, UITableViewD
         }
         
         // Configure the cell...
-        cell.taskName.text = tasks[indexPath.row]
+        cell.taskName.text = tasks[indexPath.section][indexPath.row]
         
         return cell
     }
@@ -52,7 +58,7 @@ class TasksViewController: UIViewController, UITableViewDataSource, UITableViewD
         if(segue.identifier == "toTasksDetailPopOverViewController") {
             let popup = segue.destination as! TasksDetailPopOverViewController
             if let indexPath = tasksTableView.indexPathForSelectedRow {
-                let taskName = tasks[indexPath.row]
+                let taskName = tasks[indexPath.section][indexPath.row]
                 print(taskName)
                 popup.initTask(taskName: taskName)
             }

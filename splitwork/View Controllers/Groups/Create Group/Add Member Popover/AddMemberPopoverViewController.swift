@@ -17,6 +17,8 @@ class AddMemberPopoverViewController: UIViewController, UITableViewDelegate, UIT
     @IBOutlet weak var membersTableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
+    var callback: ((_ member: String) -> ())?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         blurBackground()
@@ -54,13 +56,16 @@ class AddMemberPopoverViewController: UIViewController, UITableViewDelegate, UIT
         print("table reloaded..")
     }
     
-    
     @IBAction func cancelButtonAction(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     
-    
     @IBAction func selectButtonAction(_ sender: Any) {
+        
+        let selectedIndex = membersTableView.indexPathForSelectedRow?.row
+        let selectedMember = members[selectedIndex!]
+        callback?(selectedMember)
+        
         dismiss(animated: true, completion: nil)
     }
     

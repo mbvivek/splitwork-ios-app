@@ -15,7 +15,7 @@ class CreateGroupViewController: UIViewController, UITableViewDelegate, UITableV
     
     @IBOutlet weak var inviteListTableView: UITableView!
     
-    var invitedMembers = [String]()
+    var inviteList = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,15 +29,15 @@ class CreateGroupViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return invitedMembers.count
+        return inviteList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "AddMemberPopoverTableViewCell", for: indexPath) as? AddMemberPopoverTableViewCell  else {
-            fatalError("The dequeued cell is not an instance of AddMemberPopoverTableViewCell.")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CreateGroupInviteListTableViewCell", for: indexPath) as? CreateGroupInviteListTableViewCell  else {
+            fatalError("The dequeued cell is not an instance of CreateGroupInviteListTableViewCell.")
         }
         
-        let member = invitedMembers[indexPath.row]
+        let member = inviteList[indexPath.row]
         
         // configure the cell
         cell.name.text = member
@@ -45,16 +45,36 @@ class CreateGroupViewController: UIViewController, UITableViewDelegate, UITableV
         return cell
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toAddMemberPopoverViewController" {
+            // get the destination view controller
+            let controller = segue.destination as! AddMemberPopoverViewController
+            // set the callback
+            controller.callback = { (member: String) -> () in
+                if self.ifMemberExistsInInviteList(member) {
+                    Util.showErrorMessage(self, "'\(member)' already exists in the invite list!")
+                    return
+                }
+                self.inviteList.append(member)
+                self.inviteListTableView.reloadData()
+            }
+        }
+    }
+    
+    func ifMemberExistsInInviteList(_ member: String) -> Bool {
+        return inviteList.contains(member)
+    }
     
     @IBAction func checkAvailabilityButtonAction(_ sender: Any) {
     }
     
-    
     @IBAction func addMemberButtonAction(_ sender: Any) {
+        
     }
-    
     
     @IBAction func createGroupButtonAction(_ sender: Any) {
     }
+    
+    
     
 }
