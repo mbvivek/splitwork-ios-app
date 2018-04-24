@@ -1,5 +1,5 @@
 //
-//  BillModel+CoreDataProperties.swift
+//  Bill+CoreDataProperties.swift
 //  splitwork
 //
 //  Created by Vivek Madhusudan Badrinarayan on 4/24/18.
@@ -11,10 +11,10 @@ import Foundation
 import CoreData
 
 
-extension BillModel {
+extension Bill {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<BillModel> {
-        return NSFetchRequest<BillModel>(entityName: "BillModel")
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<Bill> {
+        return NSFetchRequest<Bill>(entityName: "Bill")
     }
 
     @NSManaged public var addedTo: NSObject?
@@ -22,7 +22,7 @@ extension BillModel {
     @NSManaged public var desc: String?
     @NSManaged public var id: Int32
     @NSManaged public var name: String?
-    @NSManaged public var addedBy: UserAccountModel?
-    @NSManaged public var group: GroupModel?
+    @NSManaged public var addedBy: UserAccount?
+    @NSManaged public var group: Group?
 
 }

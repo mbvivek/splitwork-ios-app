@@ -1,5 +1,5 @@
 //
-//  UserPersonalInfoModel+CoreDataClass.swift
+//  Task+CoreDataClass.swift
 //  splitwork
 //
 //  Created by Vivek Madhusudan Badrinarayan on 4/24/18.
@@ -11,6 +11,6 @@ import Foundation
 import CoreData
 
 
-public class UserPersonalInfoModel: NSManagedObject {
+public class Task: NSManagedObject {
 
 }

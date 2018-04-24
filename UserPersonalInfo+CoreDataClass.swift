@@ -1,5 +1,5 @@
 //
-//  UserContactInfoModel+CoreDataClass.swift
+//  UserPersonalInfo+CoreDataClass.swift
 //  splitwork
 //
 //  Created by Vivek Madhusudan Badrinarayan on 4/24/18.
@@ -11,6 +11,6 @@ import Foundation
 import CoreData
 
 
-public class UserContactInfoModel: NSManagedObject {
+public class UserPersonalInfo: NSManagedObject {
 
 }

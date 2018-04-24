@@ -1,5 +1,5 @@
 //
-//  UserAccountModel+CoreDataProperties.swift
+//  UserAccount+CoreDataProperties.swift
 //  splitwork
 //
 //  Created by Vivek Madhusudan Badrinarayan on 4/24/18.
@@ -11,10 +11,10 @@ import Foundation
 import CoreData
 
 
-extension UserAccountModel {
+extension UserAccount {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<UserAccountModel> {
-        return NSFetchRequest<UserAccountModel>(entityName: "UserAccountModel")
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<UserAccount> {
+        return NSFetchRequest<UserAccount>(entityName: "UserAccount")
     }
 
     @NSManaged public var groups: NSObject?
@@ -22,6 +22,6 @@ extension UserAccountModel {
     @NSManaged public var isActive: Bool
     @NSManaged public var password: Int32
     @NSManaged public var username: String?
-    @NSManaged public var user: UserModel?
+    @NSManaged public var user: User?
 
 }

@@ -1,5 +1,5 @@
 //
-//  UserPaymentInfoModel+CoreDataProperties.swift
+//  UserPaymentInfo+CoreDataProperties.swift
 //  splitwork
 //
 //  Created by Vivek Madhusudan Badrinarayan on 4/24/18.
@@ -11,10 +11,10 @@ import Foundation
 import CoreData
 
 
-extension UserPaymentInfoModel {
+extension UserPaymentInfo {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<UserPaymentInfoModel> {
-        return NSFetchRequest<UserPaymentInfoModel>(entityName: "UserPaymentInfoModel")
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<UserPaymentInfo> {
+        return NSFetchRequest<UserPaymentInfo>(entityName: "UserPaymentInfo")
     }
 
     @NSManaged public var cvv: String?

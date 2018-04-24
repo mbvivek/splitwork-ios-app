@@ -1,5 +1,5 @@
 //
-//  GroupModel+CoreDataProperties.swift
+//  Group+CoreDataProperties.swift
 //  splitwork
 //
 //  Created by Vivek Madhusudan Badrinarayan on 4/24/18.
@@ -11,10 +11,10 @@ import Foundation
 import CoreData
 
 
-extension GroupModel {
+extension Group {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<GroupModel> {
-        return NSFetchRequest<GroupModel>(entityName: "GroupModel")
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<Group> {
+        return NSFetchRequest<Group>(entityName: "Group")
     }
 
     @NSManaged public var bills: NSObject?
@@ -23,6 +23,6 @@ extension GroupModel {
     @NSManaged public var members: NSObject?
     @NSManaged public var name: String?
     @NSManaged public var tasks: NSObject?
-    @NSManaged public var admin: UserAccountModel?
+    @NSManaged public var admin: UserAccount?
 
 }

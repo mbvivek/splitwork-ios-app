@@ -1,5 +1,5 @@
 //
-//  BillModel+CoreDataClass.swift
+//  Group+CoreDataClass.swift
 //  splitwork
 //
 //  Created by Vivek Madhusudan Badrinarayan on 4/24/18.
@@ -11,6 +11,6 @@ import Foundation
 import CoreData
 
 
-public class BillModel: NSManagedObject {
+public class Group: NSManagedObject {
 
 }

@@ -1,5 +1,5 @@
 //
-//  TaskModel+CoreDataProperties.swift
+//  Task+CoreDataProperties.swift
 //  splitwork
 //
 //  Created by Vivek Madhusudan Badrinarayan on 4/24/18.
@@ -11,10 +11,10 @@ import Foundation
 import CoreData
 
 
-extension TaskModel {
+extension Task {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<TaskModel> {
-        return NSFetchRequest<TaskModel>(entityName: "TaskModel")
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<Task> {
+        return NSFetchRequest<Task>(entityName: "Task")
     }
 
     @NSManaged public var assignedDate: NSDate?
@@ -25,7 +25,7 @@ extension TaskModel {
     @NSManaged public var name: String?
     @NSManaged public var percentageCompleted: Double
     @NSManaged public var status: String?
-    @NSManaged public var assignedTo: UserAccountModel?
-    @NSManaged public var group: GroupModel?
+    @NSManaged public var assignedTo: UserAccount?
+    @NSManaged public var group: Group?
 
 }
