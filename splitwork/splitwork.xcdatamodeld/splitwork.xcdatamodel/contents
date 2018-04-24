@@ -52,6 +52,7 @@
         <attribute name="isActive" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="password" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" syncable="YES"/>
     </entity>
     <entity name="UserContactInfo" representedClassName="UserContactInfo" syncable="YES" codeGenerationType="class">
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
@@ -71,14 +72,14 @@
         <attribute name="profilePic" optional="YES" attributeType="Transformable" syncable="YES"/>
     </entity>
     <elements>
-        <element name="UserAccount" positionX="-146" positionY="-1" width="128" height="118"/>
-        <element name="User" positionX="72" positionY="21" width="128" height="103"/>
-        <element name="UserPersonalInfo" positionX="288" positionY="-39" width="128" height="75"/>
-        <element name="UserContactInfo" positionX="288" positionY="-135" width="128" height="75"/>
-        <element name="UserPaymentInfo" positionX="286" positionY="57" width="128" height="150"/>
-        <element name="Group" positionX="-144" positionY="180" width="128" height="148"/>
-        <element name="Task" positionX="72" positionY="285" width="128" height="193"/>
-        <element name="Bill" positionX="72" positionY="135" width="128" height="148"/>
-        <element name="Payment" positionX="-144" positionY="315" width="128" height="163"/>
+        <element name="UserAccount" positionX="-315" positionY="-28" width="128" height="133"/>
+        <element name="User" positionX="-117" positionY="-31" width="128" height="103"/>
+        <element name="UserPersonalInfo" positionX="133" positionY="-63" width="128" height="75"/>
+        <element name="UserContactInfo" positionX="133" positionY="-165" width="128" height="75"/>
+        <element name="UserPaymentInfo" positionX="133" positionY="45" width="128" height="150"/>
+        <element name="Group" positionX="-315" positionY="171" width="128" height="148"/>
+        <element name="Task" positionX="-117" positionY="126" width="128" height="193"/>
+        <element name="Bill" positionX="-119" positionY="396" width="128" height="148"/>
+        <element name="Payment" positionX="-317" positionY="386" width="128" height="163"/>
     </elements>
 </model>
