@@ -19,8 +19,9 @@ class TaskModel {
     var deadlineDate: Date
     var completionDate: Date
     var status: String
+    var percentageCompleted: Double
     
-    init(id: Int, group: GroupModel, name: String, description: String, assignedTo: UserModel, assignedDate: Date, deadlineDate: Date, completionDate: Date, status: String) {
+    init(id: Int, group: GroupModel, name: String, description: String, assignedTo: UserModel, assignedDate: Date, deadlineDate: Date, completionDate: Date, status: String, percentCompleted: Double) {
         self.id = id
         self.group = group
         self.name = name
@@ -30,5 +31,6 @@ class TaskModel {
         self.deadlineDate = deadlineDate
         self.completionDate = completionDate
         self.status = status
+        self.percentageCompleted = percentCompleted
     }
 }
