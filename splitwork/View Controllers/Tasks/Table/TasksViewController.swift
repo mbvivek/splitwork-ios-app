@@ -53,19 +53,7 @@ class TasksViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         return cell
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if(segue.identifier == "toTasksDetailPopOverViewController") {
-            let popup = segue.destination as! TasksDetailPopOverViewController
-            if let indexPath = tasksTableView.indexPathForSelectedRow {
-                let taskName = tasks[indexPath.section][indexPath.row]
-                print(taskName)
-                popup.initTask(taskName: taskName)
-            }
-        }
-    }
-    
-    
+     
     
     /*
      // MARK: - Navigation
