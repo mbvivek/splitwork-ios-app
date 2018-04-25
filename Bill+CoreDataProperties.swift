@@ -20,9 +20,9 @@ extension Bill {
     @NSManaged public var addedTo: NSObject?
     @NSManaged public var amount: Double
     @NSManaged public var desc: String?
-    @NSManaged public var id: Int32
+    @NSManaged public var id: String?
     @NSManaged public var name: String?
-    @NSManaged public var addedBy: UserAccount?
+    @NSManaged public var addedBy: NSManagedObject?
     @NSManaged public var group: Group?
 
 }

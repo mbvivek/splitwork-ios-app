@@ -17,9 +17,14 @@ extension User {
         return NSFetchRequest<User>(entityName: "User")
     }
 
-    @NSManaged public var id: Int32
-    @NSManaged public var contactInfo: UserContactInfo?
-    @NSManaged public var paymentInfo: UserPaymentInfo?
-    @NSManaged public var personalInfo: UserPersonalInfo?
+    @NSManaged public var id: String?
+    @NSManaged public var username: String?
+    @NSManaged public var name: String?
+    @NSManaged public var password: String?
+    @NSManaged public var email: String?
+    @NSManaged public var phone: String?
+    @NSManaged public var groups: NSObject?
+    @NSManaged public var profilePic: NSObject?
+    @NSManaged public var creditCard: UserPaymentInfo?
 
 }

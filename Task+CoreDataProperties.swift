@@ -21,11 +21,11 @@ extension Task {
     @NSManaged public var completionDate: NSDate?
     @NSManaged public var deadlineDate: NSDate?
     @NSManaged public var desc: String?
-    @NSManaged public var id: Int32
+    @NSManaged public var id: String?
     @NSManaged public var name: String?
     @NSManaged public var percentageCompleted: Double
     @NSManaged public var status: String?
-    @NSManaged public var assignedTo: UserAccount?
+    @NSManaged public var assignedTo: NSManagedObject?
     @NSManaged public var group: Group?
 
 }

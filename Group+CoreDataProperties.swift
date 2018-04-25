@@ -19,10 +19,10 @@ extension Group {
 
     @NSManaged public var bills: NSObject?
     @NSManaged public var desc: String?
-    @NSManaged public var id: Int32
+    @NSManaged public var id: String?
     @NSManaged public var members: NSObject?
     @NSManaged public var name: String?
     @NSManaged public var tasks: NSObject?
-    @NSManaged public var admin: UserAccount?
+    @NSManaged public var admin: NSManagedObject?
 
 }
