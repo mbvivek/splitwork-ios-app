@@ -50,4 +50,11 @@ public class User: NSManagedObject {
         appDelegate.saveContext()
     }
     
+    func clear() {
+        for user in getAllUsers() {
+            context.delete(user)
+        }
+        appDelegate.saveContext()
+    }
+    
 }

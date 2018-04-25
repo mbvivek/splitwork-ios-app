@@ -3,6 +3,7 @@
     <entity name="Bill" representedClassName=".Bill" syncable="YES">
         <attribute name="addedTo" optional="YES" attributeType="Transformable" syncable="YES"/>
         <attribute name="amount" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -27,6 +28,9 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tasks" optional="YES" attributeType="Transformable" syncable="YES"/>
         <relationship name="admin" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="LoggedInUser" representedClassName=".LoggedInUser" syncable="YES">
+        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Payment" representedClassName=".Payment" syncable="YES">
         <attribute name="amount" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
@@ -62,11 +66,12 @@
         <relationship name="creditCard" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CreditCard" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Bill" positionX="-119" positionY="396" width="128" height="148"/>
+        <element name="Bill" positionX="-119" positionY="396" width="128" height="163"/>
         <element name="CreditCard" positionX="133" positionY="45" width="128" height="163"/>
         <element name="Group" positionX="-315" positionY="171" width="128" height="148"/>
         <element name="Payment" positionX="-317" positionY="386" width="128" height="163"/>
-        <element name="Task" positionX="-117" positionY="126" width="128" height="193"/>
+        <element name="Task" positionX="-117" positionY="144" width="128" height="193"/>
         <element name="User" positionX="-117" positionY="-117" width="128" height="178"/>
+        <element name="LoggedInUser" positionX="-308" positionY="-34" width="128" height="58"/>
     </elements>
 </model>
