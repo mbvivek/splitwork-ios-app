@@ -2,7 +2,7 @@
 //  WalletTableViewCell.swift
 //  splitwork
 //
-//  Created by Vivek Madhusudan Badrinarayan on 4/24/18.
+//  Created by Swathi Kommaghatta Chandrashekaraiah on 4/25/18.
 //  Copyright © 2018 Vivek Badrinarayan. All rights reserved.
 //
 
@@ -11,10 +11,12 @@ import UIKit
 class WalletTableViewCell: UITableViewCell {
 
     //MARK: Variables
-    @IBOutlet weak var memberName: UILabel!
+    @IBOutlet weak var memberImage: UIImageView!
     @IBOutlet weak var youOwe: UILabel!
-    @IBOutlet weak var amount: UILabel!
+    @IBOutlet weak var memberName: UILabel!
     @IBOutlet weak var owesYou: UILabel!
+    @IBOutlet weak var amount: UILabel!
+    
     
     
     override func awakeFromNib() {
