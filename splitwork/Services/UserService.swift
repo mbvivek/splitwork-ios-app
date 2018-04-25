@@ -13,5 +13,21 @@ class UserService {
     
     let httpService: HTTPService
     
+    private static var sharedService: UserService = {
+        let service = UserService()
+        return service
+    }()
+    
+    private init() {
+        self.httpService = HTTPService.shared()
+        print("UserService initialized..")
+    }
+    
+    class func shared() -> UserService {
+        return sharedService
+    }
+    
+    
+    
     
 }

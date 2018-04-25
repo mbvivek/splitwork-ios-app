@@ -33,9 +33,11 @@
 		91EA8E382090F92E008903D9 /* Payment+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EA8E2C2090F92E008903D9 /* Payment+CoreDataProperties.swift */; };
 		91EA8E392090F92E008903D9 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EA8E2D2090F92E008903D9 /* User+CoreDataClass.swift */; };
 		91EA8E3A2090F92E008903D9 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EA8E2E2090F92E008903D9 /* User+CoreDataProperties.swift */; };
-		91EA8E3B2090F92E008903D9 /* Bill+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EA8E2F2090F92E008903D9 /* Bill+CoreDataClass.swift */; };
-		91EA8E3C2090F92E008903D9 /* Bill+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EA8E302090F92E008903D9 /* Bill+CoreDataProperties.swift */; };
 		91EA8E3E2091075C008903D9 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EA8E3D2091075C008903D9 /* UserService.swift */; };
+		91EA8E4120910FAD008903D9 /* LoggedInUser+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EA8E3F20910FAD008903D9 /* LoggedInUser+CoreDataClass.swift */; };
+		91EA8E4220910FAD008903D9 /* LoggedInUser+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EA8E4020910FAD008903D9 /* LoggedInUser+CoreDataProperties.swift */; };
+		91EA8E49209127DF008903D9 /* Bill+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EA8E47209127DF008903D9 /* Bill+CoreDataClass.swift */; };
+		91EA8E4A209127DF008903D9 /* Bill+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EA8E48209127DF008903D9 /* Bill+CoreDataProperties.swift */; };
 		D106EA0E208E77570046A10A /* BillsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D106EA0D208E77570046A10A /* BillsDetailViewController.swift */; };
 		D106EA11208E77B80046A10A /* BillsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D106EA10208E77B80046A10A /* BillsTableViewCell.swift */; };
 		D131CC4A2087D1E700E599BC /* GroupsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D131CC492087D1E700E599BC /* GroupsTableViewController.swift */; };
@@ -78,9 +80,11 @@
 		91EA8E2C2090F92E008903D9 /* Payment+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Payment+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		91EA8E2D2090F92E008903D9 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
 		91EA8E2E2090F92E008903D9 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		91EA8E2F2090F92E008903D9 /* Bill+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bill+CoreDataClass.swift"; sourceTree = "<group>"; };
-		91EA8E302090F92E008903D9 /* Bill+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bill+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		91EA8E3D2091075C008903D9 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		91EA8E3F20910FAD008903D9 /* LoggedInUser+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoggedInUser+CoreDataClass.swift"; sourceTree = "<group>"; };
+		91EA8E4020910FAD008903D9 /* LoggedInUser+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoggedInUser+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		91EA8E47209127DF008903D9 /* Bill+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bill+CoreDataClass.swift"; sourceTree = "<group>"; };
+		91EA8E48209127DF008903D9 /* Bill+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bill+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D106EA0D208E77570046A10A /* BillsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillsDetailViewController.swift; sourceTree = "<group>"; };
 		D106EA10208E77B80046A10A /* BillsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillsTableViewCell.swift; sourceTree = "<group>"; };
 		D131CC492087D1E700E599BC /* GroupsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsTableViewController.swift; sourceTree = "<group>"; };
@@ -132,6 +136,10 @@
 		912FFF4D20859F1100A088A0 = {
 			isa = PBXGroup;
 			children = (
+				91EA8E47209127DF008903D9 /* Bill+CoreDataClass.swift */,
+				91EA8E48209127DF008903D9 /* Bill+CoreDataProperties.swift */,
+				91EA8E3F20910FAD008903D9 /* LoggedInUser+CoreDataClass.swift */,
+				91EA8E4020910FAD008903D9 /* LoggedInUser+CoreDataProperties.swift */,
 				91EA8E252090F92E008903D9 /* CreditCard+CoreDataClass.swift */,
 				91EA8E262090F92E008903D9 /* CreditCard+CoreDataProperties.swift */,
 				91EA8E272090F92E008903D9 /* Group+CoreDataClass.swift */,
@@ -142,8 +150,6 @@
 				91EA8E2C2090F92E008903D9 /* Payment+CoreDataProperties.swift */,
 				91EA8E2D2090F92E008903D9 /* User+CoreDataClass.swift */,
 				91EA8E2E2090F92E008903D9 /* User+CoreDataProperties.swift */,
-				91EA8E2F2090F92E008903D9 /* Bill+CoreDataClass.swift */,
-				91EA8E302090F92E008903D9 /* Bill+CoreDataProperties.swift */,
 				912FFF5820859F1200A088A0 /* splitwork */,
 				912FFF5720859F1200A088A0 /* Products */,
 			);
@@ -369,18 +375,19 @@
 			files = (
 				91585CD42087F5BC004E9970 /* UserAccountService.swift in Sources */,
 				91EA8E342090F92E008903D9 /* Group+CoreDataProperties.swift in Sources */,
+				91EA8E4120910FAD008903D9 /* LoggedInUser+CoreDataClass.swift in Sources */,
 				91CD5C562090019000A140AC /* sampleCodeData.swift in Sources */,
 				91EA8E312090F92E008903D9 /* CreditCard+CoreDataClass.swift in Sources */,
 				D17EE276208EA16300544614 /* BillViewController.swift in Sources */,
+				91EA8E49209127DF008903D9 /* Bill+CoreDataClass.swift in Sources */,
 				D167DFAB20881A89001A199A /* GroupSplitViewController.swift in Sources */,
 				D131CC4F2087D29A00E599BC /* GroupDetailViewController.swift in Sources */,
 				91EA8E322090F92E008903D9 /* CreditCard+CoreDataProperties.swift in Sources */,
-				91EA8E3C2090F92E008903D9 /* Bill+CoreDataProperties.swift in Sources */,
 				91D6DCDB208D558900F62264 /* CreateGroupInviteListTableViewCell.swift in Sources */,
 				91BE7821208E67F1000E4517 /* CreateGroupViewController.swift in Sources */,
 				91EA8E382090F92E008903D9 /* Payment+CoreDataProperties.swift in Sources */,
 				91EA8E352090F92E008903D9 /* Task+CoreDataClass.swift in Sources */,
-				91EA8E3B2090F92E008903D9 /* Bill+CoreDataClass.swift in Sources */,
+				91EA8E4A209127DF008903D9 /* Bill+CoreDataProperties.swift in Sources */,
 				D131CC4D2087D22700E599BC /* GroupsTableViewCell.swift in Sources */,
 				91EA8E332090F92E008903D9 /* Group+CoreDataClass.swift in Sources */,
 				D131CC4A2087D1E700E599BC /* GroupsTableViewController.swift in Sources */,
@@ -396,6 +403,7 @@
 				91125919208EA5F5003AE522 /* AlertController.swift in Sources */,
 				912FFF6220859F1200A088A0 /* splitwork.xcdatamodeld in Sources */,
 				9110570720897994000966F4 /* TasksViewController.swift in Sources */,
+				91EA8E4220910FAD008903D9 /* LoggedInUser+CoreDataProperties.swift in Sources */,
 				91EA8E372090F92E008903D9 /* Payment+CoreDataClass.swift in Sources */,
 				D17EE279208ECCCA00544614 /* BillSplitTableViewCell.swift in Sources */,
 				91562C7620890C1100952B0A /* HTTPService.swift in Sources */,

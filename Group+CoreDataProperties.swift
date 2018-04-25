@@ -17,12 +17,12 @@ extension Group {
         return NSFetchRequest<Group>(entityName: "Group")
     }
 
-    @NSManaged public var bills: NSObject?
+    @NSManaged public var bills: [Bill]?
     @NSManaged public var desc: String?
     @NSManaged public var id: String?
-    @NSManaged public var members: NSObject?
+    @NSManaged public var members: [User]?
     @NSManaged public var name: String?
-    @NSManaged public var tasks: NSObject?
+    @NSManaged public var tasks: [Task]?
     @NSManaged public var admin: User?
 
 }

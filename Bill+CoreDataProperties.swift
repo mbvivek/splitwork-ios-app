@@ -17,11 +17,12 @@ extension Bill {
         return NSFetchRequest<Bill>(entityName: "Bill")
     }
 
-    @NSManaged public var addedTo: NSObject?
+    @NSManaged public var addedTo: [User]?
     @NSManaged public var amount: Double
     @NSManaged public var desc: String?
     @NSManaged public var id: String?
     @NSManaged public var name: String?
+    @NSManaged public var date: NSDate?
     @NSManaged public var addedBy: User?
     @NSManaged public var group: Group?
 
