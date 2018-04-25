@@ -2960,7 +2960,6 @@
                                                 <connections>
                                                     <outlet property="amount" destination="8k3-oo-nP7" id="n0P-EX-bEA"/>
                                                     <outlet property="memberName" destination="TwZ-Rb-llr" id="aRX-A2-P8A"/>
-                                                    <outlet property="owes" destination="ufx-5w-djB" id="3Rr-aU-pgz"/>
                                                     <outlet property="owesYou" destination="ufx-5w-djB" id="ZLK-FN-MK5"/>
                                                     <outlet property="youOwe" destination="331-XK-dKe" id="KHq-5F-Ltp"/>
                                                 </connections>
@@ -3000,6 +2999,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Wallet" image="wallet" id="B9E-0F-rkd"/>
                     <size key="freeformSize" width="320" height="1100"/>
+                    <connections>
+                        <outlet property="tableView" destination="moa-77-jlZ" id="TfX-8Q-Hka"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hr2-Mg-JOb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

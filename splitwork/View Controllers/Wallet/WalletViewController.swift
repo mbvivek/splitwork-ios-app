@@ -12,8 +12,9 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var details: [String]!
     
     //MARK: Variables
-    @IBOutlet weak var oweDetail: UILabel!
-    @IBOutlet weak var amount: UILabel!
+//    @IBOutlet weak var oweDetail: UILabel!
+//    @IBOutlet weak var amount: UILabel!
+//    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
