@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -1722,10 +1722,10 @@
             </objects>
             <point key="canvasLocation" x="1614" y="-1094"/>
         </scene>
-        <!--View Controller-->
+        <!--Signup View Controller-->
         <scene sceneID="GRe-lC-JGf">
             <objects>
-                <viewController id="iS0-ti-mFa" sceneMemberID="viewController">
+                <viewController id="iS0-ti-mFa" customClass="SignupViewController" customModule="splitwork" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4G1-K8-yPw">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1831,6 +1831,9 @@
                                         <exclude reference="cw0-yw-iZ8"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="name:" destination="sUd-2D-n2Z" eventType="editingDidEnd" id="ZqW-km-xpT"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eCU-mf-43y">
                                 <rect key="frame" x="60" y="202" width="200" height="30"/>
@@ -1991,6 +1994,9 @@
                                         <exclude reference="b0x-jW-rFg"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" id="Qkw-8w-2BO"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aqQ-wL-D8c">
                                 <rect key="frame" x="60" y="482" width="200" height="30"/>
@@ -2034,6 +2040,9 @@
                                         <include reference="wnb-KI-Vr6"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="signupButtonAction:" destination="iS0-ti-mFa" eventType="touchUpInside" id="EkC-eH-x1K"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="spU-zY-S92">
                                 <rect key="frame" x="60" y="312" width="200" height="30"/>
@@ -2632,8 +2641,17 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="confirmPassword" destination="k5r-G5-qhD" id="fOD-dd-P0L"/>
+                        <outlet property="email" destination="eCU-mf-43y" id="FIq-dc-W0K"/>
+                        <outlet property="name" destination="gI2-Bi-vpf" id="QuW-7m-svf"/>
+                        <outlet property="password" destination="HOY-YS-Q9v" id="N8r-TS-bHH"/>
+                        <outlet property="phone" destination="Nen-Q0-sxo" id="JJm-NJ-C5y"/>
+                        <outlet property="username" destination="spU-zY-S92" id="CSN-7z-OkK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yaO-XZ-pdX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="sUd-2D-n2Z" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-126" y="1108"/>
         </scene>

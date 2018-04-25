@@ -26,17 +26,32 @@ class UserAccountService {
         return sharedUserAccountService
     }
     
-    func getUserAccount(username: String) {
-        
-        var userAccount = [String: Any]()
-        let completionHandler: (String, [String: Any]) -> ([String: Any]) = {error, data in
+    func getAllUserAccounts() {
+        var userAccounts = [String: Any]()
+        let completionHandler: (String, [String: Any]) -> () = {error, data in
             if(error != "") {
-                print("Error: getUserAccount(\(username) \n \(error)")
+                print("Error in UserAccountService, getAllUserAccounts")
             } else {
-                userAccount = data
+                userAccounts = data
+                print("userAccounts = \(userAccounts)")
             }
-            return userAccount
         }
+        httpService.get(url: "useraccounts", completionHandler: completionHandler)
+    }
+    
+    func addUserAccount(userAccount: User) {
+        var data = [String: Any]()
+        data["username"] = userAccount.username
+        data["password"] = userAccount.password
+        data["groups"] = userAccount.groups
         
+        let completionHandler: (String, [String: Any]) -> () = {error, data in
+            if(error != "") {
+                print("Error in UserAccountService, getAllUserAccounts")
+            } else {
+                print("data = \(data)")
+            }
+        }
+        httpService.put(url: "useraccounts", data: data, completionHandler: completionHandler)
     }
 }
