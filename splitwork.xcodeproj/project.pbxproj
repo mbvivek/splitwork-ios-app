@@ -17,7 +17,6 @@
 		912FFF6420859F1200A088A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 912FFF6320859F1200A088A0 /* Assets.xcassets */; };
 		912FFF6720859F1200A088A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 912FFF6520859F1200A088A0 /* LaunchScreen.storyboard */; };
 		91562C7620890C1100952B0A /* HTTPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91562C7520890C1100952B0A /* HTTPService.swift */; };
-		91584BAE208FE2F500C6230E /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91584BAD208FE2F500C6230E /* SignupViewController.swift */; };
 		91585CD42087F5BC004E9970 /* UserAccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91585CD32087F5BC004E9970 /* UserAccountService.swift */; };
 		91BE7821208E67F1000E4517 /* CreateGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BE7820208E67F1000E4517 /* CreateGroupViewController.swift */; };
 		91BE7823208E6C49000E4517 /* AddMemberPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BE7822208E6C49000E4517 /* AddMemberPopoverViewController.swift */; };
@@ -60,7 +59,6 @@
 		912FFF6620859F1200A088A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		912FFF6820859F1200A088A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		91562C7520890C1100952B0A /* HTTPService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPService.swift; sourceTree = "<group>"; };
-		91584BAD208FE2F500C6230E /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		91585CD32087F5BC004E9970 /* UserAccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccountService.swift; sourceTree = "<group>"; };
 		91BE7820208E67F1000E4517 /* CreateGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreateGroupViewController.swift; path = "splitwork/View Controllers/Groups/Create Group/CreateGroupViewController.swift"; sourceTree = SOURCE_ROOT; };
 		91BE7822208E6C49000E4517 /* AddMemberPopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMemberPopoverViewController.swift; sourceTree = "<group>"; };
@@ -174,7 +172,6 @@
 		912FFF6E2085A2C500A088A0 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				91584BAC208FE29300C6230E /* Sign Up */,
 				D106EA0A208E77150046A10A /* Bills */,
 				911056FE20897003000966F4 /* Tasks */,
 				D131CC702087F5D500E599BC /* Dashboard */,
@@ -190,14 +187,6 @@
 				912FFF5B20859F1200A088A0 /* LoginViewController.swift */,
 			);
 			path = Login;
-			sourceTree = "<group>";
-		};
-		91584BAC208FE29300C6230E /* Sign Up */ = {
-			isa = PBXGroup;
-			children = (
-				91584BAD208FE2F500C6230E /* SignupViewController.swift */,
-			);
-			path = "Sign Up";
 			sourceTree = "<group>";
 		};
 		919E910D2087B055008A5524 /* Services */ = {
@@ -370,7 +359,6 @@
 				91CD5C562090019000A140AC /* sampleCodeData.swift in Sources */,
 				91CD5C6C209001FD00A140AC /* Task+CoreDataProperties.swift in Sources */,
 				91CD5C68209001FD00A140AC /* Bill+CoreDataProperties.swift in Sources */,
-				91584BAE208FE2F500C6230E /* SignupViewController.swift in Sources */,
 				D17EE276208EA16300544614 /* BillViewController.swift in Sources */,
 				91CD5C6D209001FD00A140AC /* User+CoreDataClass.swift in Sources */,
 				D167DFAB20881A89001A199A /* GroupSplitViewController.swift in Sources */,
