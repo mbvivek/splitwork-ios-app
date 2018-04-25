@@ -21,9 +21,9 @@ extension Payment {
     @NSManaged public var date: NSDate?
     @NSManaged public var id: String?
     @NSManaged public var status: String?
-    @NSManaged public var fromCreditCard: UserPaymentInfo?
+    @NSManaged public var fromCreditCard: CreditCard?
     @NSManaged public var fromUser: User?
-    @NSManaged public var toCreditCard: UserPaymentInfo?
+    @NSManaged public var toCreditCard: CreditCard?
     @NSManaged public var toUser: User?
 
 }

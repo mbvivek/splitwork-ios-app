@@ -9,7 +9,7 @@
 
 import Foundation
 import CoreData
-
+import UIKit
 
 extension User {
 
@@ -18,13 +18,13 @@ extension User {
     }
 
     @NSManaged public var email: String?
-    @NSManaged public var groups: NSObject?
+    @NSManaged public var groups: [Group]?
     @NSManaged public var id: String?
     @NSManaged public var name: String?
     @NSManaged public var password: String?
     @NSManaged public var phone: String?
-    @NSManaged public var profilePic: NSObject?
+    @NSManaged public var profilePic: UIImage?
     @NSManaged public var username: String?
-    @NSManaged public var creditCard: UserPaymentInfo?
+    @NSManaged public var creditCard: CreditCard?
 
 }
