@@ -19,6 +19,7 @@
 		91562C7620890C1100952B0A /* HTTPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91562C7520890C1100952B0A /* HTTPService.swift */; };
 		91585CD42087F5BC004E9970 /* UserAccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91585CD32087F5BC004E9970 /* UserAccountService.swift */; };
 		91612BA4208FD575007F5BC9 /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91612BA3208FD575007F5BC9 /* WalletViewController.swift */; };
+		91612BA6208FDF35007F5BC9 /* WalletTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91612BA5208FDF35007F5BC9 /* WalletTableViewCell.swift */; };
 		91BE7821208E67F1000E4517 /* CreateGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BE7820208E67F1000E4517 /* CreateGroupViewController.swift */; };
 		91BE7823208E6C49000E4517 /* AddMemberPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BE7822208E6C49000E4517 /* AddMemberPopoverViewController.swift */; };
 		91D6DCDB208D558900F62264 /* CreateGroupInviteListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D6DCDA208D558900F62264 /* CreateGroupInviteListTableViewCell.swift */; };
@@ -67,6 +68,7 @@
 		91562C7520890C1100952B0A /* HTTPService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPService.swift; sourceTree = "<group>"; };
 		91585CD32087F5BC004E9970 /* UserAccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccountService.swift; sourceTree = "<group>"; };
 		91612BA3208FD575007F5BC9 /* WalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
+		91612BA5208FDF35007F5BC9 /* WalletTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletTableViewCell.swift; sourceTree = "<group>"; };
 		91BE7820208E67F1000E4517 /* CreateGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreateGroupViewController.swift; path = "splitwork/View Controllers/Groups/Create Group/CreateGroupViewController.swift"; sourceTree = SOURCE_ROOT; };
 		91BE7822208E6C49000E4517 /* AddMemberPopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMemberPopoverViewController.swift; sourceTree = "<group>"; };
 		91D6DCDA208D558900F62264 /* CreateGroupInviteListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupInviteListTableViewCell.swift; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				91612BA3208FD575007F5BC9 /* WalletViewController.swift */,
+				91612BA5208FDF35007F5BC9 /* WalletTableViewCell.swift */,
 			);
 			path = Wallet;
 			sourceTree = "<group>";
@@ -397,6 +400,7 @@
 				91BE7823208E6C49000E4517 /* AddMemberPopoverViewController.swift in Sources */,
 				91125919208EA5F5003AE522 /* AlertController.swift in Sources */,
 				91DDA956208FCC00002BD362 /* Payment+CoreDataClass.swift in Sources */,
+				91612BA6208FDF35007F5BC9 /* WalletTableViewCell.swift in Sources */,
 				912FFF6220859F1200A088A0 /* splitwork.xcdatamodeld in Sources */,
 				91DDA95E208FCC00002BD362 /* UserPaymentInfo+CoreDataClass.swift in Sources */,
 				91DDA961208FCC00002BD362 /* UserPersonalInfo+CoreDataProperties.swift in Sources */,
