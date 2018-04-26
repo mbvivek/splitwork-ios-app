@@ -16,7 +16,7 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
 
     @IBOutlet weak var detailsTableView: UITableView!
-    @IBOutlet weak var transactionTableView: NSLayoutConstraint!
+    @IBOutlet weak var transactionTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()

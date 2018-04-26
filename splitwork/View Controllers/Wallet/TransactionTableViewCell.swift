@@ -10,6 +10,7 @@ import UIKit
 
 class TransactionTableViewCell: UITableViewCell {
 
+
     @IBOutlet weak var memberName: UILabel!
     @IBOutlet weak var paidAmount: UILabel!
     
