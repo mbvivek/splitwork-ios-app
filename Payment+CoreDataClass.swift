@@ -42,29 +42,29 @@ public class Payment: NSManagedObject {
         payment.id = id
         payment.amount = amount
         
-        guard let fromUser = User.shared.getUser(username: fromUsername) else {
+        if let fromUser = User.shared.getUser(username: fromUsername) {
+            payment.fromUser = fromUser
+        } else {
             print("Error fetching user with username = \(fromUsername) to add payment in CoreData")
-            return
         }
-        payment.fromUser = fromUser
-        
-        guard let toUser = User.shared.getUser(username: toUsername) else {
+
+        if let toUser = User.shared.getUser(username: toUsername) {
+            payment.toUser = toUser
+        } else {
             print("Error fetching user with username = \(toUsername) to add payment in CoreData")
-            return
         }
-        payment.toUser = toUser
-        
-        guard let fromCreditCard = CreditCard.shared.getCreditCard(id: fromCreditCardId) else {
+
+        if let fromCreditCard = CreditCard.shared.getCreditCard(id: fromCreditCardId) {
+            payment.fromCreditCard = fromCreditCard
+        } else {
             print("Error fetching credit card with id = \(fromCreditCardId) to add payment in CoreData")
-            return
         }
-        payment.fromCreditCard = fromCreditCard
         
-        guard let toCreditCard = CreditCard.shared.getCreditCard(id: toCreditCardId) else {
+        if let toCreditCard = CreditCard.shared.getCreditCard(id: toCreditCardId) {
+            payment.toCreditCard = toCreditCard
+        } else {
             print("Error fetching credit card with id = \(toCreditCardId) to add payment in CoreData")
-            return
         }
-        payment.toCreditCard = toCreditCard
         
         payment.date = date as NSDate
         payment.status = status

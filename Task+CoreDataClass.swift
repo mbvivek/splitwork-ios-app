@@ -42,19 +42,16 @@ public class Task: NSManagedObject {
         task.id = id
         task.name = name
         task.desc = desc
-        
-        guard let group = Group.shared.getGroup(id: groupId) else {
+        if let group = Group.shared.getGroup(id: groupId) {
+            task.group = group
+        } else {
             print("Error fetching group with id = \(groupId) to add a task in CoreData")
-            return
         }
-        task.group = group
-        
-        guard let assignedTo = User.shared.getUser(username: assignedToUsername) else {
+        if let assignedTo = User.shared.getUser(username: assignedToUsername) {
+            task.assignedTo = assignedTo
+        } else {
             print("Error fetching user with username = \(assignedToUsername) to add a task in CoreData")
-            return
         }
-        task.assignedTo = assignedTo
-        
         task.assignedDate = assignedDate as NSDate
         task.deadlineDate = deadlineDate as NSDate
         task.completionDate = completionDate as NSDate
@@ -62,7 +59,6 @@ public class Task: NSManagedObject {
         task.percentageCompleted = percentageCompleted
         
         appDelegate.saveContext()
-        
     }
     
     func clear() {

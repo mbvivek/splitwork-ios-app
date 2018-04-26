@@ -50,31 +50,31 @@ public class Group: NSManagedObject {
         
         var members = [User]()
         for memberUsername in memberUsernames {
-            guard let member = User.shared.getUser(username: memberUsername) else {
+            if let member = User.shared.getUser(username: memberUsername) {
+                members.append(member)
+            } else {
                 print("Error fetching user with username = \(adminUsername) from CoreData")
-                return
             }
-            members.append(member)
         }
         group.members = members
         
         var tasks = [Task]()
         for taskId in taskIds {
-            guard let task = Task.shared.getTask(id: taskId) else {
+            if let task = Task.shared.getTask(id: taskId) {
+                tasks.append(task)
+            } else {
                 print("Error fetching task with id = \(taskId) while adding group in CoreData")
-                return
             }
-            tasks.append(task)
         }
         group.tasks = tasks
         
         var bills = [Bill]()
         for billId in billIds {
-            guard let bill = Bill.shared.getBill(id: billId) else {
+            if let bill = Bill.shared.getBill(id: billId) {
+                bills.append(bill)
+            } else {
                 print("Error fetching bill with id = \(billId) while adding group in CoreData")
-                return
             }
-            bills.append(bill)
         }
         group.bills = bills
         
@@ -82,12 +82,12 @@ public class Group: NSManagedObject {
     }
     
     func deleteGroup(id: String) {
-        guard let group = getGroup(id: id) else {
+        if let group = getGroup(id: id) {
+            context.delete(group)
+            appDelegate.saveContext()
+        } else {
             print("Cannot find group with id = \(id) to delete from CoreData")
-            return
         }
-        context.delete(group)
-        appDelegate.saveContext()
     }
     
     func clear() {

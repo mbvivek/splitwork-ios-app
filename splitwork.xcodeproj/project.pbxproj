@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		9110570320897107000966F4 /* TasksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9110570220897107000966F4 /* TasksTableViewCell.swift */; };
 		9110570720897994000966F4 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9110570620897994000966F4 /* TasksViewController.swift */; };
-		91125919208EA5F5003AE522 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91125918208EA5F5003AE522 /* AlertController.swift */; };
+		91125919208EA5F5003AE522 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91125918208EA5F5003AE522 /* Util.swift */; };
 		912FFF5A20859F1200A088A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912FFF5920859F1200A088A0 /* AppDelegate.swift */; };
 		912FFF5C20859F1200A088A0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912FFF5B20859F1200A088A0 /* LoginViewController.swift */; };
 		912FFF5F20859F1200A088A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 912FFF5D20859F1200A088A0 /* Main.storyboard */; };
@@ -18,6 +18,11 @@
 		912FFF6720859F1200A088A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 912FFF6520859F1200A088A0 /* LaunchScreen.storyboard */; };
 		91562C7620890C1100952B0A /* HTTPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91562C7520890C1100952B0A /* HTTPService.swift */; };
 		91585CD42087F5BC004E9970 /* UserAccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91585CD32087F5BC004E9970 /* UserAccountService.swift */; };
+		915C2E612091724E00270C8C /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915C2E602091724E00270C8C /* UserModel.swift */; };
+		915C2E632091750A00270C8C /* GroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915C2E622091750A00270C8C /* GroupModel.swift */; };
+		915C2E65209175C600270C8C /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915C2E64209175C600270C8C /* TaskModel.swift */; };
+		915C2E672091772400270C8C /* BillModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915C2E662091772400270C8C /* BillModel.swift */; };
+		916BEC9D209178D800AEF8DA /* PaymentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916BEC9C209178D800AEF8DA /* PaymentModel.swift */; };
 		91BE7821208E67F1000E4517 /* CreateGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BE7820208E67F1000E4517 /* CreateGroupViewController.swift */; };
 		91BE7823208E6C49000E4517 /* AddMemberPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BE7822208E6C49000E4517 /* AddMemberPopoverViewController.swift */; };
 		91CD5C562090019000A140AC /* sampleCodeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CD5C552090019000A140AC /* sampleCodeData.swift */; };
@@ -52,7 +57,7 @@
 /* Begin PBXFileReference section */
 		9110570220897107000966F4 /* TasksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTableViewCell.swift; sourceTree = "<group>"; };
 		9110570620897994000966F4 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
-		91125918208EA5F5003AE522 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
+		91125918208EA5F5003AE522 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		912FFF5620859F1200A088A0 /* splitwork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = splitwork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		912FFF5920859F1200A088A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		912FFF5B20859F1200A088A0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -63,8 +68,13 @@
 		912FFF6820859F1200A088A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		91562C7520890C1100952B0A /* HTTPService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPService.swift; sourceTree = "<group>"; };
 		91585CD32087F5BC004E9970 /* UserAccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccountService.swift; sourceTree = "<group>"; };
+		915C2E602091724E00270C8C /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		915C2E622091750A00270C8C /* GroupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupModel.swift; sourceTree = "<group>"; };
+		915C2E64209175C600270C8C /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
+		915C2E662091772400270C8C /* BillModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillModel.swift; sourceTree = "<group>"; };
 		91612BA3208FD575007F5BC9 /* WalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
 		91612BA5208FDF35007F5BC9 /* WalletTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletTableViewCell.swift; sourceTree = "<group>"; };
+		916BEC9C209178D800AEF8DA /* PaymentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentModel.swift; sourceTree = "<group>"; };
 		91BE7820208E67F1000E4517 /* CreateGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreateGroupViewController.swift; path = "splitwork/View Controllers/Groups/Create Group/CreateGroupViewController.swift"; sourceTree = SOURCE_ROOT; };
 		91BE7822208E6C49000E4517 /* AddMemberPopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMemberPopoverViewController.swift; sourceTree = "<group>"; };
 		91CD5C552090019000A140AC /* sampleCodeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sampleCodeData.swift; sourceTree = "<group>"; };
@@ -127,7 +137,7 @@
 		91125917208EA5A9003AE522 /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				91125918208EA5F5003AE522 /* AlertController.swift */,
+				91125918208EA5F5003AE522 /* Util.swift */,
 				91CD5C552090019000A140AC /* sampleCodeData.swift */,
 			);
 			path = Util;
@@ -166,6 +176,7 @@
 		912FFF5820859F1200A088A0 /* splitwork */ = {
 			isa = PBXGroup;
 			children = (
+				915C2E5F209171DB00270C8C /* Models */,
 				91125917208EA5A9003AE522 /* Util */,
 				919E910D2087B055008A5524 /* Services */,
 				912FFF6E2085A2C500A088A0 /* View Controllers */,
@@ -198,6 +209,18 @@
 				912FFF5B20859F1200A088A0 /* LoginViewController.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		915C2E5F209171DB00270C8C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				915C2E602091724E00270C8C /* UserModel.swift */,
+				915C2E622091750A00270C8C /* GroupModel.swift */,
+				915C2E64209175C600270C8C /* TaskModel.swift */,
+				915C2E662091772400270C8C /* BillModel.swift */,
+				916BEC9C209178D800AEF8DA /* PaymentModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		91612BA2208FD567007F5BC9 /* Wallet */ = {
@@ -391,22 +414,27 @@
 				D131CC4D2087D22700E599BC /* GroupsTableViewCell.swift in Sources */,
 				91EA8E332090F92E008903D9 /* Group+CoreDataClass.swift in Sources */,
 				D131CC4A2087D1E700E599BC /* GroupsTableViewController.swift in Sources */,
+				916BEC9D209178D800AEF8DA /* PaymentModel.swift in Sources */,
 				912FFF5C20859F1200A088A0 /* LoginViewController.swift in Sources */,
 				91D6DCE2208D671800F62264 /* AddMemberPopoverTableViewCell.swift in Sources */,
 				9110570320897107000966F4 /* TasksTableViewCell.swift in Sources */,
 				91EA8E3A2090F92E008903D9 /* User+CoreDataProperties.swift in Sources */,
+				915C2E65209175C600270C8C /* TaskModel.swift in Sources */,
 				91EA8E3E2091075C008903D9 /* UserService.swift in Sources */,
 				912FFF5A20859F1200A088A0 /* AppDelegate.swift in Sources */,
 				91EA8E392090F92E008903D9 /* User+CoreDataClass.swift in Sources */,
 				91EA8E362090F92E008903D9 /* Task+CoreDataProperties.swift in Sources */,
 				91BE7823208E6C49000E4517 /* AddMemberPopoverViewController.swift in Sources */,
-				91125919208EA5F5003AE522 /* AlertController.swift in Sources */,
+				915C2E672091772400270C8C /* BillModel.swift in Sources */,
+				91125919208EA5F5003AE522 /* Util.swift in Sources */,
 				912FFF6220859F1200A088A0 /* splitwork.xcdatamodeld in Sources */,
 				9110570720897994000966F4 /* TasksViewController.swift in Sources */,
 				91EA8E4220910FAD008903D9 /* LoggedInUser+CoreDataProperties.swift in Sources */,
 				91EA8E372090F92E008903D9 /* Payment+CoreDataClass.swift in Sources */,
 				D17EE279208ECCCA00544614 /* BillSplitTableViewCell.swift in Sources */,
 				91562C7620890C1100952B0A /* HTTPService.swift in Sources */,
+				915C2E612091724E00270C8C /* UserModel.swift in Sources */,
+				915C2E632091750A00270C8C /* GroupModel.swift in Sources */,
 				D106EA11208E77B80046A10A /* BillsTableViewCell.swift in Sources */,
 				D131CC722087F60D00E599BC /* DashboardViewController.swift in Sources */,
 				D106EA0E208E77570046A10A /* BillsDetailViewController.swift in Sources */,
