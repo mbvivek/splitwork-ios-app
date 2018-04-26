@@ -409,6 +409,7 @@
 				91EA8E362090F92E008903D9 /* Task+CoreDataProperties.swift in Sources */,
 				91BE7823208E6C49000E4517 /* AddMemberPopoverViewController.swift in Sources */,
 				91125919208EA5F5003AE522 /* AlertController.swift in Sources */,
+				D1E652CC2091152D003989A2 /* WalletTableViewCell.swift in Sources */,
 				912FFF6220859F1200A088A0 /* splitwork.xcdatamodeld in Sources */,
 				9110570720897994000966F4 /* TasksViewController.swift in Sources */,
 				91EA8E4220910FAD008903D9 /* LoggedInUser+CoreDataProperties.swift in Sources */,
