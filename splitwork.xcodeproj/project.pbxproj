@@ -53,6 +53,9 @@
 		D167DFAB20881A89001A199A /* GroupSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D167DFAA20881A89001A199A /* GroupSplitViewController.swift */; };
 		D17EE276208EA16300544614 /* BillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17EE275208EA16300544614 /* BillViewController.swift */; };
 		D17EE279208ECCCA00544614 /* BillSplitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17EE278208ECCCA00544614 /* BillSplitTableViewCell.swift */; };
+		D1A52D372091954C005D1F77 /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A52D362091954C005D1F77 /* WalletViewController.swift */; };
+		D1A52D392091957D005D1F77 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A52D382091957D005D1F77 /* DetailTableViewCell.swift */; };
+		D1A52D3B2091958F005D1F77 /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A52D3A2091958F005D1F77 /* TransactionTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,8 +76,6 @@
 		915C2E622091750A00270C8C /* GroupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupModel.swift; sourceTree = "<group>"; };
 		915C2E64209175C600270C8C /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		915C2E662091772400270C8C /* BillModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillModel.swift; sourceTree = "<group>"; };
-		91612BA3208FD575007F5BC9 /* WalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
-		91612BA5208FDF35007F5BC9 /* WalletTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletTableViewCell.swift; sourceTree = "<group>"; };
 		916BEC9C209178D800AEF8DA /* PaymentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentModel.swift; sourceTree = "<group>"; };
 		916BEC9E20917FDC00AEF8DA /* Business.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
 		91BE7820208E67F1000E4517 /* CreateGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreateGroupViewController.swift; path = "splitwork/View Controllers/Groups/Create Group/CreateGroupViewController.swift"; sourceTree = SOURCE_ROOT; };
@@ -106,6 +107,9 @@
 		D167DFAA20881A89001A199A /* GroupSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSplitViewController.swift; sourceTree = "<group>"; };
 		D17EE275208EA16300544614 /* BillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillViewController.swift; sourceTree = "<group>"; };
 		D17EE278208ECCCA00544614 /* BillSplitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillSplitTableViewCell.swift; sourceTree = "<group>"; };
+		D1A52D362091954C005D1F77 /* WalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
+		D1A52D382091957D005D1F77 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
+		D1A52D3A2091958F005D1F77 /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,7 +199,7 @@
 		912FFF6E2085A2C500A088A0 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				91612BA2208FD567007F5BC9 /* Wallet */,
+				D1A52D3520919531005D1F77 /* Wallet */,
 				D106EA0A208E77150046A10A /* Bills */,
 				911056FE20897003000966F4 /* Tasks */,
 				D131CC702087F5D500E599BC /* Dashboard */,
@@ -224,15 +228,6 @@
 				916BEC9E20917FDC00AEF8DA /* Business.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		91612BA2208FD567007F5BC9 /* Wallet */ = {
-			isa = PBXGroup;
-			children = (
-				91612BA3208FD575007F5BC9 /* WalletViewController.swift */,
-				91612BA5208FDF35007F5BC9 /* WalletTableViewCell.swift */,
-			);
-			path = Wallet;
 			sourceTree = "<group>";
 		};
 		919E910D2087B055008A5524 /* Services */ = {
@@ -327,6 +322,16 @@
 			path = Detail;
 			sourceTree = "<group>";
 		};
+		D1A52D3520919531005D1F77 /* Wallet */ = {
+			isa = PBXGroup;
+			children = (
+				D1A52D362091954C005D1F77 /* WalletViewController.swift */,
+				D1A52D382091957D005D1F77 /* DetailTableViewCell.swift */,
+				D1A52D3A2091958F005D1F77 /* TransactionTableViewCell.swift */,
+			);
+			path = Wallet;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -417,6 +422,7 @@
 				D131CC4D2087D22700E599BC /* GroupsTableViewCell.swift in Sources */,
 				91EA8E332090F92E008903D9 /* Group+CoreDataClass.swift in Sources */,
 				D131CC4A2087D1E700E599BC /* GroupsTableViewController.swift in Sources */,
+				D1A52D392091957D005D1F77 /* DetailTableViewCell.swift in Sources */,
 				916BEC9D209178D800AEF8DA /* PaymentModel.swift in Sources */,
 				912FFF5C20859F1200A088A0 /* LoginViewController.swift in Sources */,
 				91D6DCE2208D671800F62264 /* AddMemberPopoverTableViewCell.swift in Sources */,
@@ -436,6 +442,8 @@
 				91EA8E4220910FAD008903D9 /* LoggedInUser+CoreDataProperties.swift in Sources */,
 				91EA8E372090F92E008903D9 /* Payment+CoreDataClass.swift in Sources */,
 				D17EE279208ECCCA00544614 /* BillSplitTableViewCell.swift in Sources */,
+				D1A52D3B2091958F005D1F77 /* TransactionTableViewCell.swift in Sources */,
+				D1A52D372091954C005D1F77 /* WalletViewController.swift in Sources */,
 				91562C7620890C1100952B0A /* HTTPService.swift in Sources */,
 				915C2E612091724E00270C8C /* UserModel.swift in Sources */,
 				915C2E632091750A00270C8C /* GroupModel.swift in Sources */,

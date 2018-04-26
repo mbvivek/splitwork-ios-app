@@ -2711,7 +2711,7 @@
                                                     <constraint firstAttribute="height" constant="452" id="mlH-Un-4bJ"/>
                                                 </constraints>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" reuseIdentifier="WalletTableViewCell" rowHeight="70" id="cak-bi-eto" customClass="WalletTableViewCell" customModule="splitwork" customModuleProvider="target">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" reuseIdentifier="DetailTableViewCell" rowHeight="70" id="cak-bi-eto" customClass="DetailTableViewCell" customModule="splitwork" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="28" width="315" height="70"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cak-bi-eto" id="UkK-Jx-enR">
@@ -2781,8 +2781,8 @@
                                                             </constraints>
                                                         </tableViewCellContentView>
                                                         <connections>
-                                                            <outlet property="amount" destination="42t-s0-m0j" id="0S0-HW-6h2"/>
-                                                            <outlet property="memberName" destination="1Yf-Qv-RMP" id="SYk-xq-aep"/>
+                                                            <outlet property="amount" destination="42t-s0-m0j" id="1sI-BO-Elz"/>
+                                                            <outlet property="memberName" destination="1Yf-Qv-RMP" id="eZn-MC-8eU"/>
                                                         </connections>
                                                     </tableViewCell>
                                                 </prototypes>
@@ -2806,71 +2806,6 @@
                                                     <outlet property="delegate" destination="rQ5-n9-Ixx" id="gJc-fO-199"/>
                                                 </connections>
                                             </tableView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="90n-Xw-iOB">
-                                                <rect key="frame" x="102" y="518" width="200" height="30"/>
-                                                <color key="backgroundColor" red="0.46048274639999998" green="0.74262559409999995" blue="0.89807903769999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="200" id="17k-Ub-4L6"/>
-                                                    <constraint firstAttribute="height" constant="30" id="PgA-vW-kA7"/>
-                                                    <constraint firstAttribute="width" constant="200" id="XNV-ht-mnu"/>
-                                                    <constraint firstAttribute="height" constant="30" id="XSH-uz-mTx"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
-                                                <state key="normal" title="Make a payment">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <variation key="default">
-                                                    <mask key="constraints">
-                                                        <exclude reference="17k-Ub-4L6"/>
-                                                        <exclude reference="PgA-vW-kA7"/>
-                                                    </mask>
-                                                </variation>
-                                                <variation key="heightClass=regular-widthClass=regular">
-                                                    <mask key="constraints">
-                                                        <include reference="17k-Ub-4L6"/>
-                                                        <include reference="PgA-vW-kA7"/>
-                                                        <exclude reference="XNV-ht-mnu"/>
-                                                        <exclude reference="XSH-uz-mTx"/>
-                                                    </mask>
-                                                </variation>
-                                            </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="nMH-je-Z5d">
-                                                <rect key="frame" x="0.0" y="370" width="375" height="18"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="18" id="3wX-r8-lD0"/>
-                                                </constraints>
-                                                <variation key="heightClass=regular-widthClass=regular">
-                                                    <mask key="constraints">
-                                                        <exclude reference="3wX-r8-lD0"/>
-                                                    </mask>
-                                                </variation>
-                                            </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transaction History" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2K2-hA-wFP">
-                                                <rect key="frame" x="62.5" y="392" width="250" height="28"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="250" id="L1X-3t-Dup"/>
-                                                    <constraint firstAttribute="height" constant="28" id="XYA-4Q-ZuV"/>
-                                                    <constraint firstAttribute="width" constant="250" id="dfl-NQ-Ih4"/>
-                                                    <constraint firstAttribute="height" constant="28" id="g4h-W6-Kd1"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                                <variation key="default">
-                                                    <mask key="constraints">
-                                                        <exclude reference="L1X-3t-Dup"/>
-                                                        <exclude reference="XYA-4Q-ZuV"/>
-                                                    </mask>
-                                                </variation>
-                                                <variation key="heightClass=regular-widthClass=regular">
-                                                    <mask key="constraints">
-                                                        <include reference="L1X-3t-Dup"/>
-                                                        <include reference="XYA-4Q-ZuV"/>
-                                                        <exclude reference="dfl-NQ-Ih4"/>
-                                                        <exclude reference="g4h-W6-Kd1"/>
-                                                    </mask>
-                                                </variation>
-                                            </label>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8Ue-9V-Zzi">
                                                 <rect key="frame" x="409" y="58" width="314" height="452"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2950,8 +2885,8 @@
                                                             </constraints>
                                                         </tableViewCellContentView>
                                                         <connections>
-                                                            <outlet property="memberName" destination="hRC-1M-pTS" id="Bl6-Tz-C7H"/>
-                                                            <outlet property="paidAmount" destination="Bo0-Ee-U8k" id="d7b-eI-GjO"/>
+                                                            <outlet property="memberName" destination="hRC-1M-pTS" id="Pge-t7-oVV"/>
+                                                            <outlet property="paidAmount" destination="Bo0-Ee-U8k" id="sMR-hR-ZcI"/>
                                                         </connections>
                                                     </tableViewCell>
                                                 </prototypes>
@@ -3025,6 +2960,71 @@
                                                     </mask>
                                                 </variation>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="90n-Xw-iOB">
+                                                <rect key="frame" x="102" y="528" width="200" height="30"/>
+                                                <color key="backgroundColor" red="0.46048274639999998" green="0.74262559409999995" blue="0.89807903769999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="200" id="17k-Ub-4L6"/>
+                                                    <constraint firstAttribute="height" constant="30" id="PgA-vW-kA7"/>
+                                                    <constraint firstAttribute="width" constant="200" id="XNV-ht-mnu"/>
+                                                    <constraint firstAttribute="height" constant="30" id="XSH-uz-mTx"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                                <state key="normal" title="Make a payment">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="17k-Ub-4L6"/>
+                                                        <exclude reference="PgA-vW-kA7"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <mask key="constraints">
+                                                        <include reference="17k-Ub-4L6"/>
+                                                        <include reference="PgA-vW-kA7"/>
+                                                        <exclude reference="XNV-ht-mnu"/>
+                                                        <exclude reference="XSH-uz-mTx"/>
+                                                    </mask>
+                                                </variation>
+                                            </button>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="nMH-je-Z5d">
+                                                <rect key="frame" x="0.0" y="370" width="375" height="18"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="18" id="3wX-r8-lD0"/>
+                                                </constraints>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <mask key="constraints">
+                                                        <exclude reference="3wX-r8-lD0"/>
+                                                    </mask>
+                                                </variation>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transaction History" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2K2-hA-wFP">
+                                                <rect key="frame" x="62.5" y="392" width="250" height="28"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="250" id="L1X-3t-Dup"/>
+                                                    <constraint firstAttribute="height" constant="28" id="XYA-4Q-ZuV"/>
+                                                    <constraint firstAttribute="width" constant="250" id="dfl-NQ-Ih4"/>
+                                                    <constraint firstAttribute="height" constant="28" id="g4h-W6-Kd1"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="L1X-3t-Dup"/>
+                                                        <exclude reference="XYA-4Q-ZuV"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <mask key="constraints">
+                                                        <include reference="L1X-3t-Dup"/>
+                                                        <include reference="XYA-4Q-ZuV"/>
+                                                        <exclude reference="dfl-NQ-Ih4"/>
+                                                        <exclude reference="g4h-W6-Kd1"/>
+                                                    </mask>
+                                                </variation>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -3058,7 +3058,9 @@
                                                 <variation key="heightClass=regular-widthClass=regular" constant="-189"/>
                                             </constraint>
                                             <constraint firstItem="2K2-hA-wFP" firstAttribute="top" secondItem="nMH-je-Z5d" secondAttribute="bottom" constant="4" id="ff1-Uc-Ucd"/>
-                                            <constraint firstItem="90n-Xw-iOB" firstAttribute="top" secondItem="9dv-2B-w2M" secondAttribute="bottom" constant="8" id="ggr-6J-trn"/>
+                                            <constraint firstItem="90n-Xw-iOB" firstAttribute="top" secondItem="9dv-2B-w2M" secondAttribute="bottom" constant="8" id="ggr-6J-trn">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="18"/>
+                                            </constraint>
                                             <constraint firstItem="DMY-Uz-80T" firstAttribute="leading" secondItem="hS3-zv-PBN" secondAttribute="trailing" constant="115" id="iUZ-FL-pOS"/>
                                             <constraint firstAttribute="trailing" secondItem="nMH-je-Z5d" secondAttribute="trailing" id="jm4-HZ-fSn"/>
                                             <constraint firstAttribute="trailing" secondItem="8Ue-9V-Zzi" secondAttribute="trailing" constant="44" id="k4E-6B-WPs">
@@ -3085,19 +3087,19 @@
                                                 <exclude reference="DMY-Uz-80T"/>
                                             </mask>
                                             <mask key="constraints">
-                                                <exclude reference="Fwz-LA-83r"/>
-                                                <exclude reference="Nde-mU-Lu9"/>
-                                                <exclude reference="l3m-Tc-Cai"/>
-                                                <exclude reference="DHl-47-WCg"/>
-                                                <exclude reference="pZu-2v-mXT"/>
-                                                <exclude reference="UPL-jW-PKG"/>
-                                                <exclude reference="mW7-II-soG"/>
-                                                <exclude reference="ryA-7x-ICQ"/>
                                                 <exclude reference="Qcg-S2-kvm"/>
                                                 <exclude reference="iUZ-FL-pOS"/>
                                                 <exclude reference="kYt-pi-Pcz"/>
                                                 <exclude reference="oLR-fT-k9b"/>
                                                 <exclude reference="wE0-fx-PzA"/>
+                                                <exclude reference="DHl-47-WCg"/>
+                                                <exclude reference="pZu-2v-mXT"/>
+                                                <exclude reference="UPL-jW-PKG"/>
+                                                <exclude reference="mW7-II-soG"/>
+                                                <exclude reference="ryA-7x-ICQ"/>
+                                                <exclude reference="Fwz-LA-83r"/>
+                                                <exclude reference="Nde-mU-Lu9"/>
+                                                <exclude reference="l3m-Tc-Cai"/>
                                                 <exclude reference="Cvi-Oo-d4q"/>
                                                 <exclude reference="k4E-6B-WPs"/>
                                                 <exclude reference="wAr-uY-BuS"/>
@@ -3107,15 +3109,16 @@
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=regular">
                                             <mask key="subviews">
+                                                <include reference="DMY-Uz-80T"/>
                                                 <exclude reference="nMH-je-Z5d"/>
                                                 <exclude reference="2K2-hA-wFP"/>
-                                                <include reference="DMY-Uz-80T"/>
                                             </mask>
                                             <mask key="constraints">
-                                                <exclude reference="Fwz-LA-83r"/>
-                                                <exclude reference="Nde-mU-Lu9"/>
-                                                <include reference="l3m-Tc-Cai"/>
-                                                <exclude reference="qhh-lX-BiK"/>
+                                                <exclude reference="Qcg-S2-kvm"/>
+                                                <exclude reference="iUZ-FL-pOS"/>
+                                                <include reference="kYt-pi-Pcz"/>
+                                                <include reference="oLR-fT-k9b"/>
+                                                <include reference="wE0-fx-PzA"/>
                                                 <include reference="DHl-47-WCg"/>
                                                 <exclude reference="Iyh-44-6WS"/>
                                                 <exclude reference="OaF-C6-HYF"/>
@@ -3127,11 +3130,10 @@
                                                 <include reference="ryA-7x-ICQ"/>
                                                 <exclude reference="uDZ-Af-kaz"/>
                                                 <exclude reference="xad-NM-jZP"/>
-                                                <exclude reference="Qcg-S2-kvm"/>
-                                                <exclude reference="iUZ-FL-pOS"/>
-                                                <include reference="kYt-pi-Pcz"/>
-                                                <include reference="oLR-fT-k9b"/>
-                                                <include reference="wE0-fx-PzA"/>
+                                                <exclude reference="Fwz-LA-83r"/>
+                                                <exclude reference="Nde-mU-Lu9"/>
+                                                <include reference="l3m-Tc-Cai"/>
+                                                <exclude reference="qhh-lX-BiK"/>
                                                 <exclude reference="Cvi-Oo-d4q"/>
                                                 <exclude reference="GhN-UA-pS2"/>
                                                 <include reference="k4E-6B-WPs"/>
@@ -3168,8 +3170,8 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Wallet" image="wallet" id="Yhh-Zv-u2H"/>
                     <connections>
-                        <outlet property="detailsTableView" destination="9dv-2B-w2M" id="cgS-Zz-aiS"/>
-                        <outlet property="transactionTableView" destination="8Ue-9V-Zzi" id="5lS-Dd-AJh"/>
+                        <outlet property="detailTableView" destination="9dv-2B-w2M" id="loT-81-dv0"/>
+                        <outlet property="transactionTableView" destination="8Ue-9V-Zzi" id="cSX-K5-F2r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gTf-o0-RvV" userLabel="First Responder" sceneMemberID="firstResponder"/>
