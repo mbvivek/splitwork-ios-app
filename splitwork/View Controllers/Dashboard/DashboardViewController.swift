@@ -15,6 +15,10 @@ class DashboardViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
