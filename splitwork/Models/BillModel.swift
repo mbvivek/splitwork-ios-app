@@ -14,50 +14,50 @@ class BillModel {
     var id: String?
     var name: String?
     var desc: String?
-    var addedBy: User?
-    var addedTo: [User]?
+    var addedBy: UserModel?
+    var addedTo: [UserModel]?
     var amount: Double
-    var date: NSDate?
-    var group: Group?
+    var date: Date?
+    var group: GroupModel?
     
-    init(id: String, name: String, desc: String, addedByUsername: String, addedToUsernames: [String], amount: Double, groupId: String, date: Date) {
-        
+    init(id: String, name: String, desc: String, addedBy: UserModel, addedTo: [UserModel], amount: Double, date: Date, group: GroupModel) {
         self.id = id
         self.name = name
         self.desc = desc
-        
-        if let addedBy = User.shared.getUser(username: addedByUsername) {
-            self.addedBy = addedBy
-        }
-        else {
-            print("Error fetching user with username = \(addedByUsername) while adding bill in CoreData")
-        }
-        
-        var addedTo = [User]()
-        for addedToUsername in addedToUsernames {
-            if let addedToUser = User.shared.getUser(username: addedToUsername) {
-                addedTo.append(addedToUser)
-            } else {
-                print("Error fetching user with username = \(addedToUsername) while adding bill in CoreData")
-            }
-        }
+        self.addedBy = addedBy
         self.addedTo = addedTo
-        
         self.amount = amount
-        
-        if let group = Group.shared.getGroup(id: groupId) {
-            self.group = group
-        } else {
-            print("Error fetching group with id = \(groupId) while adding a bill in CoreData")
-        }
-
-        self.date = date as NSDate
-        
+        self.date = date
+        self.group = group
     }
     
 }
 
 class Bills {
     
-    var bills = [Bill]()
+    var bills = [BillModel]()
+    
+    func addBill(id: String, name: String, desc: String, addedByUsername: String, addedToUsernames: [String], amount: Double, date: Date, groupId: String) {
+        if let group = Business.shared().groups?.getGroup(id: groupId) {
+            if let addedBy = Business.shared().users?.getUser(username: addedByUsername) {
+                var addedTo = [UserModel]()
+                for addedToUsername in addedToUsernames {
+                    if let addedToUser = Business.shared().users?.getUser(username: addedToUsername) {
+                        addedTo.append(addedToUser)
+                    }
+                }
+                let bill = BillModel(id: id, name: name, desc: desc, addedBy: addedBy, addedTo: addedTo, amount: amount, date: date, group: group)
+                bills.append(bill)
+            }
+        }
+    }
+    
+    func getBill(id: String) -> BillModel? {
+        for bill in bills {
+            if(bill.id == id) {
+                return bill
+            }
+        }
+        return nil
+    }
 }

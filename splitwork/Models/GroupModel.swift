@@ -14,50 +14,18 @@ class GroupModel {
     var id: String?
     var name: String?
     var desc: String?
-    var admin: User?
+    var admin: UserModel?
     var members: [UserModel]?
     var tasks: [TaskModel]?
     var bills: [BillModel]?
     
-    init(id: String, name: String, desc: String, adminUsername: String, memberUsernames: [String], taskIds: [String], billIds: [String]) {
+    init(id: String, name: String, desc: String, admin: UserModel, members: [UserModel], tasks: [TaskModel], bills: [BillModel]) {
         self.id = id
         self.name = name
         self.desc = desc
-        
-        guard let admin = User.shared.getUser(username: adminUsername) else {
-            print("Error fetching user with username = \(adminUsername) from CoreData")
-            return
-        }
         self.admin = admin
-        
-        var members = [User]()
-        for memberUsername in memberUsernames {
-            if let member = User.shared.getUser(username: memberUsername) {
-                members.append(member)
-            } else {
-                print("Error fetching user with username = \(adminUsername) from CoreData")
-            }
-        }
         self.members = members
-        
-        var tasks = [Task]()
-        for taskId in taskIds {
-            if let task = Task.shared.getTask(id: taskId) {
-                tasks.append(task)
-            } else {
-                print("Error fetching task with id = \(taskId) while adding group in CoreData")
-            }
-        }
         self.tasks = tasks
-        
-        var bills = [Bill]()
-        for billId in billIds {
-            if let bill = Bill.shared.getBill(id: billId) {
-                bills.append(bill)
-            } else {
-                print("Error fetching bill with id = \(billId) while adding group in CoreData")
-            }
-        }
         self.bills = bills
     }
     
@@ -66,5 +34,39 @@ class GroupModel {
 class Groups {
     
     var groups = [GroupModel]()
+    
+    func addGroup(id: String, name: String, desc: String, adminUsername: String, memberUsernames: [String], taskIds: [String], billIds: [String]) {
+        if let admin = Business.shared().users?.getUser(username: adminUsername) {
+            var members = [UserModel]()
+            for memberUsername in memberUsernames {
+                if let member = Business.shared().users?.getUser(username: memberUsername) {
+                    members.append(member)
+                }
+            }
+            var tasks = [TaskModel]()
+            for taskId in taskIds {
+                if let task = Business.shared().tasks?.getTask(id: taskId) {
+                    tasks.append(task)
+                }
+            }
+            var bills = [BillModel]()
+            for billId in billIds {
+                if let bill = Business.shared().bills?.getBill(id: billId) {
+                    bills.append(bill)
+                }
+            }
+            let group = GroupModel(id: id, name: name, desc: desc, admin: admin, members: members, tasks: tasks, bills: bills)
+            groups.append(group)
+        }
+    }
+    
+    func getGroup(id: String) -> GroupModel? {
+        for group in groups {
+            if(group.id == id) {
+                return group
+            }
+        }
+        return nil
+    }
     
 }
