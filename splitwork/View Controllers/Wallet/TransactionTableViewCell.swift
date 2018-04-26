@@ -1,5 +1,5 @@
 //
-//  WalletTableViewCell.swift
+//  TransactionTableViewCell.swift
 //  splitwork
 //
 //  Created by Swathi Kommaghatta Chandrashekaraiah on 4/25/18.
@@ -8,11 +8,10 @@
 
 import UIKit
 
-class WalletTableViewCell: UITableViewCell {
-
+class TransactionTableViewCell: UITableViewCell {
 
     @IBOutlet weak var memberName: UILabel!
-    @IBOutlet weak var amount: UILabel!
+    @IBOutlet weak var paidAmount: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
