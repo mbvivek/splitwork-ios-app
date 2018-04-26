@@ -50,8 +50,6 @@ class Users {
     
     var users = [UserModel]()
     
-    func getUserByUsername(username: String) -> UserModel? {
-        
-    }
+    
     
 }
