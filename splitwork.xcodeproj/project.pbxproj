@@ -26,6 +26,7 @@
 		916BEC9F20917FDC00AEF8DA /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916BEC9E20917FDC00AEF8DA /* Business.swift */; };
 		91BE7821208E67F1000E4517 /* CreateGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BE7820208E67F1000E4517 /* CreateGroupViewController.swift */; };
 		91BE7823208E6C49000E4517 /* AddMemberPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BE7822208E6C49000E4517 /* AddMemberPopoverViewController.swift */; };
+		91CA78F020925AFD00E6C83B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CA78EF20925AFD00E6C83B /* RegisterViewController.swift */; };
 		91CD5C562090019000A140AC /* sampleCodeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CD5C552090019000A140AC /* sampleCodeData.swift */; };
 		91D6DCDB208D558900F62264 /* CreateGroupInviteListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D6DCDA208D558900F62264 /* CreateGroupInviteListTableViewCell.swift */; };
 		91D6DCE2208D671800F62264 /* AddMemberPopoverTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D6DCE1208D671800F62264 /* AddMemberPopoverTableViewCell.swift */; };
@@ -68,6 +69,7 @@
 		916BEC9E20917FDC00AEF8DA /* Business.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
 		91BE7820208E67F1000E4517 /* CreateGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreateGroupViewController.swift; path = "splitwork/View Controllers/Groups/Create Group/CreateGroupViewController.swift"; sourceTree = SOURCE_ROOT; };
 		91BE7822208E6C49000E4517 /* AddMemberPopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMemberPopoverViewController.swift; sourceTree = "<group>"; };
+		91CA78EF20925AFD00E6C83B /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		91CD5C552090019000A140AC /* sampleCodeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sampleCodeData.swift; sourceTree = "<group>"; };
 		91D6DCDA208D558900F62264 /* CreateGroupInviteListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupInviteListTableViewCell.swift; sourceTree = "<group>"; };
 		91D6DCE1208D671800F62264 /* AddMemberPopoverTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMemberPopoverTableViewCell.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 		912FFF6F2085A2D300A088A0 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				91CA78EF20925AFD00E6C83B /* RegisterViewController.swift */,
 				912FFF5B20859F1200A088A0 /* LoginViewController.swift */,
 			);
 			path = Login;
@@ -384,6 +387,7 @@
 				91D6DCE2208D671800F62264 /* AddMemberPopoverTableViewCell.swift in Sources */,
 				9110570320897107000966F4 /* TasksTableViewCell.swift in Sources */,
 				915C2E65209175C600270C8C /* TaskModel.swift in Sources */,
+				91CA78F020925AFD00E6C83B /* RegisterViewController.swift in Sources */,
 				91EA8E3E2091075C008903D9 /* UserService.swift in Sources */,
 				912FFF5A20859F1200A088A0 /* AppDelegate.swift in Sources */,
 				91BE7823208E6C49000E4517 /* AddMemberPopoverViewController.swift in Sources */,

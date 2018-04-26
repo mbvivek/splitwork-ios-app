@@ -60,4 +60,9 @@ class Bills {
         }
         return nil
     }
+    
+    func clear() {
+        bills = [BillModel]()
+        print("bills cleared, bill count = \(bills.count)")
+    }
 }

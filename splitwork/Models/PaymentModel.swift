@@ -49,4 +49,9 @@ class Payments {
         return nil
     }
     
+    func clear() {
+        payments = [PaymentModel]()
+        print("payments cleared, payment count = \(payments.count)")
+    }
+    
 }

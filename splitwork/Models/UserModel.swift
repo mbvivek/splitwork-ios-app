@@ -32,7 +32,6 @@ class UserModel {
         }
     }
     
-    var id: String?
     var username: String?
     var password: String?
     var name: String?
@@ -42,8 +41,7 @@ class UserModel {
     var groups: [GroupModel]?
     var creditCard: CreditCardModel?
     
-    init(id: String, username: String, password: String, name: String, email: String, phone: String, profilePic: UIImage, groups: [GroupModel], creditCard: CreditCardModel!) {
-        self.id = id
+    init(username: String, password: String, name: String, email: String, phone: String, profilePic: UIImage, groups: [GroupModel], creditCard: CreditCardModel!) {
         self.username = username
         self.password = password
         self.name = name
@@ -69,14 +67,14 @@ class Users {
         return nil
     }
     
-    func addUser(id: String, username: String, password: String, name: String, email: String, phone: String, profilePic: UIImage, groupIds: [String]) {
+    func addUser(username: String, password: String, name: String, email: String, phone: String, profilePic: UIImage, groupIds: [String]) {
         var groups = [GroupModel]()
         for groupId in groupIds {
             if let group = Business.shared().groups?.getGroup(id: groupId) {
                 groups.append(group)
             }
         }
-        let user = UserModel(id: id, username: username, password: password, name: name, email: email, phone: phone, profilePic: profilePic, groups: groups, creditCard: nil)
+        let user = UserModel(username: username, password: password, name: name, email: email, phone: phone, profilePic: profilePic, groups: groups, creditCard: nil)
         users.append(user)
     }
     
@@ -85,6 +83,11 @@ class Users {
             let creditCard = UserModel.CreditCardModel(number: number, nameOnCard: nameOnCard, expiryMonth: expiryMonth, expiryYear: expiryYear, cvv: cvv, zip: zip, type: type)
             user.creditCard = creditCard
         }
+    }
+    
+    func clear() {
+        users = [UserModel]()
+        print("users cleared, user count = \(users.count)")
     }
     
 }

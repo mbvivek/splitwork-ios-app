@@ -60,4 +60,9 @@ class Tasks {
         }
         return nil
     }
+    
+    func clear() {
+        tasks = [TaskModel]()
+        print("tasks cleared, task count = \(tasks.count)")
+    }
 }

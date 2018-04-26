@@ -27,14 +27,15 @@ public class LoggedInUser: NSManagedObject {
         return users
     }
     
-    func getUser(username: String) -> LoggedInUser? {
+    func getUser() -> String? {
         if getAllUsers().count == 0 {
             return nil
         }
-        return getAllUsers()[0]
+        return getAllUsers()[0].username
     }
     
     func addUser(username: String) {
+        clear()
         let user = LoggedInUser(context: context)
         user.username = username
         appDelegate.saveContext()

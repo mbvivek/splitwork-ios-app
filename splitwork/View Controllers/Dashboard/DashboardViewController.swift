@@ -9,6 +9,8 @@
 import UIKit
 
 class DashboardViewController: UIViewController {
+    
+    var loggedInUser: UserModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,6 +19,17 @@ class DashboardViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        
+        if let _loggedInUserUsername = LoggedInUser.shared.getUser() {
+            if let _loggedInUser = Business.shared().users?.getUser(username: _loggedInUserUsername) {
+                loggedInUser = _loggedInUser
+                Util.showSuccessMessage(self, "\(loggedInUser?.username)")
+            } else {
+                Util.showErrorMessage(self, "No Logged In User found in users")
+            }
+        } else {
+            Util.showErrorMessage(self, "No Logged In User")
+        }
         
     }
 

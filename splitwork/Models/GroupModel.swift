@@ -69,4 +69,9 @@ class Groups {
         return nil
     }
     
+    func clear() {
+        groups = [GroupModel]()
+        print("groups cleared, group count = \(groups.count)")
+    }
+    
 }
