@@ -20,8 +20,6 @@ class LoginViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         passwordTextField.isSecureTextEntry = true
-        UserService.shared().addUser(id: String(Date().hashValue), username: "swathikc", password: "456", name: "Swathi", email: "swathi.kc", phone: "9876543210")
-        UserService.shared().syncUsers()
     }
     
     override func didReceiveMemoryWarning() {

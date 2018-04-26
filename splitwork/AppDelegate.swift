@@ -26,7 +26,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         
-        UserService.shared().syncUsers()
         
         return true
     }
