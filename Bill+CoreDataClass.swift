@@ -69,21 +69,22 @@ public class Bill: NSManagedObject {
         
         var addedTo = [User]()
         for addedToUsername in addedToUsernames {
-            guard let addedToUser = User.shared.getUser(username: addedToUsername) else {
+            if let addedToUser = User.shared.getUser(username: addedToUsername) {
+                addedTo.append(addedToUser)
+            } else {
                 print("Error fetching user with username = \(addedToUsername) while adding bill in CoreData")
-                return
             }
-            addedTo.append(addedToUser)
         }
         bill.addedTo = addedTo
         
         bill.amount = amount
         
-        guard let group = Group.shared.getGroup(id: groupId) else {
+        if let group = Group.shared.getGroup(id: groupId) {
+            bill.group = group
+        } else {
             print("Error fetching group with id = \(groupId) while adding a bill in CoreData")
-            return
         }
-        bill.group = group
+        
         
         bill.date = date as NSDate
         

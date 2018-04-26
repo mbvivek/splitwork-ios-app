@@ -36,7 +36,7 @@ public class User: NSManagedObject {
         return nil
     }
     
-    func addUser(id: String, username: String, password: String, name: String, email: String, phone: String, profilePic: UIImage, groups: [Group], creditCard: CreditCard) {
+    func addUser(id: String, username: String, password: String, name: String, email: String, phone: String, profilePic: UIImage, groupIds: [String]) {
         let user = User(context: context)
         user.id = id
         user.username = username
@@ -45,9 +45,36 @@ public class User: NSManagedObject {
         user.email = email
         user.phone = phone
         user.profilePic = profilePic
+        var groups = [Group]()
+        for groupId in groupIds {
+            if let group = Group.shared.getGroup(id: groupId) {
+                groups.append(group)
+            }
+        }
         user.groups = groups
-        user.creditCard = creditCard
+        user.creditCard = nil
         appDelegate.saveContext()
+    }
+    
+    func addCreditCardToUser(username: String, id: String, number: String, nameOnCard: String, expiryMonth: String, expiryYear: String, cvv: String, zip: String, type: String) {
+        if let user = getUser(username: username) {
+            let creditCard = CreditCard(context: context)
+            creditCard.id = "0"
+            creditCard.number = number
+            creditCard.nameOnCard = nameOnCard
+            creditCard.expiryMonth = expiryMonth
+            creditCard.expiryYear = expiryYear
+            creditCard.cvv = cvv
+            creditCard.zip = zip
+            creditCard.type = type
+            
+            user.creditCard = creditCard
+            
+            appDelegate.saveContext()
+        } else {
+            print("Error fetching user with username = \(username) while adding creditCardToUser in CoreData")
+            return
+        }
     }
     
     func clear() {
