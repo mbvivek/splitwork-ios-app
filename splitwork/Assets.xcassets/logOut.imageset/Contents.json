@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "wallet-filled-money-tool.png",
+      "filename" : "logout.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "wallet-filled-money-tool-2.png",
+      "filename" : "logout-1.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "wallet-filled-money-tool-1.png",
+      "filename" : "logout-2.png",
       "scale" : "3x"
     }
   ],
