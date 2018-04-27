@@ -85,16 +85,46 @@ class GroupService {
         group["name"] = name
         group["desc"] = desc
         group["adminUsername"] = adminUsername
-        group["memberUsernames"] = memberUsernames
         
         let completionHandler: (String, [String: Any]) -> () = { error, data in
             if(error != "") {
                 print("Error in adding group to firebase, error = \(error)")
             } else {
                 print("Success in adding group to firebase")
+                print("data = \(data)")
+                if let res = data["data"] as? [String: Any] {
+                    if let groupId = res["name"] as? String {
+                        print("groupId = \(groupId)")
+                        self.addMemberToGroup(groupId: groupId, memberUsername: adminUsername)
+                        for memberUsername in memberUsernames {
+                            self.addMemberToGroup(groupId: groupId, memberUsername: memberUsername)
+                        }
+                    }
+                }
             }
         }
         httpService.post(url: "groups", data: group, completionHandler: completionHandler)
+    }
+    
+    func addMemberToGroup(groupId: String, memberUsername: String) {
+        
+        var member = [String: Any]()
+        member["username"] = memberUsername
+        
+        let completionHandler: (String, [String: Any]) -> () = { error, data in
+            if(error != "") {
+                print("Error adding member to group in firebase, error = \(error)")
+            } else {
+                print("Success in adding member to group in firebase")
+                if let user = Business.shared().users?.getUser(username: memberUsername) {
+                    let userId = user.id
+                    // add group to user
+                    UserService.shared().addGroupToUser(userId: userId!, groupId: groupId)
+                }
+            }
+        }
+        
+        httpService.post(url: "groups/\(groupId)/memberUsernames", data: member, completionHandler: completionHandler)
     }
     
 }

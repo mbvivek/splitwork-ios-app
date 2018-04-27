@@ -10,8 +10,8 @@ import UIKit
 
 class CreateGroupViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    @IBOutlet weak var groupName: UITextField!
-    @IBOutlet weak var groupDescription: UITextView!
+    @IBOutlet weak var name: UITextField!
+    @IBOutlet weak var desc: UITextView!
     
     @IBOutlet weak var inviteListTableView: UITableView!
     
@@ -51,7 +51,8 @@ class CreateGroupViewController: UIViewController, UITableViewDelegate, UITableV
             let controller = segue.destination as! AddMemberPopoverViewController
             // set the callback
             controller.callback = { (member: String) -> () in
-                if self.ifMemberExistsInInviteList(member) {
+                
+                if self.inviteList.contains(member) {
                     Util.showErrorMessage(self, "'\(member)' already exists in the invite list!")
                     return
                 }
@@ -73,6 +74,24 @@ class CreateGroupViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     @IBAction func createGroupButtonAction(_ sender: Any) {
+        
+        let _name = name.text!
+        let _desc = desc.text!
+        
+        if(_name == "" || _desc == "") {
+            Util.showErrorMessage(self, "Please fill all the fields!")
+            return
+        }
+        
+        if let adminUsername = LoggedInUser.shared.getUser() {
+            GroupService.shared().addGroup(name: _name, desc: _desc, adminUsername: adminUsername, memberUsernames: inviteList)
+            Util.showSuccessMessage(self, "\"\(name)\" group is created successfully!")
+        } else {
+            Util.showErrorMessage(self, "Invalid Session!")
+        }
+        
+        
+        
     }
     
     
