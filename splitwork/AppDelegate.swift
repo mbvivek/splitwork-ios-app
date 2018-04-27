@@ -24,7 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if let navigationController = splitViewController.viewControllers.last as? UINavigationController {
                 navigationController.topViewController?.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
             }
-        }        
+        }
+        
         return true
     }
     

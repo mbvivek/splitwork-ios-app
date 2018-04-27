@@ -10,14 +10,14 @@ import UIKit
 
 class AddMemberPopoverViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
-    var members = ["Vivek", "Swathi", "Nandeep"]
-    var filteredMembers = [String]()
+    var members = [UserModel]()
+    var filteredMembers = [UserModel]()
     
     @IBOutlet weak var popoverView: UIView!
     @IBOutlet weak var membersTableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
-    var callback: ((_ member: String) -> ())?
+    var callback: ((_ member: UserModel) -> ())?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +41,10 @@ class AddMemberPopoverViewController: UIViewController, UITableViewDelegate, UIT
         }
         
         // Configure the cell...
-        cell.name.text = filteredMembers[indexPath.row]
+        let member = filteredMembers[indexPath.row]
+        cell.name.text = member.name
+        cell.username.text = member.username
+        cell.profilePic.image = member.profilePic
         
         return cell
     }
@@ -50,7 +53,7 @@ class AddMemberPopoverViewController: UIViewController, UITableViewDelegate, UIT
         if searchText.isEmpty {
             filteredMembers = members
         } else {
-            filteredMembers = members.filter{ $0.lowercased().contains(searchText.lowercased()) }
+            filteredMembers = members.filter{ ($0.name?.lowercased().contains(searchText.lowercased()))! || ($0.username?.lowercased().contains(searchText.lowercased()))! }
         }
         membersTableView.reloadData()
         print("table reloaded..")

@@ -74,6 +74,7 @@ class GroupService {
                 }
             }
             print("synced groups from server, group count = \((Business.shared().groups?.groups.count)!)")
+            NotificationCenter.default.post(name: .groupsSynced, object: nil)
             onSync?()
         }
         httpService.get(url: "groups", completionHandler: completionHandler)
@@ -101,6 +102,7 @@ class GroupService {
                         }
                     }
                 }
+                self.syncGroups(onSync: nil)
             }
         }
         httpService.post(url: "groups", data: group, completionHandler: completionHandler)
@@ -121,6 +123,7 @@ class GroupService {
                     // add group to user
                     UserService.shared().addGroupToUser(userId: userId!, groupId: groupId)
                 }
+                self.syncGroups(onSync: nil)
             }
         }
         
