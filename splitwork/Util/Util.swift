@@ -43,4 +43,36 @@ class Util {
         return String(data: data, encoding: String.Encoding.utf8)
     }
     
+    static func isInteger(testString:String) -> Bool {
+        return (Int(testString) != nil)
+    }
+    
+    static func isDouble(testString:String) -> Bool {
+        return (Double(testString) != nil)
+    }
+    
+    static func isValidEmail(testEmail:String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        let valid:Bool = emailTest.evaluate(with: testEmail)
+        print("testEmail = \(testEmail), \(valid)")
+        return valid
+    }
+    
+    static func isValidPhone(testPhone: String) -> Bool {
+        let phoneRegEx = "^\\d{10}$"
+        let phoneTest = NSPredicate(format: "SELF MATCHES %@", phoneRegEx)
+        let valid:Bool = phoneTest.evaluate(with: testPhone)
+        print("testPhone = \(testPhone), \(valid)")
+        return valid
+    }
+    
+    static func isValidZip(testZip: String) -> Bool {
+        let zipRegEx = "^\\d{5}$"
+        let zipTest = NSPredicate(format: "SELF MATCHES %@", zipRegEx)
+        let valid:Bool = zipTest.evaluate(with: testZip)
+        print("testZip = \(testZip), \(valid)")
+        return valid
+    }
+    
 }

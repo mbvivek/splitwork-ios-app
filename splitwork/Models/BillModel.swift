@@ -14,13 +14,13 @@ class BillModel {
     var id: String?
     var name: String?
     var desc: String?
-    var addedBy: UserModel?
-    var addedTo: [UserModel]?
+    var addedBy: String?
+    var addedTo: [String]?
     var amount: Double
     var date: Date?
-    var group: GroupModel?
+    var groupId: String?
     
-    init(id: String, name: String, desc: String, addedBy: UserModel, addedTo: [UserModel], amount: Double, date: Date, group: GroupModel) {
+    init(id: String, name: String, desc: String, addedBy: String, addedTo: [String], amount: Double, date: Date, groupId: String) {
         self.id = id
         self.name = name
         self.desc = desc
@@ -28,7 +28,7 @@ class BillModel {
         self.addedTo = addedTo
         self.amount = amount
         self.date = date
-        self.group = group
+        self.groupId = groupId
     }
     
 }
@@ -37,19 +37,9 @@ class Bills {
     
     var bills = [BillModel]()
     
-    func addBill(id: String, name: String, desc: String, addedByUsername: String, addedToUsernames: [String], amount: Double, date: Date, groupId: String) {
-        if let group = Business.shared().groups?.getGroup(id: groupId) {
-            if let addedBy = Business.shared().users?.getUser(username: addedByUsername) {
-                var addedTo = [UserModel]()
-                for addedToUsername in addedToUsernames {
-                    if let addedToUser = Business.shared().users?.getUser(username: addedToUsername) {
-                        addedTo.append(addedToUser)
-                    }
-                }
-                let bill = BillModel(id: id, name: name, desc: desc, addedBy: addedBy, addedTo: addedTo, amount: amount, date: date, group: group)
-                bills.append(bill)
-            }
-        }
+    func addBill(id: String, name: String, desc: String, addedBy: String, addedTo: [String], amount: Double, date: Date, groupId: String) {
+        let bill = BillModel(id: id, name: name, desc: desc, addedBy: addedBy, addedTo: addedTo, amount: amount, date: date, groupId: groupId)
+        bills.append(bill)
     }
     
     func getBill(id: String) -> BillModel? {
@@ -59,5 +49,10 @@ class Bills {
             }
         }
         return nil
+    }
+    
+    func clear() {
+        bills = [BillModel]()
+        print("bills cleared, bill count = \(bills.count)")
     }
 }

@@ -14,15 +14,15 @@ class TaskModel {
     var id: String?
     var name: String?
     var desc: String?
-    var assignedTo: UserModel?
+    var assignedTo: String?
     var assignedDate: Date?
     var deadlineDate: Date?
     var completionDate: Date?
-    var group: GroupModel?
+    var groupId: String?
     var status: String?
     var completionPercentage: Double?
     
-    init(id: String, name: String, desc: String, assignedTo: UserModel, assignedDate: Date, deadlineDate: Date, completionDate: Date, group: GroupModel, status: String, completionPercentage: Double) {
+    init(id: String, name: String, desc: String, assignedTo: String, assignedDate: Date, deadlineDate: Date, completionDate: Date, groupId: String, status: String, completionPercentage: Double) {
         
         self.id = id
         self.name = name
@@ -31,7 +31,7 @@ class TaskModel {
         self.assignedDate = assignedDate
         self.deadlineDate = deadlineDate
         self.completionDate = completionDate
-        self.group = group
+        self.groupId = groupId
         self.status = status
         self.completionPercentage = completionPercentage
         
@@ -43,13 +43,9 @@ class Tasks {
     
     var tasks = [TaskModel]()
     
-    func addTask(id: String, name: String, desc: String, assignedToUsername: String, assignedDate: Date, deadlineDate: Date, completionDate: Date, groupId: String, status: String, completionPercentage: Double) {
-        if let assignedTo = Business.shared().users?.getUser(username: assignedToUsername) {
-            if let group = Business.shared().groups?.getGroup(id: groupId) {
-                let task = TaskModel(id: id, name: name, desc: desc, assignedTo: assignedTo, assignedDate: assignedDate, deadlineDate: deadlineDate, completionDate: completionDate, group: group, status: status, completionPercentage: completionPercentage)
-                tasks.append(task)
-            }
-        }
+    func addTask(id: String, name: String, desc: String, assignedTo: String, assignedDate: Date, deadlineDate: Date, completionDate: Date, groupId: String, status: String, completionPercentage: Double) {
+        let task = TaskModel(id: id, name: name, desc: desc, assignedTo: assignedTo, assignedDate: assignedDate, deadlineDate: deadlineDate, completionDate: completionDate, groupId: groupId, status: status, completionPercentage: completionPercentage)
+        tasks.append(task)
     }
     
     func getTask(id: String) -> TaskModel? {
@@ -59,5 +55,10 @@ class Tasks {
             }
         }
         return nil
+    }
+    
+    func clear() {
+        tasks = [TaskModel]()
+        print("tasks cleared, task count = \(tasks.count)")
     }
 }
