@@ -89,7 +89,17 @@ class UserService {
     }
     
     func addGroupToUser(userId: String, groupId: String) {
+        var groupToUser = [String: Any]()
+        groupToUser["groupId"] = groupId
         
+        let completionHandler: (String, [String: Any]) -> () = { error, data in
+            if(error != "") {
+                print("Error in adding group to user, error = \(error)")
+            } else {
+                print("Success in adding group to user")
+            }
+        }
+        httpService.post(url: "users/\(userId)/groupIds", data: groupToUser, completionHandler: completionHandler)
     }
     
     
