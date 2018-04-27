@@ -26,7 +26,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tLf-DG-IA8">
                                 <rect key="frame" x="87.5" y="404" width="200" height="30"/>
@@ -43,7 +43,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="EYV-kC-Xbv" kind="show" id="oub-1q-voJ"/>
+                                    <action selector="loginButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="B3f-bx-Aql"/>
+                                    <segue destination="EYV-kC-Xbv" kind="show" identifier="toDashboard" id="N4D-fX-lmJ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o66-Ug-9L3">
@@ -75,7 +76,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="username"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Splitwork" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8bh-Ny-Hqo">
                                 <rect key="frame" x="87.5" y="228.5" width="200" height="50"/>
@@ -105,8 +106,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="passwordTextField" destination="5eq-Fs-cci" id="kHu-oJ-lC0"/>
-                        <outlet property="usernameTextField" destination="5K4-nL-Q0F" id="hGr-vB-k2E"/>
+                        <outlet property="password" destination="5eq-Fs-cci" id="Qvf-0b-7eV"/>
+                        <outlet property="username" destination="5K4-nL-Q0F" id="kWB-4O-fxT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -3772,10 +3773,10 @@
             </objects>
             <point key="canvasLocation" x="1614" y="-1094"/>
         </scene>
-        <!--Signup View Controller-->
+        <!--Register View Controller-->
         <scene sceneID="GRe-lC-JGf">
             <objects>
-                <viewController id="iS0-ti-mFa" customClass="SignupViewController" customModule="splitwork" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="iS0-ti-mFa" customClass="RegisterViewController" customModule="splitwork" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4G1-K8-yPw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3856,7 +3857,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" textContentType="name"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="7Ep-8u-zXU"/>
@@ -3881,9 +3882,6 @@
                                         <exclude reference="cw0-yw-iZ8"/>
                                     </mask>
                                 </variation>
-                                <connections>
-                                    <action selector="name:" destination="sUd-2D-n2Z" eventType="editingDidEnd" id="ZqW-km-xpT"/>
-                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eCU-mf-43y">
                                 <rect key="frame" x="87.5" y="202" width="200" height="30"/>
@@ -3897,7 +3895,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" textContentType="email"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="6uH-qk-PHB"/>
@@ -3935,7 +3933,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" textContentType="tel"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="2PO-34-J8i"/>
@@ -4091,7 +4089,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <action selector="signupButtonAction:" destination="iS0-ti-mFa" eventType="touchUpInside" id="EkC-eH-x1K"/>
+                                    <action selector="signupButtonAction:" destination="iS0-ti-mFa" eventType="touchUpInside" id="Bhy-t6-PGC"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="spU-zY-S92">
@@ -4106,7 +4104,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" textContentType="username"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="0Dp-iz-Yzu"/>
@@ -4182,7 +4180,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" textContentType="password"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="6tQ-0X-YeD"/>
@@ -4258,7 +4256,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" textContentType="password"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="O0F-vS-kAP"/>
@@ -4692,16 +4690,15 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="confirmPassword" destination="k5r-G5-qhD" id="fOD-dd-P0L"/>
-                        <outlet property="email" destination="eCU-mf-43y" id="FIq-dc-W0K"/>
-                        <outlet property="name" destination="gI2-Bi-vpf" id="QuW-7m-svf"/>
-                        <outlet property="password" destination="HOY-YS-Q9v" id="N8r-TS-bHH"/>
-                        <outlet property="phone" destination="Nen-Q0-sxo" id="JJm-NJ-C5y"/>
-                        <outlet property="username" destination="spU-zY-S92" id="CSN-7z-OkK"/>
+                        <outlet property="confirmPassword" destination="k5r-G5-qhD" id="xYy-MD-VNv"/>
+                        <outlet property="email" destination="eCU-mf-43y" id="eo2-I4-iPF"/>
+                        <outlet property="name" destination="gI2-Bi-vpf" id="kCl-J1-1PF"/>
+                        <outlet property="password" destination="HOY-YS-Q9v" id="NnW-ey-ADT"/>
+                        <outlet property="phone" destination="Nen-Q0-sxo" id="VLK-Gh-Ufx"/>
+                        <outlet property="username" destination="spU-zY-S92" id="XKH-gO-Grl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yaO-XZ-pdX" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="sUd-2D-n2Z" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-126" y="1108"/>
         </scene>
@@ -6126,7 +6123,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VmI-Vw-a5Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="531" y="1107"/>
+            <point key="canvasLocation" x="761" y="1107"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="T7s-Te-Rx0">
