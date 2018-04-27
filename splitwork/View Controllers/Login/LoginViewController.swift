@@ -16,11 +16,30 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print("LoginViewController - viewDidLoad")
+        
+        UserService.shared().syncUsers(onSync: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(didBecomeActive), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         password.isSecureTextEntry = true
-        UserService.shared().syncUsers(onSync: nil)
+    }
+    
+    // MARK: - Notification oberserver methods
+    
+    @objc func didBecomeActive() {
+        print("LoginViewController - didBecomeActive")
+        // check if LoggedInUser exists
+        if let _loggedInUserUsername  = LoggedInUser.shared.getUser() {
+            print("loggedInUser = \(_loggedInUserUsername)")
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            let dashBoardViewController = storyBoard.instantiateViewController(withIdentifier: "DashboardViewController") as! DashboardViewController
+            self.present(dashBoardViewController, animated:true, completion:nil)
+        }
     }
     
     override func didReceiveMemoryWarning() {

@@ -10,6 +10,7 @@
 		9110570320897107000966F4 /* TasksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9110570220897107000966F4 /* TasksTableViewCell.swift */; };
 		9110570720897994000966F4 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9110570620897994000966F4 /* TasksViewController.swift */; };
 		91125919208EA5F5003AE522 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91125918208EA5F5003AE522 /* Util.swift */; };
+		9117BA352093953500729F21 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9117BA342093953500729F21 /* EditProfileViewController.swift */; };
 		912FFF5A20859F1200A088A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912FFF5920859F1200A088A0 /* AppDelegate.swift */; };
 		912FFF5C20859F1200A088A0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912FFF5B20859F1200A088A0 /* LoginViewController.swift */; };
 		912FFF5F20859F1200A088A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 912FFF5D20859F1200A088A0 /* Main.storyboard */; };
@@ -35,6 +36,8 @@
 		91EA8E3E2091075C008903D9 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EA8E3D2091075C008903D9 /* UserService.swift */; };
 		91EA8E4120910FAD008903D9 /* LoggedInUser+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EA8E3F20910FAD008903D9 /* LoggedInUser+CoreDataClass.swift */; };
 		91EA8E4220910FAD008903D9 /* LoggedInUser+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EA8E4020910FAD008903D9 /* LoggedInUser+CoreDataProperties.swift */; };
+		91EED33B2093A27000432AFF /* CardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EED33A2093A27000432AFF /* CardService.swift */; };
+		91EED33D2093CCED00432AFF /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EED33C2093CCED00432AFF /* NotificationService.swift */; };
 		D106EA0E208E77570046A10A /* BillsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D106EA0D208E77570046A10A /* BillsDetailViewController.swift */; };
 		D106EA11208E77B80046A10A /* BillsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D106EA10208E77B80046A10A /* BillsTableViewCell.swift */; };
 		D131CC4A2087D1E700E599BC /* GroupsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D131CC492087D1E700E599BC /* GroupsTableViewController.swift */; };
@@ -42,7 +45,6 @@
 		D131CC4F2087D29A00E599BC /* GroupDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D131CC4E2087D29A00E599BC /* GroupDetailViewController.swift */; };
 		D131CC722087F60D00E599BC /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D131CC712087F60D00E599BC /* DashboardViewController.swift */; };
 		D167DFAB20881A89001A199A /* GroupSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D167DFAA20881A89001A199A /* GroupSplitViewController.swift */; };
-		D17395492092AA76008AFFC8 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17395482092AA76008AFFC8 /* EditProfileViewController.swift */; };
 		D17EE276208EA16300544614 /* BillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17EE275208EA16300544614 /* BillViewController.swift */; };
 		D17EE279208ECCCA00544614 /* BillSplitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17EE278208ECCCA00544614 /* BillSplitTableViewCell.swift */; };
 		D1A52D372091954C005D1F77 /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A52D362091954C005D1F77 /* WalletViewController.swift */; };
@@ -54,6 +56,7 @@
 		9110570220897107000966F4 /* TasksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTableViewCell.swift; sourceTree = "<group>"; };
 		9110570620897994000966F4 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 		91125918208EA5F5003AE522 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		9117BA342093953500729F21 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		912FFF5620859F1200A088A0 /* splitwork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = splitwork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		912FFF5920859F1200A088A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		912FFF5B20859F1200A088A0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +84,8 @@
 		91EA8E3D2091075C008903D9 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		91EA8E3F20910FAD008903D9 /* LoggedInUser+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoggedInUser+CoreDataClass.swift"; sourceTree = "<group>"; };
 		91EA8E4020910FAD008903D9 /* LoggedInUser+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoggedInUser+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		91EED33A2093A27000432AFF /* CardService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardService.swift; sourceTree = "<group>"; };
+		91EED33C2093CCED00432AFF /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		D106EA0D208E77570046A10A /* BillsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillsDetailViewController.swift; sourceTree = "<group>"; };
 		D106EA10208E77B80046A10A /* BillsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillsTableViewCell.swift; sourceTree = "<group>"; };
 		D131CC492087D1E700E599BC /* GroupsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsTableViewController.swift; sourceTree = "<group>"; };
@@ -88,7 +93,6 @@
 		D131CC4E2087D29A00E599BC /* GroupDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetailViewController.swift; sourceTree = "<group>"; };
 		D131CC712087F60D00E599BC /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		D167DFAA20881A89001A199A /* GroupSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSplitViewController.swift; sourceTree = "<group>"; };
-		D17395482092AA76008AFFC8 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		D17EE275208EA16300544614 /* BillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillViewController.swift; sourceTree = "<group>"; };
 		D17EE278208ECCCA00544614 /* BillSplitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillSplitTableViewCell.swift; sourceTree = "<group>"; };
 		D1A52D362091954C005D1F77 /* WalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
@@ -178,7 +182,6 @@
 				D131CC702087F5D500E599BC /* Dashboard */,
 				D131CC482087D19700E599BC /* Groups */,
 				912FFF6F2085A2D300A088A0 /* Login */,
-				D17395482092AA76008AFFC8 /* EditProfileViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -213,6 +216,8 @@
 				91585CD32087F5BC004E9970 /* UserAccountService.swift */,
 				91EA8E3D2091075C008903D9 /* UserService.swift */,
 				917CF3052092B64300EBC220 /* GroupService.swift */,
+				91EED33A2093A27000432AFF /* CardService.swift */,
+				91EED33C2093CCED00432AFF /* NotificationService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -286,6 +291,7 @@
 			isa = PBXGroup;
 			children = (
 				D131CC712087F60D00E599BC /* DashboardViewController.swift */,
+				9117BA342093953500729F21 /* EditProfileViewController.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -401,7 +407,6 @@
 				D1A52D392091957D005D1F77 /* DetailTableViewCell.swift in Sources */,
 				916BEC9D209178D800AEF8DA /* PaymentModel.swift in Sources */,
 				912FFF5C20859F1200A088A0 /* LoginViewController.swift in Sources */,
-				D17395492092AA76008AFFC8 /* EditProfileViewController.swift in Sources */,
 				91D6DCE2208D671800F62264 /* AddMemberPopoverTableViewCell.swift in Sources */,
 				9110570320897107000966F4 /* TasksTableViewCell.swift in Sources */,
 				915C2E65209175C600270C8C /* TaskModel.swift in Sources */,
@@ -414,8 +419,11 @@
 				91125919208EA5F5003AE522 /* Util.swift in Sources */,
 				916BEC9F20917FDC00AEF8DA /* Business.swift in Sources */,
 				912FFF6220859F1200A088A0 /* splitwork.xcdatamodeld in Sources */,
+				9117BA352093953500729F21 /* EditProfileViewController.swift in Sources */,
 				9110570720897994000966F4 /* TasksViewController.swift in Sources */,
 				91EA8E4220910FAD008903D9 /* LoggedInUser+CoreDataProperties.swift in Sources */,
+				91EED33D2093CCED00432AFF /* NotificationService.swift in Sources */,
+				91EED33B2093A27000432AFF /* CardService.swift in Sources */,
 				917CF3042092A99900EBC220 /* CreditCardModel.swift in Sources */,
 				D17EE279208ECCCA00544614 /* BillSplitTableViewCell.swift in Sources */,
 				D1A52D3B2091958F005D1F77 /* TransactionTableViewCell.swift in Sources */,

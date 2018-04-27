@@ -11,6 +11,15 @@ import UIKit
 
 class Util {
     
+    static func getLoggedInUser() -> UserModel? {
+        if let _loggedInUserUsername = LoggedInUser.shared.getUser() {
+            if let _loggedInUser = Business.shared().users?.getUser(username: _loggedInUserUsername) {
+                return _loggedInUser
+            }
+        }
+        return nil
+    }
+    
     static func showSuccessMessage(_ viewController: UIViewController, _ message: String) {
         let alert = UIAlertController(title: "Success: ", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
@@ -73,6 +82,11 @@ class Util {
         let valid:Bool = zipTest.evaluate(with: testZip)
         print("testZip = \(testZip), \(valid)")
         return valid
+    }
+    
+    static func syncData() {
+        UserService.shared().syncUsers(onSync: nil)
+        GroupService.shared().syncGroups(onSync: nil)
     }
     
 }

@@ -15,6 +15,7 @@ class Business {
     var tasks: Tasks?
     var bills: Bills?
     var payments: Payments?
+    var cards: CreditCards?
     
     private static var sharedBusiness: Business = {
         let business = Business()
@@ -27,6 +28,7 @@ class Business {
         self.tasks = Tasks()
         self.bills = Bills()
         self.payments = Payments()
+        self.cards = CreditCards()
     }
     
     class func shared() -> Business {
