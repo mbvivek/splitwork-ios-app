@@ -23,7 +23,7 @@ class DashboardViewController: UIViewController {
         if let _loggedInUserUsername = LoggedInUser.shared.getUser() {
             if let _loggedInUser = Business.shared().users?.getUser(username: _loggedInUserUsername) {
                 loggedInUser = _loggedInUser
-                Util.showSuccessMessage(self, "\(loggedInUser?.username)")
+                print("loggedInUser = \((loggedInUser?.username)!)")
             } else {
                 Util.showErrorMessage(self, "No Logged In User found in users")
             }

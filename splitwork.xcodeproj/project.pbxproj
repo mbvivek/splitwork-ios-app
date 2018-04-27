@@ -24,6 +24,8 @@
 		915C2E672091772400270C8C /* BillModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915C2E662091772400270C8C /* BillModel.swift */; };
 		916BEC9D209178D800AEF8DA /* PaymentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916BEC9C209178D800AEF8DA /* PaymentModel.swift */; };
 		916BEC9F20917FDC00AEF8DA /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916BEC9E20917FDC00AEF8DA /* Business.swift */; };
+		917CF3042092A99900EBC220 /* CreditCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917CF3032092A99800EBC220 /* CreditCardModel.swift */; };
+		917CF3062092B64300EBC220 /* GroupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917CF3052092B64300EBC220 /* GroupService.swift */; };
 		91BE7821208E67F1000E4517 /* CreateGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BE7820208E67F1000E4517 /* CreateGroupViewController.swift */; };
 		91BE7823208E6C49000E4517 /* AddMemberPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BE7822208E6C49000E4517 /* AddMemberPopoverViewController.swift */; };
 		91CA78F020925AFD00E6C83B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CA78EF20925AFD00E6C83B /* RegisterViewController.swift */; };
@@ -67,6 +69,8 @@
 		915C2E662091772400270C8C /* BillModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillModel.swift; sourceTree = "<group>"; };
 		916BEC9C209178D800AEF8DA /* PaymentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentModel.swift; sourceTree = "<group>"; };
 		916BEC9E20917FDC00AEF8DA /* Business.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
+		917CF3032092A99800EBC220 /* CreditCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardModel.swift; sourceTree = "<group>"; };
+		917CF3052092B64300EBC220 /* GroupService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupService.swift; sourceTree = "<group>"; };
 		91BE7820208E67F1000E4517 /* CreateGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreateGroupViewController.swift; path = "splitwork/View Controllers/Groups/Create Group/CreateGroupViewController.swift"; sourceTree = SOURCE_ROOT; };
 		91BE7822208E6C49000E4517 /* AddMemberPopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMemberPopoverViewController.swift; sourceTree = "<group>"; };
 		91CA78EF20925AFD00E6C83B /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -193,6 +197,7 @@
 				915C2E662091772400270C8C /* BillModel.swift */,
 				916BEC9C209178D800AEF8DA /* PaymentModel.swift */,
 				916BEC9E20917FDC00AEF8DA /* Business.swift */,
+				917CF3032092A99800EBC220 /* CreditCardModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -203,6 +208,7 @@
 				91562C7520890C1100952B0A /* HTTPService.swift */,
 				91585CD32087F5BC004E9970 /* UserAccountService.swift */,
 				91EA8E3D2091075C008903D9 /* UserService.swift */,
+				917CF3052092B64300EBC220 /* GroupService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -389,6 +395,7 @@
 				915C2E65209175C600270C8C /* TaskModel.swift in Sources */,
 				91CA78F020925AFD00E6C83B /* RegisterViewController.swift in Sources */,
 				91EA8E3E2091075C008903D9 /* UserService.swift in Sources */,
+				917CF3062092B64300EBC220 /* GroupService.swift in Sources */,
 				912FFF5A20859F1200A088A0 /* AppDelegate.swift in Sources */,
 				91BE7823208E6C49000E4517 /* AddMemberPopoverViewController.swift in Sources */,
 				915C2E672091772400270C8C /* BillModel.swift in Sources */,
@@ -397,6 +404,7 @@
 				912FFF6220859F1200A088A0 /* splitwork.xcdatamodeld in Sources */,
 				9110570720897994000966F4 /* TasksViewController.swift in Sources */,
 				91EA8E4220910FAD008903D9 /* LoggedInUser+CoreDataProperties.swift in Sources */,
+				917CF3042092A99900EBC220 /* CreditCardModel.swift in Sources */,
 				D17EE279208ECCCA00544614 /* BillSplitTableViewCell.swift in Sources */,
 				D1A52D3B2091958F005D1F77 /* TransactionTableViewCell.swift in Sources */,
 				D1A52D372091954C005D1F77 /* WalletViewController.swift in Sources */,
