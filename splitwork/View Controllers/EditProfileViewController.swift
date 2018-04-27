@@ -1,30 +1,19 @@
 //
-//  DashboardViewController.swift
+//  EditProfileViewController.swift
 //  splitwork
 //
-//  Created by Swathi Kommaghatta Chandrashekaraiah on 4/18/18.
+//  Created by Swathi Kommaghatta Chandrashekaraiah on 4/26/18.
 //  Copyright © 2018 Vivek Badrinarayan. All rights reserved.
 //
 
 import UIKit
 
-class DashboardViewController: UIViewController {
+class EditProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-    }
-
-    
-    @IBAction func changeProfilePicAction(_ sender: UILongPressGestureRecognizer) {
-        
-        Util.showSuccessMessage(self, "changeProfilePicAction")
-        
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,8 +31,5 @@ class DashboardViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    
-    //MARK: Actions
-    
 
 }
