@@ -39,6 +39,7 @@
 		D131CC4F2087D29A00E599BC /* GroupDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D131CC4E2087D29A00E599BC /* GroupDetailViewController.swift */; };
 		D131CC722087F60D00E599BC /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D131CC712087F60D00E599BC /* DashboardViewController.swift */; };
 		D167DFAB20881A89001A199A /* GroupSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D167DFAA20881A89001A199A /* GroupSplitViewController.swift */; };
+		D17395492092AA76008AFFC8 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17395482092AA76008AFFC8 /* EditProfileViewController.swift */; };
 		D17EE276208EA16300544614 /* BillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17EE275208EA16300544614 /* BillViewController.swift */; };
 		D17EE279208ECCCA00544614 /* BillSplitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17EE278208ECCCA00544614 /* BillSplitTableViewCell.swift */; };
 		D1A52D372091954C005D1F77 /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A52D362091954C005D1F77 /* WalletViewController.swift */; };
@@ -81,6 +82,7 @@
 		D131CC4E2087D29A00E599BC /* GroupDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetailViewController.swift; sourceTree = "<group>"; };
 		D131CC712087F60D00E599BC /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		D167DFAA20881A89001A199A /* GroupSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSplitViewController.swift; sourceTree = "<group>"; };
+		D17395482092AA76008AFFC8 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		D17EE275208EA16300544614 /* BillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillViewController.swift; sourceTree = "<group>"; };
 		D17EE278208ECCCA00544614 /* BillSplitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillSplitTableViewCell.swift; sourceTree = "<group>"; };
 		D1A52D362091954C005D1F77 /* WalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				D131CC702087F5D500E599BC /* Dashboard */,
 				D131CC482087D19700E599BC /* Groups */,
 				912FFF6F2085A2D300A088A0 /* Login */,
+				D17395482092AA76008AFFC8 /* EditProfileViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 				D1A52D392091957D005D1F77 /* DetailTableViewCell.swift in Sources */,
 				916BEC9D209178D800AEF8DA /* PaymentModel.swift in Sources */,
 				912FFF5C20859F1200A088A0 /* LoginViewController.swift in Sources */,
+				D17395492092AA76008AFFC8 /* EditProfileViewController.swift in Sources */,
 				91D6DCE2208D671800F62264 /* AddMemberPopoverTableViewCell.swift in Sources */,
 				9110570320897107000966F4 /* TasksTableViewCell.swift in Sources */,
 				915C2E65209175C600270C8C /* TaskModel.swift in Sources */,
