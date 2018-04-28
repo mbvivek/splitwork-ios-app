@@ -28,7 +28,6 @@ class GroupModel {
         self.taskIds = taskIds
         self.billIds = billIds
     }
-    
 }
 
 class Groups {

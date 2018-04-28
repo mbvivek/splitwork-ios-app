@@ -46,46 +46,43 @@ class EditProfileViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         
-        if let loggedInUserUsername = LoggedInUser.shared.getUser() {
-            if let loggedInUser = Business.shared().users?.getUser(username: loggedInUserUsername) {
-                print("loggedInUser = \((loggedInUser.username)!)")
-                username.text = loggedInUser.username
-                name.text = loggedInUser.name
-                email.text = loggedInUser.email
-                phone.text = loggedInUser.phone
+        if let loggedInUser = Util.getLoggedInUser() {
+            print("loggedInUser = \((loggedInUser.username)!)")
+            username.text = loggedInUser.username
+            name.text = loggedInUser.name
+            email.text = loggedInUser.email
+            phone.text = loggedInUser.phone
+            
+            if loggedInUser.creditCardId != "" {
+                cardExists = true
                 
-                if loggedInUser.creditCardId != "" {
-                    cardExists = true
-                    
-                    // get the card from credit card service and disply the data
-                    let card = Business.shared().cards?.getCreditCard(id: loggedInUser.creditCardId!)
-                    
-                    cardType.text = card?.type
-                    nameOnCard.text = card?.nameOnCard
-                    cardNumber.text = card?.number
-                    expiryMonth.text = card?.expiryMonth
-                    expiryYear.text = card?.expiryYear
-                    cvv.text = card?.cvv
-                    
-                    
-                } else {
-                    // allow the user to add new card
-                    saveCardButton.isHidden = false
-                    editCardButton.isHidden = true
-                    
-                    cardType.isEnabled = true
-                    nameOnCard.isEnabled = true
-                    cardNumber.isEnabled = true
-                    expiryMonth.isEnabled = true
-                    expiryYear.isEnabled = true
-                    cvv.isEnabled = true
-                }
+                // get the card from credit card service and disply the data
+                let card = Business.shared().cards?.getCreditCard(id: loggedInUser.creditCardId!)
+                
+                cardType.text = card?.type
+                nameOnCard.text = card?.nameOnCard
+                cardNumber.text = card?.number
+                expiryMonth.text = card?.expiryMonth
+                expiryYear.text = card?.expiryYear
+                cvv.text = card?.cvv
+                
                 
             } else {
-                Util.showErrorMessage(self, "Invalid Session!")
+                // allow the user to add new card
+                saveCardButton.isHidden = false
+                editCardButton.isHidden = true
+                
+                cardType.isEnabled = true
+                nameOnCard.isEnabled = true
+                cardNumber.isEnabled = true
+                expiryMonth.isEnabled = true
+                expiryYear.isEnabled = true
+                cvv.isEnabled = true
             }
+            
         } else {
             Util.showErrorMessage(self, "Invalid Session!")
+            Util.clearLoggedInUser(self)
         }
     }
     

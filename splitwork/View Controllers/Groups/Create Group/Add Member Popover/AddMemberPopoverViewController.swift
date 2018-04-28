@@ -65,9 +65,10 @@ class AddMemberPopoverViewController: UIViewController, UITableViewDelegate, UIT
     
     @IBAction func selectButtonAction(_ sender: Any) {
         
-        let selectedIndex = membersTableView.indexPathForSelectedRow?.row
-        let selectedMember = members[selectedIndex!]
-        callback?(selectedMember)
+        if let selectedIndex = membersTableView.indexPathForSelectedRow?.row {
+            let selectedMember = members[selectedIndex]
+            callback?(selectedMember)
+        }
         
         dismiss(animated: true, completion: nil)
     }

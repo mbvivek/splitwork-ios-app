@@ -54,7 +54,6 @@ class CardService {
                 }
             }
             print("synced cards from server, card count = \((Business.shared().cards?.cards.count)!)")
-            NotificationCenter.default.post(name: .cardsSynced, object: nil)
             onSync?()
         }
         httpService.get(url: "cards", completionHandler: completionHandler)

@@ -37,8 +37,8 @@ class LoginViewController: UIViewController {
         if let _loggedInUserUsername  = LoggedInUser.shared.getUser() {
             print("loggedInUser = \(_loggedInUserUsername)")
             let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-            let dashBoardViewController = storyBoard.instantiateViewController(withIdentifier: "DashboardViewController") as! DashboardViewController
-            self.present(dashBoardViewController, animated:true, completion:nil)
+            let tabBarcontroller = storyBoard.instantiateViewController(withIdentifier: "TabBarController")
+            self.present(tabBarcontroller, animated:true, completion:nil)
         }
     }
     
