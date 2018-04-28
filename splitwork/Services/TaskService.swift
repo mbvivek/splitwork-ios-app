@@ -99,4 +99,19 @@ class TaskService {
         httpService.post(url: "tasks", data: task, completionHandler: completionHandler)
     }
     
+    func updateTaskStatus(taskId: String, status: String) {
+        var task = [String: Any]()
+        task["status"] = status
+        
+        let completionHandler: (String, [String: Any]) -> () = { error, data in
+            if(error != "") {
+                print("Error in adding task to firebase, error = \(error)")
+            } else {
+                print("Success in adding task to firebase")
+                self.syncTasks(onSync: nil)
+            }
+        }
+        httpService.patch(url: "tasks/\(taskId)", data: task, completionHandler: completionHandler)
+    }
+    
 }

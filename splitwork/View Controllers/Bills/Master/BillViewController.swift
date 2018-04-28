@@ -10,15 +10,45 @@ import UIKit
 
 class BillViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var detailViewController: BillsDetailViewController!
-    var bills: [String]!
-    
+    var bills = [BillModel]()
+    var loggedInUser: UserModel?
     //MARK: Variables
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        bills = ["Bill1", "Bill2", "Bill3", "Bill4"]
+        
+        BillService.shared().syncBills(onSync: onSync)
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        loadData()
+    }
+    
+    func onSync() {
+        DispatchQueue.main.async {
+            self.loadData()
+        }
+    }
+    
+    func loadData() {
+        bills = [BillModel]()
+        if let _loggedInUser = Util.getLoggedInUser() {
+            loggedInUser = _loggedInUser
+            for groupId in (loggedInUser?.groupIds)! {
+                if let group = Business.shared().groups?.getGroup(id: groupId) {
+                    for billId in group.billIds! {
+                        if let bill = Business.shared().bills?.getBill(id: billId) {
+                            if(bill.addedTo?.contains((loggedInUser?.username)!))! {
+                                bills.append(bill)
+                            }
+                        }
+                    }
+                }
+            }
+            tableView.reloadData()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,7 +66,7 @@ class BillViewController: UIViewController, UITableViewDelegate, UITableViewData
                 // get the detail view controller
                 let controller = (segue.destination as! UINavigationController).topViewController as! BillsDetailViewController
                 // configure the detail view
-                controller.setBillLabel(label: bill)
+                controller.setBill(bill: bill)
                 controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true
             }
@@ -63,11 +93,20 @@ class BillViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         
         let bill = bills[indexPath.row]
-        cell.billNames.text = bill
-        cell.addedBy.text = "You"
+        cell.billNames.text = bill.name
+        
+        if let addedByUser = Business.shared().users?.getUser(username: bill.addedBy!) {
+            cell.addedBy.text = addedByUser.name
+        }
+
         cell.oweLabel.text = "You are owed"
-        cell.oweAmount.text = "20"
-        cell.group.text = "Cooking"
+        
+        cell.oweAmount.text = String(bill.amount/Double(bill.addedTo!.count))
+        
+        if let group = Business.shared().groups?.getGroup(id: bill.groupId!) {
+            cell.group.text = group.name
+        }
+        
         return cell
     }
     
