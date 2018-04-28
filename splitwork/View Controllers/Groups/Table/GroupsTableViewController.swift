@@ -15,7 +15,8 @@ class GroupsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        GroupService.shared().syncGroups(onSync: onSync)
+        //GroupService.shared().syncGroups(onSync: onSync)
+        TaskService.shared().syncTasks(onSync: onSync)
     }
     
     override func viewWillAppear(_ animated: Bool) {

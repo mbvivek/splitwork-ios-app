@@ -21,7 +21,7 @@ class TasksViewController: UIViewController, UITableViewDataSource, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        TaskService.shared().syncTasks(onSync: onSync)
+        //TaskService.shared().syncTasks(onSync: onSync)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -113,6 +113,21 @@ class TasksViewController: UIViewController, UITableViewDataSource, UITableViewD
         cell.status.text = filteredTasks[indexPath.section][indexPath.row].status
         
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toViewTaskViewController" {
+            if let indexPath = tasksTableView.indexPathForSelectedRow {
+                // get the selected task
+                let task = filteredTasks[indexPath.section][indexPath.row]
+                // get the detail view controller
+                let controller = (segue.destination as! UINavigationController).topViewController as! ViewTaskViewController
+                // configure the detail view
+                controller.setTask(task: task)
+                controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
+                controller.navigationItem.leftItemsSupplementBackButton = true
+            }
+        }
     }
      
     

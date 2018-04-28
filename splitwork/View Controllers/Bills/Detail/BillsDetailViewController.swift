@@ -13,16 +13,20 @@ class BillsDetailViewController: UIViewController, UITableViewDelegate, UITableV
     
     //MARK: Variables
     
+    var bill: BillModel?
+    
     @IBOutlet weak var billName: UILabel!
     @IBOutlet weak var billAmount: UILabel!
     @IBOutlet weak var billDate: UILabel!
-    @IBOutlet weak var addedBy: UILabel!
-    @IBOutlet weak var paidAmount: UILabel!
-    @IBOutlet weak var tableView: AddMemberPopoverTableViewCell!
+    
+    @IBOutlet weak var addedByProfilePic: UIImageView!
+    @IBOutlet weak var addedByUser: UILabel!
+    @IBOutlet weak var addedByUserAmount: UILabel!
+    
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        billSplits = ["Vivek", "Spoorthi", "Swathi", "Nidhi"]
         // Do any additional setup after loading the view.
     }
 
@@ -30,10 +34,20 @@ class BillsDetailViewController: UIViewController, UITableViewDelegate, UITableV
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    func setBillLabel(label: String) {
+    func setBill(bill: BillModel) {
         view.isHidden = false
         loadViewIfNeeded()
-        self.billName.text = label
+        self.bill = bill
+        billName.text = bill.name
+        billAmount.text = String("$\(bill.amount)")
+        billDate.text = Util.dateToStr(date: bill.date!)
+        
+        if let user = Business.shared().users?.getUser(username: bill.addedBy!) {
+            addedByProfilePic.image = user.profilePic
+            addedByUser.text = user.name
+            addedByUserAmount.text = String(bill.amount)
+        }
+        
     }
     
     // MARK: - Table view data source
@@ -45,7 +59,7 @@ class BillsDetailViewController: UIViewController, UITableViewDelegate, UITableV
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return billSplits.count
+        return (bill?.addedTo!.count)!
     }
     
     
@@ -55,9 +69,12 @@ class BillsDetailViewController: UIViewController, UITableViewDelegate, UITableV
             fatalError("The dequeued cell is not an instance of BillSplitTableViewCell.")
         }
         
-        let billSplit = billSplits[indexPath.row]
-        cell.memberName.text = billSplit
-        cell.amount.text = "25.00"
+        if let user = Business.shared().users?.getUser(username: (bill?.addedTo![indexPath.row])!) {
+            cell.memberName.text = user.name
+            cell.profilePic.image = user.profilePic
+        }
+        cell.amount.text = String(bill!.amount/Double(bill!.addedTo!.count))
+        
         return cell
     }
     

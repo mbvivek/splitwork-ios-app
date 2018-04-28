@@ -21,12 +21,17 @@ class LoginViewController: UIViewController {
         
         UserService.shared().syncUsers(onSync: nil)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(didBecomeActive), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         password.isSecureTextEntry = true
+        // check if LoggedInUser exists
+        if let _loggedInUserUsername  = LoggedInUser.shared.getUser() {
+            print("loggedInUser = \(_loggedInUserUsername)")
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            let tabBarcontroller = storyBoard.instantiateViewController(withIdentifier: "TabBarController")
+            self.present(tabBarcontroller, animated:true, completion:nil)
+        }
     }
     
     // MARK: - Notification oberserver methods

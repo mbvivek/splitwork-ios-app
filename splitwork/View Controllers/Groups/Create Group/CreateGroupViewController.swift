@@ -84,8 +84,6 @@ class CreateGroupViewController: UIViewController, UITableViewDelegate, UITableV
         }
     }
     
-    @IBAction func checkAvailabilityButtonAction(_ sender: Any) {
-    }
     
     @IBAction func addMemberButtonAction(_ sender: Any) {
         

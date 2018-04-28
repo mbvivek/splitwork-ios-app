@@ -113,9 +113,29 @@ class Util {
         return date
     }
     
-    static func syncData() {
-        UserService.shared().syncUsers(onSync: nil)
-        GroupService.shared().syncGroups(onSync: nil)
+    static func syncData(onSync: (() -> ())? ) {
+        
+        let onCardsSync: () -> () = {
+            onSync?()
+        }
+        
+        let onBillsSync: () -> () = {
+            CardService.shared().syncCards(onSync: onCardsSync)
+        }
+        
+        let onTasksSync: () -> () = {
+            BillService.shared().syncBills(onSync: onBillsSync)
+        }
+        
+        let onGroupsSync: () -> () = {
+            TaskService.shared().syncTasks(onSync: onTasksSync)
+        }
+        
+        let onUsersSync: () -> () = {
+            GroupService.shared().syncGroups(onSync: onGroupsSync)
+        }
+
+        UserService.shared().syncUsers(onSync: onUsersSync)
     }
     
 }

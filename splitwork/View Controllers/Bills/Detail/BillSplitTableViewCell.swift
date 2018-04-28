@@ -10,6 +10,7 @@ import UIKit
 
 class BillSplitTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var profilePic: UIImageView!
     @IBOutlet weak var memberName: UILabel!
     @IBOutlet weak var amount: UILabel!
     

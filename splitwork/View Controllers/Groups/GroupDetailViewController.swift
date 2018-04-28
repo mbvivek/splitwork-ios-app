@@ -24,7 +24,6 @@ class GroupDetailViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var totalTaskCount: UILabel!
     @IBOutlet weak var totalBillCount: UILabel!
     
-    @IBOutlet weak var yourPendingTaskCount: UILabel!
     @IBOutlet weak var yourAssignedTaskCount: UILabel!
     @IBOutlet weak var yourCompletedTaskCount: UILabel!
     @IBOutlet weak var yourMissedTaskCount: UILabel!
@@ -37,6 +36,7 @@ class GroupDetailViewController: UIViewController, UITableViewDelegate, UITableV
     
     @IBOutlet weak var addTaskButton: UIButton!
     
+    @IBOutlet weak var addMemberButton: UIButton!
     @IBOutlet weak var membersTableView: UITableView!
     
     override func viewDidLoad() {
@@ -97,6 +97,10 @@ class GroupDetailViewController: UIViewController, UITableViewDelegate, UITableV
         if let loggedInUser = Util.getLoggedInUser() {
             if let group = Business.shared().groups?.getGroup(id: groupId!) {
                 
+                if(loggedInUser.username == group.adminUsername) {
+                    addMemberButton.isHidden = false
+                }
+                
                 self.group = group
                 
                 if(loggedInUser.username == group.adminUsername) {
@@ -119,7 +123,6 @@ class GroupDetailViewController: UIViewController, UITableViewDelegate, UITableV
                 totalTaskCount.text = String(group.taskIds!.count)
                 totalBillCount.text = String(group.billIds!.count)
                 
-                yourPendingTaskCount.text = String(getPendingTasksCount(tasks: tasks))
                 yourAssignedTaskCount.text = String(getAssignedTasksCount(tasks: tasks))
                 yourCompletedTaskCount.text = String(getCompletedTasksCount(tasks: tasks))
                 yourMissedTaskCount.text = String(getMissedTasksCount(tasks: tasks))
@@ -156,17 +159,43 @@ class GroupDetailViewController: UIViewController, UITableViewDelegate, UITableV
             controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
             controller.navigationItem.leftItemsSupplementBackButton = true
         }
-    }
-    
-    func getPendingTasksCount(tasks: [TaskModel]) -> Int {
-        var count = 0
-        for task in tasks {
-            if(task.status == "Pending") {
-                count += 1
+        
+        if segue.identifier == "toAddBillViewController" {
+            // get the detail view controller
+            let controller = segue.destination as! AddBillViewController
+            // configure the detail view
+            controller.setGroup(groupId: self.groupId!)
+            controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
+            controller.navigationItem.leftItemsSupplementBackButton = true
+        }
+        
+        if segue.identifier == "toAddMemberPopoverViewController" {
+            // get the destination view controller
+            let controller = segue.destination as! AddMemberPopoverViewController
+            // set the members list
+            var members = [UserModel]()
+            for member in (Business.shared().users?.users)! {
+                if(member.username != Util.getLoggedInUser()?.username) {
+                    members.append(member)
+                }
+            }
+            controller.members = members
+            // set the callback
+            controller.callback = { (member: UserModel) -> () in
+                for _member in self.group!.memberUsernames! {
+                    if(_member == member.username) {
+                        Util.showErrorMessage(self, "\(member.username!) already exists in the group")
+                        return
+                    }
+                }
+                GroupService.shared().addMemberToGroup(groupId: (self.group?.id)!, memberUsername: member.username!)
+                self.group?.memberUsernames?.append(member.username!)
+                self.membersTableView.reloadData()
             }
         }
-        return count
+        
     }
+    
     
     func getAssignedTasksCount(tasks: [TaskModel]) -> Int {
         var count = 0

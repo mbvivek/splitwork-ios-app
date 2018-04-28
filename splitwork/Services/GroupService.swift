@@ -151,4 +151,20 @@ class GroupService {
         httpService.post(url: "groups/\(groupId)/taskIds", data: task, completionHandler: completionHandler)
     }
     
+    func addBillToGroup(groupId: String, billId: String) {
+        
+        var bill = [String: Any]()
+        bill["billId"] = billId
+        
+        let completionHandler: (String, [String: Any]) -> () = { error, data in
+            if(error != "") {
+                print("Error adding bill to group in firebase, error = \(error)")
+            } else {
+                print("Success in adding bill to group in firebase")
+                self.syncGroups(onSync: nil)
+            }
+        }
+        httpService.post(url: "groups/\(groupId)/billIds", data: bill, completionHandler: completionHandler)
+    }
+    
 }
