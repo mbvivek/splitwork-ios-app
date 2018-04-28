@@ -25,9 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         
-        let dateInStr = Util.dateToStr(date: Date())
-        let date = Util.strToDate(dateInStr: dateInStr!)!
-        print("dateInStr = \(dateInStr!), date = \(date)")
         return true
     }
     
