@@ -9,12 +9,44 @@
 import UIKit
 
 class GroupsTableViewController: UITableViewController {
+    
     var detailViewController: GroupDetailViewController!
-    var groups : [String]!
+    var groups = [GroupModel]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        groups = ["HouseWork", "BirthdayParty", "Assignment", "Cooking"]
+        GroupService.shared().syncGroups(onSync: onSync)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        loadData()
+    }
+    
+    func onSync() {
+        print("groups synced!")
+        DispatchQueue.main.async {
+            self.loadData()
+        }
+    }
+    
+    func loadData() {
+        groups = [GroupModel]()
+        if let loggedInUser = Util.getLoggedInUser() {
+            for groupId in loggedInUser.groupIds! {
+                print("groupId = \(groupId)")
+                if let group = Business.shared().groups?.getGroup(id: groupId) {
+                    groups.append(group)
+                }
+            }
+        } else {
+            Util.showErrorMessage(self, "Invalid session!")
+            Util.clearLoggedInUser(self)
+        }
+        tableView.reloadData()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,7 +64,7 @@ class GroupsTableViewController: UITableViewController {
                 // get the detail view controller
                 let controller = (segue.destination as! UINavigationController).topViewController as! GroupDetailViewController
                 // configure the detail view
-                controller.setGroupLabel(label: group)
+                controller.setGroup(groupId: group.id!)
                 controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true
             }
@@ -59,8 +91,11 @@ class GroupsTableViewController: UITableViewController {
         }
         
         let group = groups[indexPath.row]
-        cell.groupName.text = group
-
+        cell.groupName.text = group.name
+        cell.memberCount.text = String(group.memberUsernames!.count)
+        cell.taskCount.text = String(group.taskIds!.count)
+        cell.billCount.text = String(group.billIds!.count)
+        
         return cell
     }
 

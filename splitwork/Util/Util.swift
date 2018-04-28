@@ -20,6 +20,13 @@ class Util {
         return nil
     }
     
+    static func clearLoggedInUser(_ viewController: UIViewController) {
+        LoggedInUser.shared.clear()
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let loginViewController = storyBoard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        viewController.present(loginViewController, animated:true, completion:nil)
+    }
+    
     static func showSuccessMessage(_ viewController: UIViewController, _ message: String) {
         let alert = UIAlertController(title: "Success: ", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
@@ -82,6 +89,28 @@ class Util {
         let valid:Bool = zipTest.evaluate(with: testZip)
         print("testZip = \(testZip), \(valid)")
         return valid
+    }
+    
+    static func dateToStr(date: Date) -> String? {
+        if date == nil {
+            return ""
+        }
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM dd yyyy HH:mm"
+        dateFormatter.timeZone = NSTimeZone(name: "UTC") as TimeZone!
+        let dateInStr = dateFormatter.string(from: date)
+        return dateInStr
+    }
+    
+    static func strToDate(dateInStr: String) -> Date? {
+        if(dateInStr == "") {
+            return nil
+        }
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM dd yyyy HH:mm"
+        dateFormatter.timeZone = NSTimeZone(name: "EDT") as TimeZone!
+        let date = dateFormatter.date(from: dateInStr)!
+        return date
     }
     
     static func syncData() {

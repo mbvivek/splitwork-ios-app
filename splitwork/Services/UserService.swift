@@ -46,8 +46,12 @@ class UserService {
                         let phone = user["phone"] as! String
                         let profilePic = Util.convertBase64ToImage(base64String: user["profilePic"] as! String)
                         var groupIds = [String]()
-                        if let _groupIds = user["groupIds"] as? [String] {
-                            groupIds = _groupIds
+                        if let _groupIds = user["groupIds"] as? [String: Any] {
+                            for _groupId in _groupIds {
+                                if let __groupId = _groupId.value as? [String: Any] {
+                                    groupIds.append(__groupId["groupId"] as! String)
+                                }
+                            }
                         } else {
                             print("Error parsing groups to [String] in UserService.syncUsers()")
                         }
@@ -63,7 +67,6 @@ class UserService {
             }
             print("synced users from server, user count = \((Business.shared().users?.users.count)!)")
             onSync?()
-            NotificationCenter.default.post(name: .usersSynced, object: nil)
         }
         httpService.get(url: "users", completionHandler: completionHandler)
     }

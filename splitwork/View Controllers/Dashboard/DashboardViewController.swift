@@ -14,39 +14,23 @@ class DashboardViewController: UIViewController, UIImagePickerControllerDelegate
     @IBOutlet weak var username: UILabel!
     @IBOutlet weak var profilePic: UIImageView!
     
-    var loggedInUser: UserModel?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let notificationCenter = NotificationCenter.default
-        notificationCenter.addObserver(self, selector: #selector(loadData), name: .usersSynced, object: nil)
     }
-    
-    @objc func loadData() {
-        print("DashboardViewController.loadData()")
-    }
-    
-    func validateSession() {
-        guard let _loggedInUser = Util.getLoggedInUser() else {
-            Util.showErrorMessage(self, "Invalid Session!")
-            // clear user and navigate to login page
-            LoggedInUser.shared.clear()
-            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-            let loginViewController = storyBoard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-            self.present(loginViewController, animated:true, completion:nil)
-            return
-        }
-        self.loggedInUser = _loggedInUser
-    }
+
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         
-        loggedInUser = Util.getLoggedInUser()
-        name.text = loggedInUser?.name
-        username.text = loggedInUser?.username
-        profilePic.image = loggedInUser?.profilePic
+        if let loggedInUser = Util.getLoggedInUser() {
+            name.text = loggedInUser.name
+            username.text = loggedInUser.username
+            profilePic.image = loggedInUser.profilePic
+        } else {
+            Util.showErrorMessage(self, "Invalid Session!")
+            Util.clearLoggedInUser(self)
+        }
+        
     }
     
     override func didReceiveMemoryWarning() {
