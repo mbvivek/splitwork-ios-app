@@ -7,20 +7,32 @@
 //
 
 import UIKit
+import Foundation
 
 class CreateGroupViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    @IBOutlet weak var groupName: UITextField!
-    @IBOutlet weak var groupDescription: UITextView!
+    @IBOutlet weak var name: UITextField!
+    @IBOutlet weak var desc: UITextView!
     
     @IBOutlet weak var inviteListTableView: UITableView!
     
-    var inviteList = [String]()
+    var inviteList = [UserModel]()
+    
+    var loggedInUser: UserModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let _loggedInUserUsername = LoggedInUser.shared.getUser() {
+            if let _loggedInUser = Business.shared().users?.getUser(username: _loggedInUserUsername) {
+                loggedInUser = _loggedInUser
+                return
+            }
+        }
+        Util.showErrorMessage(self, "Invalid Session!")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         
-        // Do any additional setup after loading the view.
     }
     
     override func didReceiveMemoryWarning() {
@@ -37,10 +49,11 @@ class CreateGroupViewController: UIViewController, UITableViewDelegate, UITableV
             fatalError("The dequeued cell is not an instance of CreateGroupInviteListTableViewCell.")
         }
         
-        let member = inviteList[indexPath.row]
-        
         // configure the cell
-        cell.name.text = member
+        let member = inviteList[indexPath.row]
+        cell.name.text = member.name
+        cell.username.text = member.username
+        cell.profilePic.image = member.profilePic
         
         return cell
     }
@@ -49,11 +62,21 @@ class CreateGroupViewController: UIViewController, UITableViewDelegate, UITableV
         if segue.identifier == "toAddMemberPopoverViewController" {
             // get the destination view controller
             let controller = segue.destination as! AddMemberPopoverViewController
+            // set the members list
+            var members = [UserModel]()
+            for member in (Business.shared().users?.users)! {
+                if(member.username != loggedInUser?.username) {
+                    members.append(member)
+                }
+            }
+            controller.members = members
             // set the callback
-            controller.callback = { (member: String) -> () in
-                if self.ifMemberExistsInInviteList(member) {
-                    Util.showErrorMessage(self, "'\(member)' already exists in the invite list!")
-                    return
+            controller.callback = { (member: UserModel) -> () in
+                for _member in self.inviteList {
+                    if(_member.username == member.username) {
+                        Util.showErrorMessage(self, "\(member.username!) already exists in the invite list")
+                        return
+                    }
                 }
                 self.inviteList.append(member)
                 self.inviteListTableView.reloadData()
@@ -61,20 +84,32 @@ class CreateGroupViewController: UIViewController, UITableViewDelegate, UITableV
         }
     }
     
-    func ifMemberExistsInInviteList(_ member: String) -> Bool {
-        return inviteList.contains(member)
-    }
-    
-    @IBAction func checkAvailabilityButtonAction(_ sender: Any) {
-    }
     
     @IBAction func addMemberButtonAction(_ sender: Any) {
         
     }
     
     @IBAction func createGroupButtonAction(_ sender: Any) {
+        
+        let _name = name.text!
+        let _desc = desc.text!
+        
+        if(_name == "" || _desc == "") {
+            Util.showErrorMessage(self, "Please fill all the fields!")
+            return
+        }
+        
+        if let adminUsername = LoggedInUser.shared.getUser() {
+            var memberUsernames = [String]()
+            for member in inviteList {
+                memberUsernames.append(member.username!)
+            }
+            GroupService.shared().addGroup(name: _name, desc: _desc, adminUsername: adminUsername, memberUsernames: memberUsernames)
+            Util.showSuccessMessage(self, "\"\(_name)\" group is created successfully!")
+            dismiss(animated: true, completion: nil)
+        } else {
+            Util.showErrorMessage(self, "Invalid Session!")
+        }
     }
-    
-    
     
 }

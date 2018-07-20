@@ -1,20 +1,19 @@
 //
-//  TasksTableViewCell.swift
+//  GroupDetailMemberTableViewCell.swift
 //  splitwork
 //
-//  Created by Vivek Madhusudan Badrinarayan on 4/19/18.
+//  Created by Vivek Madhusudan Badrinarayan on 4/27/18.
 //  Copyright © 2018 Vivek Badrinarayan. All rights reserved.
 //
 
 import UIKit
 
-class TasksTableViewCell: UITableViewCell {
+class GroupDetailMemberTableViewCell: UITableViewCell {
     
     
-    @IBOutlet weak var taskName: UILabel!
-    @IBOutlet weak var assignedTo: UILabel!
-    @IBOutlet weak var dueOn: UILabel!
-    @IBOutlet weak var status: UILabel!
+    @IBOutlet weak var profilePic: UIImageView!
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var role: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

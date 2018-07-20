@@ -16,11 +16,35 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print("LoginViewController - viewDidLoad")
+        
+        UserService.shared().syncUsers(onSync: nil)
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         password.isSecureTextEntry = true
-        UserService.shared().syncUsers(onSync: nil)
+        // check if LoggedInUser exists
+        if let _loggedInUserUsername  = LoggedInUser.shared.getUser() {
+            print("loggedInUser = \(_loggedInUserUsername)")
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            let tabBarcontroller = storyBoard.instantiateViewController(withIdentifier: "TabBarController")
+            self.present(tabBarcontroller, animated:true, completion:nil)
+        }
+    }
+    
+    // MARK: - Notification oberserver methods
+    
+    @objc func didBecomeActive() {
+        print("LoginViewController - didBecomeActive")
+        // check if LoggedInUser exists
+        if let _loggedInUserUsername  = LoggedInUser.shared.getUser() {
+            print("loggedInUser = \(_loggedInUserUsername)")
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            let tabBarcontroller = storyBoard.instantiateViewController(withIdentifier: "TabBarController")
+            self.present(tabBarcontroller, animated:true, completion:nil)
+        }
     }
     
     override func didReceiveMemoryWarning() {

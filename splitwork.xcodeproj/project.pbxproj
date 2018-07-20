@@ -10,6 +10,7 @@
 		9110570320897107000966F4 /* TasksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9110570220897107000966F4 /* TasksTableViewCell.swift */; };
 		9110570720897994000966F4 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9110570620897994000966F4 /* TasksViewController.swift */; };
 		91125919208EA5F5003AE522 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91125918208EA5F5003AE522 /* Util.swift */; };
+		9117BA352093953500729F21 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9117BA342093953500729F21 /* EditProfileViewController.swift */; };
 		912FFF5A20859F1200A088A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912FFF5920859F1200A088A0 /* AppDelegate.swift */; };
 		912FFF5C20859F1200A088A0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912FFF5B20859F1200A088A0 /* LoginViewController.swift */; };
 		912FFF5F20859F1200A088A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 912FFF5D20859F1200A088A0 /* Main.storyboard */; };
@@ -22,10 +23,16 @@
 		915C2E632091750A00270C8C /* GroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915C2E622091750A00270C8C /* GroupModel.swift */; };
 		915C2E65209175C600270C8C /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915C2E64209175C600270C8C /* TaskModel.swift */; };
 		915C2E672091772400270C8C /* BillModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915C2E662091772400270C8C /* BillModel.swift */; };
+		9161231C2093F1950055BD1F /* TaskService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9161231B2093F1950055BD1F /* TaskService.swift */; };
+		9161231E2093F8C90055BD1F /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9161231D2093F8C90055BD1F /* AddTaskViewController.swift */; };
+		91612320209425550055BD1F /* GroupDetailMemberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9161231F209425550055BD1F /* GroupDetailMemberTableViewCell.swift */; };
+		91612322209437130055BD1F /* ViewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91612321209437130055BD1F /* ViewTaskViewController.swift */; };
 		916BEC9D209178D800AEF8DA /* PaymentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916BEC9C209178D800AEF8DA /* PaymentModel.swift */; };
 		916BEC9F20917FDC00AEF8DA /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916BEC9E20917FDC00AEF8DA /* Business.swift */; };
 		917CF3042092A99900EBC220 /* CreditCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917CF3032092A99800EBC220 /* CreditCardModel.swift */; };
 		917CF3062092B64300EBC220 /* GroupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917CF3052092B64300EBC220 /* GroupService.swift */; };
+		919D9380209446AD003D4EC9 /* AddBillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919D937F209446AD003D4EC9 /* AddBillViewController.swift */; };
+		919D938220944B0B003D4EC9 /* BillService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919D938120944B0B003D4EC9 /* BillService.swift */; };
 		91BE7821208E67F1000E4517 /* CreateGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BE7820208E67F1000E4517 /* CreateGroupViewController.swift */; };
 		91BE7823208E6C49000E4517 /* AddMemberPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BE7822208E6C49000E4517 /* AddMemberPopoverViewController.swift */; };
 		91CA78F020925AFD00E6C83B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CA78EF20925AFD00E6C83B /* RegisterViewController.swift */; };
@@ -35,6 +42,7 @@
 		91EA8E3E2091075C008903D9 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EA8E3D2091075C008903D9 /* UserService.swift */; };
 		91EA8E4120910FAD008903D9 /* LoggedInUser+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EA8E3F20910FAD008903D9 /* LoggedInUser+CoreDataClass.swift */; };
 		91EA8E4220910FAD008903D9 /* LoggedInUser+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EA8E4020910FAD008903D9 /* LoggedInUser+CoreDataProperties.swift */; };
+		91EED33B2093A27000432AFF /* CardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EED33A2093A27000432AFF /* CardService.swift */; };
 		D106EA0E208E77570046A10A /* BillsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D106EA0D208E77570046A10A /* BillsDetailViewController.swift */; };
 		D106EA11208E77B80046A10A /* BillsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D106EA10208E77B80046A10A /* BillsTableViewCell.swift */; };
 		D131CC4A2087D1E700E599BC /* GroupsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D131CC492087D1E700E599BC /* GroupsTableViewController.swift */; };
@@ -42,7 +50,6 @@
 		D131CC4F2087D29A00E599BC /* GroupDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D131CC4E2087D29A00E599BC /* GroupDetailViewController.swift */; };
 		D131CC722087F60D00E599BC /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D131CC712087F60D00E599BC /* DashboardViewController.swift */; };
 		D167DFAB20881A89001A199A /* GroupSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D167DFAA20881A89001A199A /* GroupSplitViewController.swift */; };
-		D17395492092AA76008AFFC8 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17395482092AA76008AFFC8 /* EditProfileViewController.swift */; };
 		D17EE276208EA16300544614 /* BillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17EE275208EA16300544614 /* BillViewController.swift */; };
 		D17EE279208ECCCA00544614 /* BillSplitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17EE278208ECCCA00544614 /* BillSplitTableViewCell.swift */; };
 		D1A52D372091954C005D1F77 /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A52D362091954C005D1F77 /* WalletViewController.swift */; };
@@ -54,6 +61,7 @@
 		9110570220897107000966F4 /* TasksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTableViewCell.swift; sourceTree = "<group>"; };
 		9110570620897994000966F4 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 		91125918208EA5F5003AE522 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		9117BA342093953500729F21 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		912FFF5620859F1200A088A0 /* splitwork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = splitwork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		912FFF5920859F1200A088A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		912FFF5B20859F1200A088A0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -68,10 +76,16 @@
 		915C2E622091750A00270C8C /* GroupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupModel.swift; sourceTree = "<group>"; };
 		915C2E64209175C600270C8C /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		915C2E662091772400270C8C /* BillModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillModel.swift; sourceTree = "<group>"; };
+		9161231B2093F1950055BD1F /* TaskService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskService.swift; sourceTree = "<group>"; };
+		9161231D2093F8C90055BD1F /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
+		9161231F209425550055BD1F /* GroupDetailMemberTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetailMemberTableViewCell.swift; sourceTree = "<group>"; };
+		91612321209437130055BD1F /* ViewTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewTaskViewController.swift; sourceTree = "<group>"; };
 		916BEC9C209178D800AEF8DA /* PaymentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentModel.swift; sourceTree = "<group>"; };
 		916BEC9E20917FDC00AEF8DA /* Business.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
 		917CF3032092A99800EBC220 /* CreditCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardModel.swift; sourceTree = "<group>"; };
 		917CF3052092B64300EBC220 /* GroupService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupService.swift; sourceTree = "<group>"; };
+		919D937F209446AD003D4EC9 /* AddBillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBillViewController.swift; sourceTree = "<group>"; };
+		919D938120944B0B003D4EC9 /* BillService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillService.swift; sourceTree = "<group>"; };
 		91BE7820208E67F1000E4517 /* CreateGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreateGroupViewController.swift; path = "splitwork/View Controllers/Groups/Create Group/CreateGroupViewController.swift"; sourceTree = SOURCE_ROOT; };
 		91BE7822208E6C49000E4517 /* AddMemberPopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMemberPopoverViewController.swift; sourceTree = "<group>"; };
 		91CA78EF20925AFD00E6C83B /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +95,7 @@
 		91EA8E3D2091075C008903D9 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		91EA8E3F20910FAD008903D9 /* LoggedInUser+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoggedInUser+CoreDataClass.swift"; sourceTree = "<group>"; };
 		91EA8E4020910FAD008903D9 /* LoggedInUser+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoggedInUser+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		91EED33A2093A27000432AFF /* CardService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardService.swift; sourceTree = "<group>"; };
 		D106EA0D208E77570046A10A /* BillsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillsDetailViewController.swift; sourceTree = "<group>"; };
 		D106EA10208E77B80046A10A /* BillsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillsTableViewCell.swift; sourceTree = "<group>"; };
 		D131CC492087D1E700E599BC /* GroupsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsTableViewController.swift; sourceTree = "<group>"; };
@@ -88,7 +103,6 @@
 		D131CC4E2087D29A00E599BC /* GroupDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetailViewController.swift; sourceTree = "<group>"; };
 		D131CC712087F60D00E599BC /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		D167DFAA20881A89001A199A /* GroupSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSplitViewController.swift; sourceTree = "<group>"; };
-		D17395482092AA76008AFFC8 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		D17EE275208EA16300544614 /* BillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillViewController.swift; sourceTree = "<group>"; };
 		D17EE278208ECCCA00544614 /* BillSplitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillSplitTableViewCell.swift; sourceTree = "<group>"; };
 		D1A52D362091954C005D1F77 /* WalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
@@ -110,8 +124,9 @@
 		911056FE20897003000966F4 /* Tasks */ = {
 			isa = PBXGroup;
 			children = (
-				D173954A2092B22E008AFFC8 /* Pending */,
 				911056FF2089700E000966F4 /* Table */,
+				9161231D2093F8C90055BD1F /* AddTaskViewController.swift */,
+				91612321209437130055BD1F /* ViewTaskViewController.swift */,
 			);
 			path = Tasks;
 			sourceTree = "<group>";
@@ -178,7 +193,6 @@
 				D131CC702087F5D500E599BC /* Dashboard */,
 				D131CC482087D19700E599BC /* Groups */,
 				912FFF6F2085A2D300A088A0 /* Login */,
-				D17395482092AA76008AFFC8 /* EditProfileViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -213,6 +227,9 @@
 				91585CD32087F5BC004E9970 /* UserAccountService.swift */,
 				91EA8E3D2091075C008903D9 /* UserService.swift */,
 				917CF3052092B64300EBC220 /* GroupService.swift */,
+				91EED33A2093A27000432AFF /* CardService.swift */,
+				9161231B2093F1950055BD1F /* TaskService.swift */,
+				919D938120944B0B003D4EC9 /* BillService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -249,6 +266,7 @@
 			children = (
 				D17EE277208ECC6700544614 /* Detail */,
 				D106EA0F208E77920046A10A /* Master */,
+				919D937F209446AD003D4EC9 /* AddBillViewController.swift */,
 			);
 			path = Bills;
 			sourceTree = "<group>";
@@ -269,6 +287,7 @@
 				D131CC4B2087D1FB00E599BC /* Table */,
 				D131CC4E2087D29A00E599BC /* GroupDetailViewController.swift */,
 				D167DFAA20881A89001A199A /* GroupSplitViewController.swift */,
+				9161231F209425550055BD1F /* GroupDetailMemberTableViewCell.swift */,
 			);
 			path = Groups;
 			sourceTree = "<group>";
@@ -286,15 +305,9 @@
 			isa = PBXGroup;
 			children = (
 				D131CC712087F60D00E599BC /* DashboardViewController.swift */,
+				9117BA342093953500729F21 /* EditProfileViewController.swift */,
 			);
 			path = Dashboard;
-			sourceTree = "<group>";
-		};
-		D173954A2092B22E008AFFC8 /* Pending */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Pending;
 			sourceTree = "<group>";
 		};
 		D17EE277208ECC6700544614 /* Detail */ = {
@@ -388,10 +401,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				919D938220944B0B003D4EC9 /* BillService.swift in Sources */,
+				9161231C2093F1950055BD1F /* TaskService.swift in Sources */,
 				91585CD42087F5BC004E9970 /* UserAccountService.swift in Sources */,
 				91EA8E4120910FAD008903D9 /* LoggedInUser+CoreDataClass.swift in Sources */,
 				91CD5C562090019000A140AC /* sampleCodeData.swift in Sources */,
 				D17EE276208EA16300544614 /* BillViewController.swift in Sources */,
+				919D9380209446AD003D4EC9 /* AddBillViewController.swift in Sources */,
 				D167DFAB20881A89001A199A /* GroupSplitViewController.swift in Sources */,
 				D131CC4F2087D29A00E599BC /* GroupDetailViewController.swift in Sources */,
 				91D6DCDB208D558900F62264 /* CreateGroupInviteListTableViewCell.swift in Sources */,
@@ -401,7 +417,7 @@
 				D1A52D392091957D005D1F77 /* DetailTableViewCell.swift in Sources */,
 				916BEC9D209178D800AEF8DA /* PaymentModel.swift in Sources */,
 				912FFF5C20859F1200A088A0 /* LoginViewController.swift in Sources */,
-				D17395492092AA76008AFFC8 /* EditProfileViewController.swift in Sources */,
+				91612322209437130055BD1F /* ViewTaskViewController.swift in Sources */,
 				91D6DCE2208D671800F62264 /* AddMemberPopoverTableViewCell.swift in Sources */,
 				9110570320897107000966F4 /* TasksTableViewCell.swift in Sources */,
 				915C2E65209175C600270C8C /* TaskModel.swift in Sources */,
@@ -414,11 +430,15 @@
 				91125919208EA5F5003AE522 /* Util.swift in Sources */,
 				916BEC9F20917FDC00AEF8DA /* Business.swift in Sources */,
 				912FFF6220859F1200A088A0 /* splitwork.xcdatamodeld in Sources */,
+				9117BA352093953500729F21 /* EditProfileViewController.swift in Sources */,
 				9110570720897994000966F4 /* TasksViewController.swift in Sources */,
 				91EA8E4220910FAD008903D9 /* LoggedInUser+CoreDataProperties.swift in Sources */,
+				91EED33B2093A27000432AFF /* CardService.swift in Sources */,
 				917CF3042092A99900EBC220 /* CreditCardModel.swift in Sources */,
 				D17EE279208ECCCA00544614 /* BillSplitTableViewCell.swift in Sources */,
 				D1A52D3B2091958F005D1F77 /* TransactionTableViewCell.swift in Sources */,
+				9161231E2093F8C90055BD1F /* AddTaskViewController.swift in Sources */,
+				91612320209425550055BD1F /* GroupDetailMemberTableViewCell.swift in Sources */,
 				D1A52D372091954C005D1F77 /* WalletViewController.swift in Sources */,
 				91562C7620890C1100952B0A /* HTTPService.swift in Sources */,
 				915C2E612091724E00270C8C /* UserModel.swift in Sources */,

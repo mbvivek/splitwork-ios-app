@@ -8,17 +8,20 @@
 
 import UIKit
 
-class TasksViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    
+class TasksViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
     
     @IBOutlet weak var tasksTableView: UITableView!
     
-    var headers = ["Group1", "Group2"]
-    var tasks = [["Cleaning", "Rental Car"], ["Grocery Shopping"]]
+    var loggedInUser: UserModel?
+    var groups = [GroupModel]()
+    var tasks = [[TaskModel]]()
+    
+    var filteredTasks = [[TaskModel]]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        //TaskService.shared().syncTasks(onSync: onSync)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -30,16 +33,66 @@ class TasksViewController: UIViewController, UITableViewDataSource, UITableViewD
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        loadData()
+    }
+    
+    func onSync() {
+        print("groups synced!")
+        DispatchQueue.main.async {
+            self.loadData()
+        }
+    }
+    
+    func loadData() {
+        groups = [GroupModel]()
+        if let loggedInUser = Util.getLoggedInUser() {
+            for groupId in loggedInUser.groupIds! {
+                print("groupId = \(groupId)")
+                if let group = Business.shared().groups?.getGroup(id: groupId) {
+                    groups.append(group)
+                    var groupTasks = [TaskModel]()
+                    for taskId in group.taskIds! {
+                        if let task = Business.shared().tasks?.getTask(id: taskId) {
+                            groupTasks.append(task)
+                        }
+                    }
+                    tasks.append(groupTasks)
+                }
+            }
+            filteredTasks = tasks
+            tasksTableView.reloadData()
+        } else {
+            Util.showErrorMessage(self, "Invalid session!")
+            Util.clearLoggedInUser(self)
+        }
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.isEmpty {
+            filteredTasks = tasks
+        } else {
+            for (index, groupTasks) in tasks.enumerated() {
+                let _groupTasks = groupTasks.filter{ ($0.name?.lowercased().contains(searchText.lowercased()))! || ($0.assignedTo?.lowercased().contains(searchText.lowercased()))! }
+                print("_grouptasks = \(_groupTasks.count)")
+                filteredTasks[index] = _groupTasks
+            }
+        }
+        tasksTableView.reloadData()
+        print("table reloaded..")
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
-        return tasks.count
+        return groups.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tasks[section].count
+//        return tasks[section].count
+        return filteredTasks[section].count
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return headers[section]
+        return groups[section].name
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -49,9 +102,32 @@ class TasksViewController: UIViewController, UITableViewDataSource, UITableViewD
         }
         
         // Configure the cell...
-        cell.taskName.text = tasks[indexPath.section][indexPath.row]
+//        cell.taskName.text = tasks[indexPath.section][indexPath.row].name
+//        cell.assignedTo.text = tasks[indexPath.section][indexPath.row].assignedTo
+//        cell.dueOn.text = Util.dateToStr(date: tasks[indexPath.section][indexPath.row].deadlineDate!)
+//        cell.status.text = tasks[indexPath.section][indexPath.row].status
+        
+        cell.taskName.text = filteredTasks[indexPath.section][indexPath.row].name
+        cell.assignedTo.text = filteredTasks[indexPath.section][indexPath.row].assignedTo
+        cell.dueOn.text = Util.dateToStr(date: filteredTasks[indexPath.section][indexPath.row].deadlineDate!)
+        cell.status.text = filteredTasks[indexPath.section][indexPath.row].status
         
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toViewTaskViewController" {
+            if let indexPath = tasksTableView.indexPathForSelectedRow {
+                // get the selected task
+                let task = filteredTasks[indexPath.section][indexPath.row]
+                // get the detail view controller
+                let controller = (segue.destination as! UINavigationController).topViewController as! ViewTaskViewController
+                // configure the detail view
+                controller.setTask(task: task)
+                controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
+                controller.navigationItem.leftItemsSupplementBackButton = true
+            }
+        }
     }
      
     

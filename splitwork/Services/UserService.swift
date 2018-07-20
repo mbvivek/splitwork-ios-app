@@ -46,13 +46,17 @@ class UserService {
                         let phone = user["phone"] as! String
                         let profilePic = Util.convertBase64ToImage(base64String: user["profilePic"] as! String)
                         var groupIds = [String]()
-                        if let _groupIds = user["groupIds"] as? [String] {
-                            groupIds = _groupIds
+                        if let _groupIds = user["groupIds"] as? [String: Any] {
+                            for _groupId in _groupIds {
+                                if let __groupId = _groupId.value as? [String: Any] {
+                                    groupIds.append(__groupId["groupId"] as! String)
+                                }
+                            }
                         } else {
                             print("Error parsing groups to [String] in UserService.syncUsers()")
                         }
                         var creditCardId = ""
-                        if let _creditCardId = user["creditCardId"] as? String {
+                        if let _creditCardId = user["cardId"] as? String {
                             creditCardId = _creditCardId
                         }
 
@@ -76,6 +80,7 @@ class UserService {
         user["email"] = email
         user["phone"] = phone
         user["profilePic"] = Util.convertImageToBase64(image: UIImage(named: "default_profile")!)
+        user["cardId"] = ""
         
         let completionHandler: (String, [String:Any]) -> () = { error, data in
             if(error != "") {
@@ -89,7 +94,83 @@ class UserService {
     }
     
     func addGroupToUser(userId: String, groupId: String) {
+        var groupToUser = [String: Any]()
+        groupToUser["groupId"] = groupId
         
+        let completionHandler: (String, [String: Any]) -> () = { error, data in
+            if(error != "") {
+                print("Error in adding group to user, error = \(error)")
+            } else {
+                print("Success in adding group to user")
+                self.syncUsers(onSync: nil)
+            }
+        }
+        httpService.post(url: "users/\(userId)/groupIds", data: groupToUser, completionHandler: completionHandler)
+    }
+    
+    func addCardToUser(userId: String, cardId: String) {
+        
+        var cardToUser = [String: Any]()
+        cardToUser["cardId"] = cardId
+        
+        let completionHandler: (String, [String: Any]) -> () = { error, data in
+            if(error != "") {
+                print("Error in adding card to user, error = \(error)")
+            } else {
+                print("Success in adding card to user")
+                self.syncUsers(onSync: nil)
+            }
+        }
+        httpService.patch(url: "users/\(userId)", data: cardToUser, completionHandler: completionHandler)
+    }
+    
+    func updateUser(userId: String, name: String, email: String, phone: String) {
+        
+        var user = [String: Any]()
+        user["name"] = name
+        user["email"] = email
+        user["phone"] = phone
+        
+        let completionHandler: (String, [String: Any]) -> () = { error, data in
+            if(error != "") {
+                print("Error in updating user, error = \(error)")
+            } else {
+                print("Success updating user")
+                self.syncUsers(onSync: nil)
+            }
+        }
+        httpService.patch(url: "users/\(userId)", data: user, completionHandler: completionHandler)
+        
+    }
+    
+    func updateProfilePic(userId: String, profilePic: UIImage) {
+        var user = [String: Any]()
+        user["profilePic"] = Util.convertImageToBase64(image: profilePic)
+        
+        let completionHandler: (String, [String: Any]) -> () = { error, data in
+            if(error != "") {
+                print("Error in updating profile pic, error = \(error)")
+            } else {
+                print("Success updating profile pic")
+                self.syncUsers(onSync: nil)
+            }
+        }
+        httpService.patch(url: "users/\(userId)", data: user, completionHandler: completionHandler)
+    }
+    
+    func updatePassword(userId: String, password: String) {
+        var user = [String: Any]()
+        user["password"] = String(password.hashValue)
+        
+        let completionHandler: (String, [String: Any]) -> () = { error, data in
+            if(error != "") {
+                print("Error in updating profile pic, error = \(error)")
+            } else {
+                print("Success updating profile pic")
+                self.syncUsers(onSync: nil)
+            }
+        }
+        httpService.patch(url: "users/\(userId)", data: user, completionHandler: completionHandler)
     }
     
     
